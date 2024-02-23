@@ -1,0 +1,22 @@
+{
+	"name": "proyectohandkid",
+	"version": "1.0.0",
+	"description": "Es una interfaz que esta dirigida para niños de 5 a 8 años que puedan hacer publicaciones sobre partidas de juegos, experiencias durante estas partidas y que puedan interactuar con sus amigos, por medio de mensajes y reacciones a las publicaciones (me gusta y comentarios).",
+	"main": "index.js",
+	"scripts": {
+		"start": "serve"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/anasofia01/HandKid.git"
+	},
+	"author": "Ana Sofia Pacheco & Nayo Gonzáles",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/anasofia01/HandKid/issues"
+	},
+	"homepage": "https://github.com/anasofia01/HandKid#readme",
+	"devDependencies": {
+		"serve": "^14.2.1"
+	}
+}
