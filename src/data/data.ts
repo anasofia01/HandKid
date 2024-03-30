@@ -136,5 +136,45 @@ const data = [
 			],
 			// Puedes agregar más propiedades según sea necesario
 		},
+		friends: [
+			{
+				id: 1,
+				name: 'Santi Lucky',
+				username: '@Santzz12_',
+				avatar:
+					'https://devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/5X/0/a/f/3/0af3387f719ee7aebf2b96cd5fb1a9a4d7984a20.jpeg',
+				verified: true,
+			},
+			{
+				id: 2,
+				name: 'NayooLover',
+				username: '@Skynet8_2',
+				avatar:
+					'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/176427a9-0ff1-4cb0-b4a8-40359ec9ea53/dcw96pn-0a17a3eb-058c-44d0-91a3-61a2567680a8.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzE3NjQyN2E5LTBmZjEtNGNiMC1iNGE4LTQwMzU5ZWM5ZWE1M1wvZGN3OTZwbi0wYTE3YTNlYi0wNThjLTQ0ZDAtOTFhMy02MWEyNTY3NjgwYTgucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.FN3O4Hbo53ozlGUyf31AO7qcrIKomcjkMo6G4z32ef0',
+				verified: false,
+			},
+			{
+				id: 3,
+				name: 'Mari Ruizzz',
+				username: '@MarRR_24',
+				avatar: 'https://pbs.twimg.com/media/FTxaVfEXsAImsYM?format=png&name=small',
+				verified: false,
+			},
+			{
+				id: 4,
+				name: 'Sofi Pachaa',
+				username: '@Sof_Pache',
+				avatar:
+					'https://media.karousell.com/media/photos/products/2021/8/29/pet_commissions_updated_1630236394_c862862b_progressive.jpg',
+				verified: true,
+			},
+			{
+				id: 6,
+				name: 'Gomecito H',
+				username: '@HowarGo1',
+				avatar: 'https://i.pinimg.com/736x/eb/d6/64/ebd664d8ec2f4458ffd55681292a578d.jpg',
+				verified: true,
+			},
+		],
 	},
 ];
