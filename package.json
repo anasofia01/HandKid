@@ -18,6 +18,7 @@
 	},
 	"homepage": "https://github.com/anasofia01/HandKid#readme",
 	"devDependencies": {
+		"css-loader": "^6.10.0",
 		"eslint": "^8.57.0",
 		"nodemon": "^3.1.0",
 		"serve": "^14.2.1",
