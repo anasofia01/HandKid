@@ -38,7 +38,6 @@ class UserFriends extends HTMLElement {
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
-        <figure>
           <div class = "friend-container>
             <div class = "frame">
             <img src = "${this.avatar}"></img>
@@ -48,7 +47,6 @@ class UserFriends extends HTMLElement {
               <span>${this.username}</span>
             </div>
           </div>
-        </figure>
       `;
 		}
 
