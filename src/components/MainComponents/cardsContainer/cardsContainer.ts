@@ -1,4 +1,6 @@
-class cardsContainer extends HTMLElement {
+import styles from './cardsContainer.css';
+
+class CardsContainer extends HTMLElement {
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
@@ -8,5 +10,12 @@ class cardsContainer extends HTMLElement {
 		this.render();
 	}
 
-	render() {}
+	render() {
+		const cssMyComponent = this.ownerDocument.createElement('style');
+		cssMyComponent.innerHTML = styles;
+		this.shadowRoot?.appendChild(cssMyComponent);
+	}
 }
+
+customElements.define('cards-container', CardsContainer);
+export default CardsContainer;
