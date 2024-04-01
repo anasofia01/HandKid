@@ -49,7 +49,7 @@ class ButtonNav extends HTMLElement {
           <button><img src = "${this.iconAddPost}"></button>
           <button><img src = "${this.iconHome}"></button>
           <button><img src = "${this.iconMessage}"></button>
-          <button><img srx = "${this.iconSettings}"></button>
+          <button><img src = "${this.iconSettings}"></button>
         </div>
       `;
 		}
