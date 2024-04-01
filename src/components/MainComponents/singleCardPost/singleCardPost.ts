@@ -1,3 +1,4 @@
+import ButtonPostInteractions, { PostAttribute } from '../buttonPostInteractions/buttonPostInteractions';
 import styles from './singleCardPost.css';
 
 export enum Attribute {
@@ -7,8 +8,11 @@ export enum Attribute {
 	'description' = 'description',
 	'timestamp' = 'timestamp',
 	'hashtags' = 'hashtags',
-	'mentions' = 'mentions',
 	'media' = 'media',
+	'likes' = 'likes',
+	'comments' = 'comments',
+	'images' = 'images',
+	'tags' = 'tags',
 }
 
 class SingleCardPost extends HTMLElement {
@@ -17,9 +21,12 @@ class SingleCardPost extends HTMLElement {
 	username?: string;
 	description?: string;
 	timestamp?: string;
-	hashtags?: string;
-	mentions?: string;
-	media?: string;
+	hashtags?: Array<string>;
+	media?: Array<string>;
+	likes?: number;
+	comments?: number;
+	images?: string;
+	tags?: string;
 
 	static get observedAttributes() {
 		const classAttribute: Record<Attribute, null> = {
@@ -29,8 +36,11 @@ class SingleCardPost extends HTMLElement {
 			description: null,
 			timestamp: null,
 			hashtags: null,
-			mentions: null,
 			media: null,
+			likes: null,
+			comments: null,
+			images: null,
+			tags: null,
 		};
 		return Object.keys(classAttribute);
 	}
@@ -38,6 +48,8 @@ class SingleCardPost extends HTMLElement {
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
+		this.createImages();
+		this.createHashtags();
 	}
 
 	connectedCallback() {
@@ -45,9 +57,39 @@ class SingleCardPost extends HTMLElement {
 	}
 
 	attributeChangedCallback(propName: Attribute, oldValue: string | undefined, newValue: string | undefined) {
-		this[propName] = newValue;
+		switch (propName) {
+			case Attribute.likes:
+				if (newValue) {
+					this.likes = Number(newValue);
+				} else {
+					this.likes = undefined;
+				}
+				break;
+		}
+
+		switch (propName) {
+			case Attribute.comments:
+				if (newValue) {
+					this.comments = Number(newValue);
+				} else {
+					this.comments = undefined;
+				}
+				break;
+		}
 
 		this.render();
+	}
+
+	createHashtags() {
+		this.hashtags?.forEach((hashtag) => {
+			this.tags = this.tags + `<span>${hashtag}</span>`;
+		});
+	}
+
+	createImages() {
+		this.media?.forEach((image) => {
+			this.images = this.images + `<img src='${image}'></img>`;
+		});
 	}
 
 	render() {
@@ -64,10 +106,15 @@ class SingleCardPost extends HTMLElement {
 							<span>${this.timestamp}</span>
 						</div>
 						<p>${this.description}</p>
-						<span>${this.hashtags}</span>
+						<span>${this.tags}</span>
 						<div class = "image-post">
-							<img src = "${this.media}"></img>
+							${this.images}
 						</div>
+						<button-interactions iconBefore = "https://cdn-icons-png.freepik.com/256/1077/1077035.png"
+						iconAfter = "https://icons.iconarchive.com/icons/designbolts/free-valentine-heart/256/Heart-icon.png"
+						digit = "${this.likes}">
+						</button-interactions>
+						<button-interactions iconGeneral = "https://cdn.iconscout.com/icon/free/png-256/free-comment-2652894-2202811.png" digit = "${this.comments}"></button-interactions>
 					</div>
 				</figure>
     `;
