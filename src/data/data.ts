@@ -1,4 +1,4 @@
-const dataPost = [
+export const dataPost = [
 	{
 		id: 1,
 		person: {
@@ -15,14 +15,9 @@ const dataPost = [
 			likes: 20,
 			comments: 6,
 			hashtags: ['#Minecraft', '#Survival', '#Server'], // Lista de hashtags utilizados en el post
-			mentions: ['@Juanjomd_', '@usuario2'], // Lista de usuarios mencionados en el post
 			media: [
-				{
-					type: 'image', // Tipo de medio (image, video, etc.)
-					url1: 'blob:https://web.whatsapp.com/d03e60a0-97e6-4aa0-8f37-443855e28b8d', // URL del medio
-					url2: 'blob:https://web.whatsapp.com/1403cbc4-337b-4d58-a345-317c944a220d',
-				},
-				// Puedes agregar más objetos si hay varios medios en el post
+				'https://i.pinimg.com/originals/84/55/4f/84554f3beca4a14d020917ab36638159.jpg',
+				'https://i.pinimg.com/564x/5c/75/78/5c757889ad1d8e0f9b9aadbe96dd26e4.jpg',
 			],
 			// Puedes agregar más propiedades según sea necesario
 		},
@@ -43,14 +38,9 @@ const dataPost = [
 			likes: 40,
 			comments: 15,
 			hashtags: ['#Minecraft', '#Enderman', '#Diamantes'], // Lista de hashtags utilizados en el post
-			mentions: [], // Lista de usuarios mencionados en el post
 			media: [
-				{
-					type: 'image', // Tipo de medio (image, video, etc.)
-					url1: 'https://static.wikia.nocookie.net/minecraft_es_gamepedia/images/f/f7/2011-02-21_14.46.24.png/revision/latest?cb=20110711205600', // URL del medio
-					url2: 'https://staticg.sportskeeda.com/editor/2021/08/c274e-16295615679782-800.jpg',
-				},
-				// Puedes agregar más objetos si hay varios medios en el post
+				'https://static.wikia.nocookie.net/minecraft_es_gamepedia/images/f/f7/2011-02-21_14.46.24.png/revision/latest?cb=20110711205600', // URL del medio
+				'https://staticg.sportskeeda.com/editor/2021/08/c274e-16295615679782-800.jpg',
 			],
 			// Puedes agregar más propiedades según sea necesario
 		},
@@ -70,14 +60,9 @@ const dataPost = [
 			likes: 10,
 			comments: 2,
 			hashtags: ['#Minecraft', '#Aventuras', '#Castillo'], // Lista de hashtags utilizados en el post
-			mentions: ['@Juanjomd_', '@Skynet8_2'], // Lista de usuarios mencionados en el post
 			media: [
-				{
-					type: 'image', // Tipo de medio (image, video, etc.)
-					url1: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgYT_HYKHoow2Eu0xmPI_pEZCym1RoV3eQU0upL_DjgUFyDzLt8bepbCj4n-S8ThTTDn1OgT_GhJZCAXS3yHyeo0kjLiogxWosIPJEjQCvHqCY2Qc7-JNZ5jczu1r4-UG79V6_xlrEMyJ5q/s1600/79.jpg', // URL del medio
-					url2: 'https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2021/10/minecraft-2511871.jpg?tf=3840x',
-				},
-				// Puedes agregar más objetos si hay varios medios en el post
+				'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgYT_HYKHoow2Eu0xmPI_pEZCym1RoV3eQU0upL_DjgUFyDzLt8bepbCj4n-S8ThTTDn1OgT_GhJZCAXS3yHyeo0kjLiogxWosIPJEjQCvHqCY2Qc7-JNZ5jczu1r4-UG79V6_xlrEMyJ5q/s1600/79.jpg', // URL del medio
+				'https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2021/10/minecraft-2511871.jpg?tf=3840x',
 			],
 			// Puedes agregar más propiedades según sea necesario
 		},
@@ -98,14 +83,9 @@ const dataPost = [
 			likes: 35,
 			comments: 25,
 			hashtags: ['#Minecraft', '#Diamantes', '#Épico'], // Lista de hashtags utilizados en el post
-			mentions: ['@Matixgr1212_', '@HowarGo1'], // Lista de usuarios mencionados en el post
 			media: [
-				{
-					type: 'image', // Tipo de medio (image, video, etc.)
-					url1: 'https://i.blogs.es/eb2c51/diamante-minecraft/1366_2000.jpeg', // URL del medio
-					url2: 'https://i.ytimg.com/vi/Xcl08z4vinA/maxresdefault.jpg',
-				},
-				// Puedes agregar más objetos si hay varios medios en el post
+				'https://i.blogs.es/eb2c51/diamante-minecraft/1366_2000.jpeg', // URL del medio
+				'https://i.ytimg.com/vi/Xcl08z4vinA/maxresdefault.jpg',
 			],
 			// Puedes agregar más propiedades según sea necesario
 		},
@@ -125,21 +105,16 @@ const dataPost = [
 			likes: 50,
 			comments: 15,
 			hashtags: ['#Minecraft', '#Granja', '#Pociones'], // Lista de hashtags utilizados en el post
-			mentions: ['@Santzz12_', '@HowarGo1'], // Lista de usuarios mencionados en el post
 			media: [
-				{
-					type: 'image', // Tipo de medio (image, video, etc.)
-					url1: 'https://i.pinimg.com/originals/a5/ab/19/a5ab1945f5a2638ddfe705e934e76ac7.jpg', // URL del medio
-					url2: 'https://pm1.aminoapps.com/6310/6a4b3162478cc2e8f4d1f347a882ceca9df63fd3_hq.jpg',
-				},
-				// Puedes agregar más objetos si hay varios medios en el post
+				'https://i.pinimg.com/originals/a5/ab/19/a5ab1945f5a2638ddfe705e934e76ac7.jpg', // URL del medio
+				'https://pm1.aminoapps.com/6310/6a4b3162478cc2e8f4d1f347a882ceca9df63fd3_hq.jpg',
 			],
 			// Puedes agregar más propiedades según sea necesario
 		},
 	},
 ];
 
-const dataFriends = [
+export const dataFriends = [
 	{
 		id: 1,
 		name: 'Santi Lucky',
