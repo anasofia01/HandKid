@@ -14,12 +14,23 @@ class AppContainer extends HTMLElement {
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
+<<<<<<< HEAD
       <div class = "logo-container">
         <h1>HandKid</h1>
       </div>
       <nav-bar></nav-bar>
       <cards-container></cards-container>
       <container-friends></container-friends>
+=======
+			<div class="body">
+      <div class = "logo-container">
+        <h1>HandKid</h1>
+      </div>
+      <cards-container></cards-container>
+      <container-friends class="container-friends"></container-friends>
+	  <nav-bar class="nav-bar"></nav-bar>
+	  </div>
+>>>>>>> nayo
       `;
 		}
 
