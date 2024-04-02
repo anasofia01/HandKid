@@ -20,7 +20,7 @@ class AppContainer extends HTMLElement {
       </div>
       <nav-bar></nav-bar>
       <cards-container></cards-container>
-      <container-friends></container-friends>
+      <container-friends class="container-friends"></container-friends>
 	  </div>
       `;
 		}

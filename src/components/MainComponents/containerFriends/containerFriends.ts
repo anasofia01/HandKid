@@ -25,6 +25,8 @@ class ContainerFriends extends HTMLElement {
 
 	render() {
 		if (this.shadowRoot) {
+			const divAll = this.ownerDocument.createElement('div');
+			divAll.classList.add('container-friends');
 			const containerTitle = this.ownerDocument.createElement('div');
 			const titleFriends = this.ownerDocument.createElement('h3');
 			titleFriends.textContent = 'Friends';
@@ -33,13 +35,15 @@ class ContainerFriends extends HTMLElement {
 
 			containerTitle.appendChild(titleFriends);
 			containerTitle.appendChild(iconSearch);
-			this.shadowRoot?.appendChild(containerTitle);
+			divAll.appendChild(containerTitle);
 
 			const containerFriends = this.ownerDocument.createElement('section');
 			this.users.forEach((component) => {
 				containerFriends.appendChild(component);
 			});
-			this.shadowRoot?.appendChild(containerFriends);
+			divAll.appendChild(containerFriends);
+
+			this.shadowRoot.appendChild(divAll);
 		}
 
 		const cssMyComponent = this.ownerDocument.createElement('style');

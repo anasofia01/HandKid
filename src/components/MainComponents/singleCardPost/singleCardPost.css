@@ -8,6 +8,7 @@
     position: relative;
     padding: 14px;
     padding-left: 15%;
+    gap: 4px;
 }
 
 .frame{
@@ -25,8 +26,14 @@
 
 .user-info{
     display: flex;
+    gap: 4px;
     align-items: center;
     margin-top: 10px;
+}
+
+.user-info > :nth-child(2),
+.user-info > :nth-child(3) {
+    color: gray;
 }
 
 .image-post{
