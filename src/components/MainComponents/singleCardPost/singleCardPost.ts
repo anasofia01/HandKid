@@ -56,7 +56,7 @@ class SingleCardPost extends HTMLElement {
 		this.render();
 	}
 
-	attributeChangedCallback(propName: Attribute, oldValue: string | undefined, newValue: string | undefined) {
+	attributeChangedCallback(propName: Attribute, oldValue: any, newValue: any) {
 		switch (propName) {
 			case Attribute.likes:
 				if (newValue) {
@@ -65,9 +65,7 @@ class SingleCardPost extends HTMLElement {
 					this.likes = undefined;
 				}
 				break;
-		}
 
-		switch (propName) {
 			case Attribute.comments:
 				if (newValue) {
 					this.comments = Number(newValue);
@@ -75,14 +73,20 @@ class SingleCardPost extends HTMLElement {
 					this.comments = undefined;
 				}
 				break;
+
+			default:
+				this[propName] = newValue;
+				break;
 		}
 
 		this.render();
 	}
 
 	createHashtags() {
+		console.log(this.hashtags);
 		this.hashtags?.forEach((hashtag) => {
 			this.tags = this.tags + `<span>${hashtag}</span>`;
+			console.log(hashtag);
 		});
 	}
 

@@ -7,15 +7,15 @@ class CardsContainer extends HTMLElement {
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
+		this.getValueData();
 	}
 
 	connectedCallback() {
 		this.render();
-		this.getValueData();
 	}
 
 	getValueData() {
-		const dataInfo = dataPost.map((user: any) => {
+		dataPost.forEach((user: any) => {
 			const postCard = this.ownerDocument.createElement('single-card-post') as SingleCardPost;
 			postCard.setAttribute(Attribute.avatar, user.person.avatar);
 			postCard.setAttribute(Attribute.name, user.person.name);
@@ -33,8 +33,8 @@ class CardsContainer extends HTMLElement {
 			const containerCards = this.ownerDocument.createElement('section');
 			this.cards.forEach((component) => {
 				containerCards.appendChild(component);
-				this.shadowRoot?.appendChild(containerCards);
 			});
+			this.shadowRoot?.appendChild(containerCards);
 		}
 
 		const cssMyComponent = this.ownerDocument.createElement('style');

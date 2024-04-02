@@ -7,18 +7,18 @@ class ContainerFriends extends HTMLElement {
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
+		this.getValueData();
 	}
 	connectedCallback() {
 		this.render();
-		this.getValueData();
 	}
 
 	getValueData() {
-		const dataInfo = dataFriends.map((user: any) => {
+		dataFriends.forEach((user: any) => {
 			const userComponent = this.ownerDocument.createElement('user-friends') as UserFriends;
-			userComponent.setAttribute(Attribute.avatar, user.person.avatar);
-			userComponent.setAttribute(Attribute.name, user.person.name);
-			userComponent.setAttribute(Attribute.username, user.person.username);
+			userComponent.setAttribute(Attribute.avatar, user.avatar);
+			userComponent.setAttribute(Attribute.name, user.name);
+			userComponent.setAttribute(Attribute.username, user.username);
 			this.users.push(userComponent);
 		});
 	}
@@ -38,8 +38,8 @@ class ContainerFriends extends HTMLElement {
 			const containerFriends = this.ownerDocument.createElement('section');
 			this.users.forEach((component) => {
 				containerFriends.appendChild(component);
-				this.shadowRoot?.appendChild(containerFriends);
 			});
+			this.shadowRoot?.appendChild(containerFriends);
 		}
 
 		const cssMyComponent = this.ownerDocument.createElement('style');
