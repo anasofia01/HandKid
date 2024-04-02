@@ -35,6 +35,10 @@ class ButtonPostInteractions extends HTMLElement {
 					this.digitButton = undefined;
 				}
 				break;
+
+			default:
+				this[propName] = newValue;
+				break;
 		}
 
 		this.render();
@@ -43,16 +47,10 @@ class ButtonPostInteractions extends HTMLElement {
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
-        <div class = "container-button">
           <div class = "button-comment">
-            <button src = "${this.iconImage}"></button>
+            <button><img src = "${this.iconImage}"></img></button>
             <span>${this.digitButton}</span>
           </div>
-          <div class = "button-like">
-          <button src = "${this.iconImage}"></button>
-          <span>${this.digitButton}</span>
-        </div>
-        </div>
     `;
 		}
 

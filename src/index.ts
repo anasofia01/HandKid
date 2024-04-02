@@ -17,6 +17,7 @@ class AppContainer extends HTMLElement {
       <div class = "logo-container">
         <h1>HandKid</h1>
       </div>
+      <nav-bar></nav-bar>
       <cards-container></cards-container>
       <container-friends></container-friends>
       `;

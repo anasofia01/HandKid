@@ -25,8 +25,8 @@ class SingleCardPost extends HTMLElement {
 	media?: Array<string>;
 	likes?: number;
 	comments?: number;
-	images?: string;
-	tags?: string;
+	images?: string = '';
+	tags?: string = '';
 
 	static get observedAttributes() {
 		const classAttribute: Record<Attribute, null> = {
@@ -48,8 +48,6 @@ class SingleCardPost extends HTMLElement {
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
-		this.createImages();
-		this.createHashtags();
 	}
 
 	connectedCallback() {
@@ -74,6 +72,24 @@ class SingleCardPost extends HTMLElement {
 				}
 				break;
 
+			case Attribute.hashtags:
+				if (newValue) {
+					this.hashtags = JSON.parse(newValue);
+					this.createHashtags();
+				} else {
+					this.hashtags = undefined;
+				}
+				break;
+
+			case Attribute.media:
+				if (newValue) {
+					this.media = JSON.parse(newValue);
+					this.createImages();
+				} else {
+					this.media = undefined;
+				}
+				break;
+
 			default:
 				this[propName] = newValue;
 				break;
@@ -83,10 +99,8 @@ class SingleCardPost extends HTMLElement {
 	}
 
 	createHashtags() {
-		console.log(this.hashtags);
 		this.hashtags?.forEach((hashtag) => {
 			this.tags = this.tags + `<span>${hashtag}</span>`;
-			console.log(hashtag);
 		});
 	}
 
@@ -110,15 +124,12 @@ class SingleCardPost extends HTMLElement {
 							<span>${this.timestamp}</span>
 						</div>
 						<p>${this.description}</p>
-						<span>${this.tags}</span>
+						<div class = "hashtag-post">${this.tags}</div>
 						<div class = "image-post">
 							${this.images}
 						</div>
-						<button-interactions iconBefore = "https://cdn-icons-png.freepik.com/256/1077/1077035.png"
-						iconAfter = "https://icons.iconarchive.com/icons/designbolts/free-valentine-heart/256/Heart-icon.png"
-						digit = "${this.likes}">
-						</button-interactions>
-						<button-interactions iconGeneral = "https://cdn.iconscout.com/icon/free/png-256/free-comment-2652894-2202811.png" digit = "${this.comments}"></button-interactions>
+						<button-interactions iconImage = "https://cdn-icons-png.freepik.com/256/1077/1077035.png" digitButton = "${this.likes}"></button-interactions>
+						<button-interactions iconImage = "https://cdn.iconscout.com/icon/free/png-256/free-comment-2652894-2202811.png" digitButton = "${this.comments}"></button-interactions>
 					</div>
 				</figure>
     `;

@@ -39,7 +39,7 @@ export const dataPost = [
 			comments: 15,
 			hashtags: ['#Minecraft', '#Enderman', '#Diamantes'], // Lista de hashtags utilizados en el post
 			media: [
-				'https://static.wikia.nocookie.net/minecraft_es_gamepedia/images/f/f7/2011-02-21_14.46.24.png/revision/latest?cb=20110711205600', // URL del medio
+				'https://www.magisnet.com/wp-content/uploads/2020/05/Minecraft3.jpg', // URL del medio
 				'https://staticg.sportskeeda.com/editor/2021/08/c274e-16295615679782-800.jpg',
 			],
 			// Puedes agregar más propiedades según sea necesario

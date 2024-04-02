@@ -22,8 +22,10 @@ class CardsContainer extends HTMLElement {
 			postCard.setAttribute(Attribute.username, user.person.username);
 			postCard.setAttribute(Attribute.description, user.post.description);
 			postCard.setAttribute(Attribute.timestamp, user.post.timestamp);
-			postCard.setAttribute(Attribute.hashtags, user.post.hashtags);
-			postCard.setAttribute(Attribute.media, user.post.media);
+			postCard.setAttribute(Attribute.hashtags, JSON.stringify(user.post.hashtags));
+			postCard.setAttribute(Attribute.media, JSON.stringify(user.post.media));
+			postCard.setAttribute(Attribute.likes, user.post.likes);
+			postCard.setAttribute(Attribute.comments, user.post.comments);
 			this.cards.push(postCard);
 		});
 	}
