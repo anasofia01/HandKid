@@ -4,7 +4,7 @@
 	"description": "Es una interfaz que esta dirigida para niños de 5 a 8 años que puedan hacer publicaciones sobre partidas de juegos, experiencias durante estas partidas y que puedan interactuar con sus amigos, por medio de mensajes y reacciones a las publicaciones (me gusta y comentarios).",
 	"main": "index.js",
 	"scripts": {
-		"build": "webpack --watch --mode=production",
+		"build": "webpack --mode=production",
 		"start": "serve"
 	},
 	"repository": {

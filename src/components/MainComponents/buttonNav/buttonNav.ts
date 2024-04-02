@@ -1,27 +1,15 @@
 import styles from './buttonNav.css';
 
 export enum Attribute {
-	'iconUser' = 'iconUser',
-	'iconAddPost' = 'iconAddPost',
-	'iconHome' = 'iconHome',
-	'iconMessage' = 'iconMessage',
-	'iconSettings' = 'iconSettings',
+	'iconGeneral' = 'iconGeneral',
 }
 
 class ButtonNav extends HTMLElement {
-	iconUser?: string;
-	iconAddPost?: string;
-	iconHome?: string;
-	iconMessage?: string;
-	iconSettings?: string;
+	iconGeneral?: string;
 
 	static get observedAttributes() {
 		const classAttribute: Record<Attribute, null> = {
-			iconUser: null,
-			iconAddPost: null,
-			iconHome: null,
-			iconMessage: null,
-			iconSettings: null,
+			iconGeneral: null,
 		};
 		return Object.keys(classAttribute);
 	}
@@ -44,13 +32,7 @@ class ButtonNav extends HTMLElement {
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
-        <div class = "container-buttons">
-          <button><img src = "${this.iconUser}"></button>
-          <button><img src = "${this.iconAddPost}"></button>
-          <button><img src = "${this.iconHome}"></button>
-          <button><img src = "${this.iconMessage}"></button>
-          <button><img src = "${this.iconSettings}"></button>
-        </div>
+          <button><icon-component iconImage = "${this.iconGeneral}"></icon-component></button>
       `;
 		}
 

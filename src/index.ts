@@ -13,17 +13,11 @@ class AppContainer extends HTMLElement {
 
 	render() {
 		if (this.shadowRoot) {
-			const logoContainer = this.ownerDocument.createElement('div');
-			const logoHandkid = this.ownerDocument.createElement('span');
-			logoHandkid.textContent = 'HandKid';
-
-			logoContainer.appendChild(logoHandkid);
-			this.shadowRoot?.appendChild(logoContainer);
-
 			this.shadowRoot.innerHTML = `
+      <div class = "logo-container">
+        <h1>HandKid</h1>
+      </div>
       <nav-bar></nav-bar>
-      <cards-container></cards-container>
-      <container-friends></container-friends>
       `;
 		}
 
