@@ -33,13 +33,15 @@ class ContainerFriends extends HTMLElement {
 
 			containerTitle.appendChild(titleFriends);
 			containerTitle.appendChild(iconSearch);
-			this.shadowRoot?.appendChild(containerTitle);
-
+			
 
 			const containerFriends = this.ownerDocument.createElement('section');
+			containerFriends.appendChild(containerTitle);
+			containerFriends.className = 'container-friends'
 			this.users.forEach((component) => {
 				containerFriends.appendChild(component);
 			});
+			
 			this.shadowRoot?.appendChild(containerFriends);
 		}
 

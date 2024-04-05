@@ -9,11 +9,7 @@
     bottom: 0;
 }
 
-.container-friends{
-    position: fixed;
-    right: -13vw;
-    top: 0;
-}
+
 
 .nav-bar{
     position: fixed;
@@ -29,6 +25,3 @@
     padding-left: 40px;
 }
 
-cards-container{
-    margin-left: 100px;
-}

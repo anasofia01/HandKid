@@ -128,15 +128,10 @@ class SingleCardPost extends HTMLElement {
 						<div class = "image-post">
 							${this.images}
 						</div>
-<<<<<<< HEAD
-						<button-interactions iconImage = "https://cdn-icons-png.freepik.com/256/1077/1077035.png" digitButton = "${this.likes}"></button-interactions>
-						<button-interactions iconImage = "https://cdn.iconscout.com/icon/free/png-256/free-comment-2652894-2202811.png" digitButton = "${this.comments}"></button-interactions>
-=======
 						<div class="buttons-div">
 						<button-interactions iconImage = "https://cdn-icons-png.freepik.com/256/1077/1077035.png" digitButton = "${this.likes}"></button-interactions>
 						<button-interactions iconImage = "https://cdn.iconscout.com/icon/free/png-256/free-comment-2652894-2202811.png" digitButton = "${this.comments}"></button-interactions>
 						</div>
->>>>>>> nayo
 					</div>
 				</figure>
     `;

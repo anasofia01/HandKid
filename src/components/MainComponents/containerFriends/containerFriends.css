@@ -1,20 +1,18 @@
 .container-friends{
     background: linear-gradient(180deg, #492E87 0%, #9D0191 100%);
     border-radius: 50px;
-    width: 30vw;
+    width: 25vw;
     right: 0;
-    display: flex;
+    display:flex;
+    position: fixed;
+    left: 70%;
+    top: 10%;
     flex-direction: column;
     justify-content: center;
     align-items: baseline;
     gap: 20px;
-    height: 100vh;
+    height: 80vh;
     padding-left: 30px;
     color: white;
 }
 
-.container-friends section{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
