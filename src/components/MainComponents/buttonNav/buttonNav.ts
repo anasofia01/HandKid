@@ -32,7 +32,7 @@ class ButtonNav extends HTMLElement {
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
-          <button><icon-component iconimage = "${this.iconGeneral}"></icon-component></button>
+          <button><icon-component iconimage = "${this.icongeneral}"></icon-component></button>
       `;
 		}
 
