@@ -25,3 +25,10 @@
 .info-friend > :nth-child(2){
     color: rgba(255, 255, 255, 0.53);
 }
+
+@media (max-width: 600px) {
+    .friend-container{
+        flex-direction: row;
+        margin-top: 6%;
+    }       
+}

@@ -14,5 +14,30 @@
     height: 80vh;
     padding-left: 30px;
     color: white;
+
 }
 
+@media (max-width: 600px) {
+    .container-friends{
+        width: 80%;
+        height: 20vh;
+        border-radius: 20px;
+        position: absolute;
+        flex-direction: column;
+        left: 5%;
+        top: 5%;
+        gap: 0;
+        overflow-y: hidden;
+        overflow-x: scroll;
+    } 
+
+    .title{
+        margin-bottom: 0;
+    } 
+    
+    .container-friends-list{
+        display: flex;
+        flex-direction: row;
+        
+    } 
+}
