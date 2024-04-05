@@ -1,18 +1,18 @@
 import styles from './buttonPostInteractions.css';
 
 export enum PostAttribute {
-	'iconImage' = 'iconImage',
-	'digitButton' = 'digitButton',
+	'iconimage' = 'iconimage',
+	'digitbutton' = 'digitbutton',
 }
 
 class ButtonPostInteractions extends HTMLElement {
-	iconImage?: string;
-	digitButton?: number;
+	iconimage?: string;
+	digitbutton?: number;
 
 	static get observedAttributes() {
 		const classPostAttribute: Record<PostAttribute, null> = {
-			iconImage: null,
-			digitButton: null,
+			iconimage: null,
+			digitbutton: null,
 		};
 		return Object.keys(classPostAttribute);
 	}
@@ -28,11 +28,11 @@ class ButtonPostInteractions extends HTMLElement {
 
 	attributeChangedCallback(propName: PostAttribute, oldValue: string | undefined, newValue: string | undefined) {
 		switch (propName) {
-			case PostAttribute.digitButton:
+			case PostAttribute.digitbutton:
 				if (newValue) {
-					this.digitButton = Number(newValue);
+					this.digitbutton = Number(newValue);
 				} else {
-					this.digitButton = undefined;
+					this.digitbutton = undefined;
 				}
 				break;
 
@@ -48,8 +48,8 @@ class ButtonPostInteractions extends HTMLElement {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
           <div class = "button-comment">
-            <button><img src = "${this.iconImage}"></img></button>
-            <span>${this.digitButton}</span>
+            <button class= "icon-button"><img class= "icon-img"src = ${this.iconimage}></img></button>
+            <span>${this.digitbutton}</span>
           </div>
     `;
 		}
