@@ -1,15 +1,15 @@
 import styles from './buttonNav.css';
 
 export enum Attribute {
-	'iconGeneral' = 'iconGeneral',
+	'icongeneral' = 'icongeneral',
 }
 
 class ButtonNav extends HTMLElement {
-	iconGeneral?: string;
+	icongeneral?: string;
 
 	static get observedAttributes() {
 		const classAttribute: Record<Attribute, null> = {
-			iconGeneral: null,
+			icongeneral: null,
 		};
 		return Object.keys(classAttribute);
 	}
@@ -32,7 +32,7 @@ class ButtonNav extends HTMLElement {
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
-          <button><icon-component iconImage = "${this.iconGeneral}"></icon-component></button>
+          <button><icon-component iconimage = "${this.icongeneral}"></icon-component></button>
       `;
 		}
 
