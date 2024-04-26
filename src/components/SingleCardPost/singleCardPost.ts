@@ -1,4 +1,3 @@
-import ButtonPostInteractions, { PostAttribute } from '../buttonPostInteractions/buttonPostInteractions';
 import styles from './singleCardPost.css';
 
 export enum Attribute {
@@ -113,33 +112,30 @@ class SingleCardPost extends HTMLElement {
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
-				<figure>
+				<style>${styles}</style>
+				<div>
 					<div class = "container-info">
-						<div class = "frame">
+						<div class = "post-info">
 							<img src = "${this.avatar}"></img>
-						</div>
-						<div class = "user-info">
 							<span>${this.name}</span>
 							<span>${this.username}</span>
 							<span>${this.timestamp}</span>
+							<p>${this.description}</p>
+							<div class = "hashtag-post">${this.tags}</div>
 						</div>
-						<p>${this.description}</p>
-						<div class = "hashtag-post">${this.tags}</div>
 						<div class = "image-post">
 							${this.images}
 						</div>
-						<div class="buttons-div">
-						<button-interactions iconimage = "https://cdn-icons-png.freepik.com/256/1077/1077035.png" digitbutton = "${this.likes}"></button-interactions>
-						<button-interactions iconimage = "https://cdn.iconscout.com/icon/free/png-256/free-comment-2652894-2202811.png" digitbutton = "${this.comments}"></button-interactions>
+						<div class="container-buttonInteraction">
+							<button class= "icon-button"><img class= "icon-img"src = ""></button>
+							<span>${this.comments}</span>
+							<button class= "icon-button"><img class= "icon-img"src = ""></button>
+							<span>${this.likes}</span>
 						</div>
-					</div>
-				</figure>
+				</div>
+			</div>
     `;
 		}
-
-		const cssMyComponent = this.ownerDocument.createElement('style');
-		cssMyComponent.innerHTML = styles;
-		this.shadowRoot?.appendChild(cssMyComponent);
 	}
 }
 
