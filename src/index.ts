@@ -1,5 +1,6 @@
 import styles from './index.css';
 import './components/index';
+import './screens/index';
 
 class AppContainer extends HTMLElement {
 	constructor() {
@@ -14,24 +15,23 @@ class AppContainer extends HTMLElement {
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
-      
-
-	  <div class="body">
-			<div class = "logo-container">
-				<h1>HandKid</h1>
-			</div>
-				<nav-bar></nav-bar>
-
-				<cards-container></cards-container>
-				<container-friends></container-friends>
-				
-	  </div>
+				<style>${styles}</style>
+				<div class="main-container">
+					<div class="logo-container">
+						<h1>HandKid</h1>
+					</div>
+					<div class="column1">
+						<screen-nav-bar></screen-nav-bar>
+					</div>
+					<div class="column2">
+						<screen-card-post></screen-card-post>
+					</div>
+					<div class="column3">
+						<screen-card-friends></screen-card-friends>
+					</div>
+				</div>
       `;
 		}
-
-		const cssMyComponent = this.ownerDocument.createElement('style');
-		cssMyComponent.innerHTML = styles;
-		this.shadowRoot?.appendChild(cssMyComponent);
 	}
 }
 
