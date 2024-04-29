@@ -8,17 +8,38 @@ class SingleButtonNav extends HTMLElement {
 
 	connectedCallback() {
 		this.render();
+		this.addProfileButtonListener();
+		this.addHomeButtonListener();
+	}
+
+	addProfileButtonListener() {
+		const profileButton = this.shadowRoot?.querySelector('#profile');
+		if (profileButton) {
+			profileButton.addEventListener('click', () => {
+				this.dispatchEvent(new CustomEvent('profile-clicked', { bubbles: true, composed: true }));
+			});
+		}
+	}
+
+	addHomeButtonListener() {
+		const homeButton = this.shadowRoot?.querySelector('#home');
+		if (homeButton) {
+			homeButton.addEventListener('click', () => {
+				this.dispatchEvent(new CustomEvent('home-clicked', { bubbles: true, composed: true }));
+			});
+		}
 	}
 
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
 				<style>${styles}</style>
-				<button class = "ayuda"><img alt = "User Icon" src = "../../resource/user-solid.svg">Hola</button>
-				<button class = "ayuda"><img src = "https://www.nicepng.com/png/full/781-7812300_icono-persona-circle.png">Hola</button>
-				<button class = "ayuda"><img src = "https://www.nicepng.com/png/full/781-7812300_icono-persona-circle.png">Hola</button>
-				<button class = "ayuda"><img src = "https://www.nicepng.com/png/full/781-7812300_icono-persona-circle.png">Hola</button>
-				<button class = "ayuda"><img src = "https://www.nicepng.com/png/full/781-7812300_icono-persona-circle.png">Hola</button>
+				<div class = "container-menu">
+					<button class = "btnMenu" id = "home">Home</button>
+					<button class = "btnMenu">Add Post</button>
+					<button class = "btnMenu" id = "profile">Profile</button>
+					<button class = "btnMenu">Settings</button>
+				</div>
       `;
 		}
 	}

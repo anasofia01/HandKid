@@ -1,5 +1,23 @@
-.ayuda {
-	background-color: red;
-	width: 200px;
-	height: 200px;
+.container-menu {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 12px;
+}
+
+.btnMenu {
+	display: flex;
+	align-items: center;
+	padding: 10px;
+	margin-bottom: 10px;
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+	width: 100%;
+	color: #fff;
+}
+
+.btnMenu i {
+	margin-right: 10px;
 }
