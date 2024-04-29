@@ -49,10 +49,6 @@ class SingleCardPost extends HTMLElement {
 		this.attachShadow({ mode: 'open' });
 	}
 
-	connectedCallback() {
-		this.render();
-	}
-
 	attributeChangedCallback(propName: Attribute, oldValue: any, newValue: any) {
 		switch (propName) {
 			case Attribute.likes:
@@ -74,7 +70,6 @@ class SingleCardPost extends HTMLElement {
 			case Attribute.hashtags:
 				if (newValue) {
 					this.hashtags = JSON.parse(newValue);
-					this.createHashtags();
 				} else {
 					this.hashtags = undefined;
 				}
@@ -83,7 +78,6 @@ class SingleCardPost extends HTMLElement {
 			case Attribute.media:
 				if (newValue) {
 					this.media = JSON.parse(newValue);
-					this.createImages();
 				} else {
 					this.media = undefined;
 				}
@@ -93,46 +87,46 @@ class SingleCardPost extends HTMLElement {
 				this[propName] = newValue;
 				break;
 		}
+	}
 
+	connectedCallback() {
 		this.render();
+		this.shadowRoot?.querySelector('.btn-like')?.addEventListener('click', this.likePost.bind(this));
 	}
 
-	createHashtags() {
-		this.hashtags?.forEach((hashtag) => {
-			this.tags = this.tags + `<span>${hashtag}</span>`;
-		});
-	}
-
-	createImages() {
-		this.media?.forEach((image) => {
-			this.images = this.images + `<img src='${image}'></img>`;
-		});
+	likePost() {
+		this.likes = (this.likes || 0) + 1;
+		this.render();
 	}
 
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
 				<style>${styles}</style>
-				<div>
-					<div class = "container-info">
-						<div class = "post-info">
-							<img src = "${this.avatar}"></img>
-							<span>${this.name}</span>
-							<span>${this.username}</span>
-							<span>${this.timestamp}</span>
-							<p>${this.description}</p>
-							<div class = "hashtag-post">${this.tags}</div>
+				<div class="container-info">
+					<div class="post-info-head">
+						<img class="avatar" src="${this.avatar}"></img>
+						<span><b>${this.name}</b></span>
+						<span class="span-head span-username">${this.username}</span>
+						<span class="span-head span-timestamp">${this.timestamp}</span>
+					</div>
+					<div class="post-info-body">
+						<div class="post-description">
+							${this.description}
 						</div>
-						<div class = "image-post">
-							${this.images}
+						<div class="post-images">
+							${this.media?.map((image) => `<img src="${image}" alt="Image">`).join('') ?? ''}
 						</div>
-						<div class="container-buttonInteraction">
-							<button class= "icon-button"><img class= "icon-img"src = ""></button>
-							<span>${this.comments}</span>
-							<button class= "icon-button"><img class= "icon-img"src = ""></button>
-							<span>${this.likes}</span>
+						<div class="post-hashtag">
+							${this.hashtags?.map((tag) => `<span>${tag}</span>`).join('') ?? ''}
 						</div>
-				</div>
+					</div>
+					<div class="container-buttons-interaction">
+						<button class="icon-button btn-comment"></button>
+						<span>${this.comments}</span>
+						<button class="icon-button btn-like"></button>
+						<span>${this.likes}</span>
+					</div>
 			</div>
     `;
 		}
