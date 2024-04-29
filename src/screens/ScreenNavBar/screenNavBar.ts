@@ -15,7 +15,9 @@ class ScreenNavBar extends HTMLElement {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
 				<style>${styles}</style>
-				<single-button-nav></single-button-nav>
+				<div class = "container-menu">
+					<single-button-nav></single-button-nav>
+				</div>
 			`;
 		}
 	}
