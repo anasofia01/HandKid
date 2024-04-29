@@ -1,6 +1,8 @@
 import styles from './index.css';
 import './components/index';
 import './screens/index';
+import { ProfileData } from './types/profileData';
+import SingleCardProfile from './components/SingleCardProfile/singleCardProfile';
 
 class AppContainer extends HTMLElement {
 	constructor() {
@@ -10,6 +12,48 @@ class AppContainer extends HTMLElement {
 
 	connectedCallback() {
 		this.render();
+		this.renderPost();
+		this.addEventListener('profile-clicked', () => this.renderMyProfile());
+		this.addEventListener('home-clicked', () => this.renderPost());
+		this.addEventListener('friend-clicked', (event) => {
+			console.log('holi');
+			const detail = (event as CustomEvent).detail;
+			this.renderFriendProfile(detail);
+		});
+	}
+
+	renderMyProfile() {
+		const container = this.shadowRoot?.querySelector('.column2');
+		if (container) {
+			container.innerHTML = '';
+			const profileContent = document.createElement('single-card-profile');
+			container.appendChild(profileContent);
+		}
+	}
+
+	renderPost() {
+		const container = this.shadowRoot?.querySelector('.column2');
+		if (container) {
+			container.innerHTML = '';
+			const postContent = document.createElement('screen-card-post');
+			container.appendChild(postContent);
+		}
+	}
+
+	renderFriendProfile(profileData: ProfileData) {
+		const container = this.shadowRoot?.querySelector('.column2');
+		if (container) {
+			console.log(profileData.friends);
+			container.innerHTML = '';
+			const profileContent = document.createElement('single-card-profile') as SingleCardProfile;
+			profileContent.banner = profileData.banner;
+			profileContent.avatar = profileData.avatar;
+			profileContent.name = profileData.name;
+			profileContent.username = profileData.username;
+			profileContent.age = Number(profileData.age);
+			profileContent.friends = Number(profileData.friends);
+			container.appendChild(profileContent);
+		}
 	}
 
 	render() {
@@ -24,7 +68,6 @@ class AppContainer extends HTMLElement {
 						<screen-nav-bar></screen-nav-bar>
 					</div>
 					<div class="column2">
-						<screen-card-post></screen-card-post>
 					</div>
 					<div class="column3">
 						<screen-card-friends></screen-card-friends>
