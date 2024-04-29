@@ -4,18 +4,27 @@ export enum Attribute {
 	'avatar' = 'avatar',
 	'name' = 'name',
 	'username' = 'username',
+	'banner' = 'banner',
+	'age' = 'age',
+	'friends' = 'friends',
 }
 
 class SingleCardFriend extends HTMLElement {
 	avatar?: string;
 	name?: string;
 	username?: string;
+	banner?: string;
+	age?: number;
+	friends?: number;
 
 	static get observedAttributes() {
 		const classAttribute: Record<Attribute, null> = {
 			avatar: null,
 			name: null,
 			username: null,
+			banner: null,
+			age: null,
+			friends: null,
 		};
 		return Object.keys(classAttribute);
 	}
@@ -27,10 +36,31 @@ class SingleCardFriend extends HTMLElement {
 
 	connectedCallback() {
 		this.render();
+		this.addEventListener('click', () => {
+			console.log(this.friends);
+			this.dispatchEvent(
+				new CustomEvent('friend-clicked', {
+					detail: {
+						avatar: this.avatar,
+						name: this.name,
+						username: this.username,
+						banner: this.banner,
+						age: this.age,
+						friends: this.friends,
+					},
+					bubbles: true,
+					composed: true,
+				})
+			);
+		});
 	}
 
 	attributeChangedCallback(propName: Attribute, oldValue: string | undefined, newValue: string | undefined) {
-		this[propName] = newValue;
+		if (propName === Attribute.age || propName === Attribute.friends) {
+			this[propName] = newValue ? Number(newValue) : undefined;
+		} else {
+			this[propName] = newValue;
+		}
 
 		this.render();
 	}
@@ -39,15 +69,15 @@ class SingleCardFriend extends HTMLElement {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
 				<style>${styles}</style>
-        <div class = "friend-container">
-          <div class = "frame">
-          	<img src = "${this.avatar}"></img>
-          </div>
-          <div class = "info-friend">
-            <span>${this.name}</span>
-            <span>${this.username}</span>
-          </div>
-        </div>
+        <div class = "container-friend card-friend">
+					<div class = "text-container">
+						<span class = "friend-name">${this.name}</span>
+						<span class = "friend-username">${this.username}</span>
+					</div>
+					<div class = "avatar-container">
+						<img src = "${this.avatar}" class = "avatar"></img>
+					</div>
+      	</div>
       `;
 		}
 	}
