@@ -1,0 +1,8 @@
+export interface ProfileData {
+	banner?: string;
+	avatar?: string;
+	name?: string;
+	username?: string;
+	age?: number;
+	friends?: number;
+}
