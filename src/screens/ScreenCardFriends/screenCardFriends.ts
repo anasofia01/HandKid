@@ -1,6 +1,6 @@
 import SingleCardFriend, { Attribute } from '../../components/SingleCardFriend/singleCardFriend';
 import styles from './screenCardFriends.css';
-import { dataFriends } from '../../data/data';
+import { dataFriends } from '../../services/data';
 
 class ScreenCardFriends extends HTMLElement {
 	users: SingleCardFriend[] = [];
