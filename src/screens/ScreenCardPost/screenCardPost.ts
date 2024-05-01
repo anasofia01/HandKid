@@ -1,6 +1,6 @@
 import SingleCardPost from '../../components/SingleCardPost/singleCardPost';
 import styles from './screenCardPost.css';
-import { dataPost } from '../../data/data';
+import { dataPost } from '../../services/data';
 
 class ScreenCardPost extends HTMLElement {
 	cards: SingleCardPost[] = [];
