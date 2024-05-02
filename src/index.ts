@@ -2,7 +2,9 @@ import styles from './index.css';
 import './components/index';
 import './screens/index';
 import { ProfileData } from './types/profileData';
+import { PostData } from './types/postData';
 import SingleCardProfile from './components/SingleCardProfile/singleCardProfile';
+import { createPost } from './utils/firebase';
 
 class AppContainer extends HTMLElement {
 	constructor() {
@@ -16,17 +18,28 @@ class AppContainer extends HTMLElement {
 		this.addEventListener('profile-clicked', () => this.renderMyProfile());
 		this.addEventListener('home-clicked', () => this.renderPost());
 		this.addEventListener('friend-clicked', (event) => {
-			console.log('holi');
 			const detail = (event as CustomEvent).detail;
 			this.renderFriendProfile(detail);
 		});
+		this.addEventListener('add-post-clicked', () => this.renderForm());
+		const logoElement = this.shadowRoot?.querySelector('.logo-container');
+		if (logoElement) {
+			logoElement.addEventListener('click', () => this.renderPost());
+		}
 	}
 
 	renderMyProfile() {
 		const container = this.shadowRoot?.querySelector('.column2');
 		if (container) {
 			container.innerHTML = '';
-			const profileContent = document.createElement('single-card-profile');
+			const profileContent = document.createElement('single-card-profile') as SingleCardProfile;
+			profileContent.banner =
+				'https://png.pngtree.com/background/20230524/original/pngtree-emojiees-with-different-expressions-on-a-table-picture-image_2710520.jpg';
+			profileContent.avatar = 'https://i.pinimg.com/564x/06/1b/82/061b82351616561cddb942c7b64a6bd3.jpg';
+			profileContent.name = 'El Matiassx';
+			profileContent.username = '@Matixgr1212_';
+			profileContent.age = 8;
+			profileContent.friends = 5;
 			container.appendChild(profileContent);
 		}
 	}
@@ -54,6 +67,45 @@ class AppContainer extends HTMLElement {
 			profileContent.friends = Number(profileData.friends);
 			container.appendChild(profileContent);
 		}
+	}
+
+	renderForm() {
+		const container = this.shadowRoot?.querySelector('.column2');
+		if (container) {
+			container.innerHTML = '';
+			const formContent = document.createElement('screen-form-post');
+			container.appendChild(formContent);
+
+			formContent.addEventListener('form-submitted', (event) => {
+				const formInfo = (event as CustomEvent).detail;
+				this.processFormData(formInfo);
+			});
+		}
+	}
+
+	async processFormData(formInfo: FormData) {
+		const img1 = formInfo.get('img1') as string;
+		const img2 = formInfo.get('img2') as string;
+		const description = formInfo.get('description') as string;
+		const tags1 = formInfo.get('tags1') as string;
+		const tags2 = formInfo.get('tags2') as string;
+		const postDataInfo: PostData = {
+			user: '',
+			description: description,
+			timestamp: '',
+			likes: 0,
+			comments: 0,
+			media: [img1, img2],
+			hashtags: [tags1, tags2],
+		};
+		try {
+			const result = await createPost(postDataInfo);
+			alert('saved info');
+		} catch (error) {
+			alert('error');
+			console.error(error);
+		}
+		this.renderPost();
 	}
 
 	render() {
