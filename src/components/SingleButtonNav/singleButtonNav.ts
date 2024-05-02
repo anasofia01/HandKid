@@ -10,6 +10,7 @@ class SingleButtonNav extends HTMLElement {
 		this.render();
 		this.addProfileButtonListener();
 		this.addHomeButtonListener();
+		this.addFormButtonListener();
 	}
 
 	addProfileButtonListener() {
@@ -30,15 +31,23 @@ class SingleButtonNav extends HTMLElement {
 		}
 	}
 
+	addFormButtonListener() {
+		const formButton = this.shadowRoot?.querySelector('#addPost');
+		if (formButton) {
+			formButton.addEventListener('click', () => {
+				this.dispatchEvent(new CustomEvent('add-post-clicked', { bubbles: true, composed: true }));
+			});
+		}
+	}
+
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
 				<style>${styles}</style>
 				<div class = "container-menu">
 					<button class = "btnMenu" id = "home">Home</button>
-					<button class = "btnMenu">Add Post</button>
+					<button class = "btnMenu" id = "addPost">Add Post</button>
 					<button class = "btnMenu" id = "profile">Profile</button>
-					<button class = "btnMenu">Settings</button>
 				</div>
       `;
 		}
