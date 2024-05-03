@@ -1,13 +1,9 @@
 export interface PostData {
-	avatar?: string;
-	name?: string;
-	username?: string;
+	user?: string;
 	description?: string;
-	timeStamp?: string;
+	timestamp?: string;
 	likes?: number;
 	comments?: number;
 	media?: Array<string>;
-	images?: string;
 	hashtags?: Array<string>;
-	tags?: string;
 }
