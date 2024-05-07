@@ -6,6 +6,7 @@ import { PostData } from '../../types/postData';
 import { CommentsData } from '../../types/commentsData';
 import SingleCardProfile from '../../components/SingleCardProfile/singleCardProfile';
 import { createPost } from '../../utils/firebase';
+import { SingleCardPost } from '../../components/index';
 
 class ScreenDashboard extends HTMLElement {
 	constructor() {
@@ -141,7 +142,23 @@ class ScreenDashboard extends HTMLElement {
 		}
 	}
 
-	addComment(detail: CommentsData) {}
+	addComment(detail: CommentsData) {
+		const container = this.shadowRoot?.querySelector('.column2');
+		if (container) {
+			container.innerHTML = '';
+			const postCard = document.createElement('single-card-post') as SingleCardPost;
+			postCard.idPost = detail.idPost;
+			postCard.avatar = detail.avatar;
+			postCard.name = detail.name;
+			postCard.username = detail.username;
+			postCard.description = detail.description;
+			postCard.timestamp = detail.timestamp;
+			// postCard.hashtags = detail.hashtags.map((tag: string) => tag.trim());
+			// postCard.media = detail.media.map((media: string) => media.trim());
+			postCard.likes = detail.likes;
+			postCard.comments = detail.comments;
+		}
+	}
 
 	render() {
 		if (this.shadowRoot) {
