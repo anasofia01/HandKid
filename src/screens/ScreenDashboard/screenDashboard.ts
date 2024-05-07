@@ -157,6 +157,7 @@ class ScreenDashboard extends HTMLElement {
 			postCard.media = detail.media.map((media: string) => media.trim());
 			postCard.likes = detail.likes;
 			postCard.comments = detail.comments;
+			container.appendChild(postCard);
 		}
 	}
 
