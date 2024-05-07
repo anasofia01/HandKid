@@ -1,3 +1,9 @@
+export enum Attribute {
+	'avatar' = 'avatar',
+	'username' = 'username',
+	'comment' = 'comment',
+}
+
 class SingleButtonComment extends HTMLElement {
 	constructor() {
 		super();
