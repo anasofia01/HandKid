@@ -1,3 +1,5 @@
+import styles from './createFormComment.css';
+
 class CreateFormComment extends HTMLElement {
 	constructor() {
 		super();
@@ -7,7 +9,13 @@ class CreateFormComment extends HTMLElement {
 	connectedCallback() {
 		this.render();
 	}
-	render() {}
+	render() {
+		if (this.shadowRoot) {
+			this.shadowRoot.innerHTML = `
+      <style>${styles}</style>
+      `;
+		}
+	}
 }
 
 customElements.define('create-form-comment', CreateFormComment);
