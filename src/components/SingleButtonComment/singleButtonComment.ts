@@ -5,6 +5,10 @@ export enum Attribute {
 }
 
 class SingleButtonComment extends HTMLElement {
+	avatar?: string;
+	username?: string;
+	comment?: string;
+
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
