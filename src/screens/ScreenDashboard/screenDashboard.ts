@@ -34,6 +34,8 @@ class ScreenDashboard extends HTMLElement {
 		if (getPhoneFriends) {
 			getPhoneFriends.addEventListener('click', () => this.renderPhoneFriends());
 		}
+
+		this.addEventListener('comment-clicked', (event) => {});
 	}
 
 	renderMyProfile() {
