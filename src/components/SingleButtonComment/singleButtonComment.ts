@@ -18,6 +18,15 @@ class SingleButtonComment extends HTMLElement {
 		this.render();
 	}
 
+	static get observedAttributes() {
+		const classAttribute: Record<Attribute, null> = {
+			avatar: null,
+			username: null,
+			comment: null,
+		};
+		return Object.keys(classAttribute);
+	}
+
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
