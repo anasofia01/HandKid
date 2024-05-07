@@ -7,6 +7,6 @@ export interface CommentsData {
 	timestamp: string;
 	likes: number;
 	comments: number;
-	media: Array<string>;
-	hashtags: Array<string>;
+	media: string[];
+	hashtags: string[];
 }
