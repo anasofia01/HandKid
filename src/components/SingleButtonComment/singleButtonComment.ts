@@ -27,6 +27,12 @@ class SingleButtonComment extends HTMLElement {
 		return Object.keys(classAttribute);
 	}
 
+	attributeChangedCallback(propName: Attribute, oldValue: string | undefined, newValue: string | undefined) {
+		this[propName] = newValue;
+
+		this.render();
+	}
+
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
