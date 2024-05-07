@@ -57,8 +57,8 @@
 }
 
 .icon-button {
-	width: 30px;
-	height: 30px;
+	width: 25px;
+	height: 25px;
 	border: none;
 	cursor: pointer;
 }
@@ -83,6 +83,11 @@ span {
 	margin-left: 5px;
 }
 
+.span-likes,
+.span-comments {
+	color: #b2aeae;
+}
+
 .span-username {
 	color: gray;
 }
@@ -102,33 +107,9 @@ span {
 		width: 90%;
 	}
 
-	.post-images {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: flex-start;
-	}
-
 	.post-images img {
-		width: 48%;
-		margin-right: 2%;
-	}
-
-	.post-hashtag {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: flex-start;
-	}
-
-	.post-hashtag span {
-		margin-right: 5px;
-	}
-
-	.post-info-head span {
-		font-size: 14px;
-	}
-
-	.span-head {
-		display: none;
+		width: calc(48% - 4px);
+		margin: 2px;
 	}
 }
 
@@ -137,26 +118,24 @@ span {
 		width: 95%;
 	}
 
-	.post-images img {
-		width: 100%;
-		margin-right: 0;
+	.avatar {
+		width: 30px;
+		height: 30px;
 	}
 
 	.post-hashtag {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: flex-start;
-	}
-
-	.post-hashtag span {
-		margin-right: 5px;
+		display: none;
 	}
 
 	.post-info-head span {
 		font-size: 12px;
 	}
 
-	.span-head {
-		display: none;
+	.container-buttons-interaction {
+		margin-top: 5px;
+	}
+
+	.icon-button {
+		margin: 0 3px;
 	}
 }
