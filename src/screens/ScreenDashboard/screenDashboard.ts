@@ -3,6 +3,7 @@ import '../../components/index';
 import '../../screens/index';
 import { ProfileData } from '../../types/profileData';
 import { PostData } from '../../types/postData';
+import { CommentsData } from '../../types/commentsData';
 import SingleCardProfile from '../../components/SingleCardProfile/singleCardProfile';
 import { createPost } from '../../utils/firebase';
 
@@ -35,7 +36,10 @@ class ScreenDashboard extends HTMLElement {
 			getPhoneFriends.addEventListener('click', () => this.renderPhoneFriends());
 		}
 
-		this.addEventListener('comment-clicked', (event) => {});
+		this.addEventListener('comment-clicked', (event) => {
+			const detail = (event as CustomEvent).detail;
+			this.addComment(detail);
+		});
 	}
 
 	renderMyProfile() {
@@ -136,6 +140,8 @@ class ScreenDashboard extends HTMLElement {
 			container.appendChild(friendsView);
 		}
 	}
+
+	addComment(detail: CommentsData) {}
 
 	render() {
 		if (this.shadowRoot) {
