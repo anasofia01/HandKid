@@ -3,21 +3,26 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	gap: 12px;
+	gap: 40px;
 }
 
-.btnMenu {
+.container-btn-home,
+.container-btn-add,
+.container-btn-profile {
 	display: flex;
 	align-items: center;
-	padding: 10px;
-	margin-bottom: 10px;
-	border: none;
-	background-color: transparent;
+	justify-content: center;
+	width: 80px;
+	height: 80px;
+	background-color: #fecd1a;
+	border-radius: 50%;
 	cursor: pointer;
-	width: 100%;
-	color: #fff;
 }
 
-.btnMenu i {
-	margin-right: 10px;
+.container-btn-home svg,
+.container-btn-add svg,
+.container-btn-profile svg {
+	width: 50%;
+	height: 50%;
+	fill: #fff;
 }
