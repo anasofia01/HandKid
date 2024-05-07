@@ -33,10 +33,6 @@
 		flex-direction: column;
 		align-items: center;
 	}
-
-	.avatar-container {
-		margin-bottom: 12px;
-	}
 }
 
 @media (max-width: 768px) {
@@ -44,19 +40,11 @@
 		flex-direction: column;
 		align-items: center;
 	}
-
-	.avatar-container {
-		margin-bottom: 12px;
-	}
 }
 
 @media (max-width: 576px) {
 	.container-friend {
 		flex-direction: column;
 		align-items: center;
-	}
-
-	.avatar-container {
-		margin-bottom: 12px;
 	}
 }
