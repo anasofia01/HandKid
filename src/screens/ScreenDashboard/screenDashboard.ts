@@ -1,4 +1,4 @@
-import './screenDashboard.css';
+import styles from './screenDashboard.css';
 import '../../components/index';
 import '../../screens/index';
 import { ProfileData } from '../../types/profileData';
