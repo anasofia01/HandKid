@@ -1,4 +1,5 @@
 import styles from './index.css';
+import './screens/index';
 
 class AppContainer extends HTMLElement {
 	constructor() {
