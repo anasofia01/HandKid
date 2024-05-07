@@ -1,6 +1,7 @@
 import styles from './singleCardPost.css';
 
 export enum Attribute {
+	'idPost' = 'idPost',
 	'avatar' = 'avatar',
 	'name' = 'name',
 	'username' = 'username',
@@ -15,6 +16,7 @@ export enum Attribute {
 }
 
 class SingleCardPost extends HTMLElement {
+	idPost?: string;
 	avatar?: string;
 	name?: string;
 	username?: string;
@@ -29,6 +31,7 @@ class SingleCardPost extends HTMLElement {
 
 	static get observedAttributes() {
 		const classAttribute: Record<Attribute, null> = {
+			idPost: null,
 			avatar: null,
 			name: null,
 			username: null,
@@ -97,6 +100,7 @@ class SingleCardPost extends HTMLElement {
 			commentButton.addEventListener('click', () => {
 				const commentEvent = new CustomEvent('comment-clicked', {
 					detail: {
+						idPost: this.idPost,
 						avatar: this.avatar,
 						name: this.name,
 						username: this.username,
