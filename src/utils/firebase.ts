@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, addDoc, getDocs, getDoc, doc } from 'firebase/firestore/lite';
+import { getFirestore, collection, addDoc, getDocs, getDoc, doc, updateDoc } from 'firebase/firestore/lite';
 import { PostData } from '../types/postData';
 
 const firebaseConfig = {
@@ -41,4 +41,11 @@ export const getLikesById = async (id: string): Promise<number | null> => {
 	} else {
 		return null;
 	}
+};
+
+export const updateLikesById = async (id: string, newLikes: number): Promise<void> => {
+	const postReference = doc(db, 'post', id);
+	await updateDoc(postReference, {
+		likes: newLikes,
+	});
 };
