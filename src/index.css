@@ -15,14 +15,21 @@
 }
 
 .logo-container {
-	color: white;
-	padding: 12px;
+	color: #fecd1a;
+	padding: 20px;
 	padding-left: 40px;
-	width: 180px;
+	width: 200px;
 	position: fixed;
 	top: 0;
 	left: 0;
 	cursor: pointer;
+	font-size: 32px;
+	font-weight: bold;
+}
+
+.logo-container svg {
+	width: 28px;
+	height: 28px;
 }
 
 .column1,
@@ -52,11 +59,12 @@ screen-form-post {
 	height: 100vh;
 }
 
-@media (max-width: 768px) {
-	.logo-container {
-		display: none;
-	}
+.phone-menu,
+.phone-friends {
+	display: none;
+}
 
+@media (max-width: 768px) {
 	.column1 {
 		display: none;
 	}
@@ -67,15 +75,43 @@ screen-form-post {
 }
 
 @media (max-width: 576px) {
-	.logo-container {
-		display: none;
-	}
-
 	.column1 {
 		display: none;
 	}
 
 	.column3 {
 		display: none;
+	}
+
+	.column2 {
+		width: 80%;
+	}
+
+	.phone-menu,
+	.phone-friends {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 40px;
+		height: 40px;
+		position: fixed;
+		bottom: 10px;
+		right: 10px;
+		background: linear-gradient(180deg, #492e87 0%, #9d0191 100%);
+		border: none;
+		padding: 10px;
+		cursor: pointer;
+		z-index: 1000;
+		border-radius: 50%;
+		cursor: pointer;
+	}
+
+	.phone-menu svg,
+	.phone-friends svg {
+		width: 25px;
+	}
+
+	.phone-friends {
+		bottom: 80px;
 	}
 }
