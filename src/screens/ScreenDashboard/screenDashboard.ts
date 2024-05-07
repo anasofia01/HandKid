@@ -153,8 +153,8 @@ class ScreenDashboard extends HTMLElement {
 			postCard.username = detail.username;
 			postCard.description = detail.description;
 			postCard.timestamp = detail.timestamp;
-			// postCard.hashtags = detail.hashtags.map((tag: string) => tag.trim());
-			// postCard.media = detail.media.map((media: string) => media.trim());
+			postCard.hashtags = detail.hashtags.map((tag: string) => tag.trim());
+			postCard.media = detail.media.map((media: string) => media.trim());
 			postCard.likes = detail.likes;
 			postCard.comments = detail.comments;
 		}
