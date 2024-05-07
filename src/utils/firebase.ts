@@ -26,6 +26,7 @@ export const getPosts = async (): Promise<PostData[]> => {
 	const postArray: PostData[] = [];
 	posts.docs.forEach((doc) => {
 		const postInfo = doc.data() as PostData;
+		postInfo.id = doc.id;
 		postArray.push(postInfo);
 	});
 	return postArray;
