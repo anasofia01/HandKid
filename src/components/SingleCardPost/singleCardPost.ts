@@ -121,10 +121,7 @@ class SingleCardPost extends HTMLElement {
 		}
 	}
 
-	likePost() {
-		this.likes = (this.likes || 0) + 1;
-		this.render();
-	}
+	likePost() {}
 
 	render() {
 		if (this.shadowRoot) {
