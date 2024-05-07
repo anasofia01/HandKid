@@ -13,6 +13,16 @@ class CreateFormComment extends HTMLElement {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
       <style>${styles}</style>
+      <div class = "container-form">
+        <form id = "form-create-comment">
+          <div class = "comment-text">
+            <textarea name = "comment" placeholder = "Comment Here" required></textarea>
+          </div>
+          <div class = "btn-form">
+            <input type = "submit" id = "save-comment" value = "Send">
+          </div>
+        </form>
+      </div>
       `;
 		}
 	}
