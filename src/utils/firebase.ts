@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, addDoc, getDocs, doc } from 'firebase/firestore/lite';
+import { getFirestore, collection, addDoc, getDocs, getDoc, doc } from 'firebase/firestore/lite';
 import { PostData } from '../types/postData';
 
 const firebaseConfig = {
@@ -30,4 +30,15 @@ export const getPosts = async (): Promise<PostData[]> => {
 		postArray.push(postInfo);
 	});
 	return postArray;
+};
+
+export const getLikesById = async (id: string): Promise<number | null> => {
+	const postReference = doc(db, 'post', id);
+	const postDoc = await getDoc(postReference);
+	if (postDoc.exists()) {
+		const postData = postDoc.data() as PostData;
+		return postData.likes ?? 0;
+	} else {
+		return null;
+	}
 };
