@@ -56,3 +56,14 @@ export const addCommentToPost = async (postId: string, newComment: string) => {
 		commentsText: arrayUnion(newComment),
 	});
 };
+
+export const getCommentsById = async (postId: string) => {
+	const commentReferenceById = doc(db, 'post', postId);
+	const postDoc = await getDoc(commentReferenceById);
+	if (postDoc.exists()) {
+		const postData = postDoc.data() as PostData;
+		return postData.commentsText ?? [];
+	} else {
+		return null;
+	}
+};
