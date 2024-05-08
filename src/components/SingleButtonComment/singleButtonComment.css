@@ -9,3 +9,8 @@
 	margin: 20px;
 	padding: 20px;
 }
+
+.user-info {
+	display: flex;
+	align-items: center;
+}
