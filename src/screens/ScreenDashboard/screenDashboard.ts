@@ -147,6 +147,7 @@ class ScreenDashboard extends HTMLElement {
 		if (container) {
 			container.innerHTML = '';
 			const postCard = document.createElement('single-card-post') as SingleCardPost;
+			const formComment = document.createElement('create-form-comment');
 			postCard.idPost = detail.idPost;
 			postCard.avatar = detail.avatar;
 			postCard.name = detail.name;
@@ -158,6 +159,7 @@ class ScreenDashboard extends HTMLElement {
 			postCard.likes = detail.likes;
 			postCard.comments = detail.comments;
 			container.appendChild(postCard);
+			container.appendChild(formComment);
 		}
 	}
 
