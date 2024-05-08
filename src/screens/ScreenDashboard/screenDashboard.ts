@@ -184,6 +184,12 @@ class ScreenDashboard extends HTMLElement {
 				commentElements.forEach((element) => {
 					element.remove();
 				});
+				comments.forEach((comment: any) => {
+					const commentItem = this.ownerDocument.createElement('single-button-comment') as SingleButtonComment;
+					commentItem.classList.add('comment');
+					commentItem.comment = comment;
+					container.appendChild(commentItem);
+				});
 			}
 		}
 	}
