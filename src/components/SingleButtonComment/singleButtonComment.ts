@@ -38,6 +38,7 @@ class SingleButtonComment extends HTMLElement {
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
+			<style>${styles}</style>
         <div class = "container-comment">
           <div class = "user-info">
             <img src = "https://mir-s3-cdn-cf.behance.net/project_modules/fs/c34725103626861.5f50fea8ae0be.png" class = "avatar" alt = "avatar-user">
