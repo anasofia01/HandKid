@@ -7,3 +7,4 @@ export { default as SingleCardLogin } from './SingleCardLogin/singleCardLogin';
 export { default as SingleCardRegister } from './SingleCardRegister/singleCardRegister';
 export { default as SingleCardPassword } from './SingleCardPassword/singleCardPassword';
 export { default as SingleButtonComment } from './SingleButtonComment/singleButtonComment';
+export { default as CreateFormComment } from './CreateFormComment/createFormComment';
