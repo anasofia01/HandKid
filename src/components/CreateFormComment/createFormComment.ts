@@ -13,10 +13,10 @@ class CreateFormComment extends HTMLElement {
 			form.addEventListener('submit', (event) => {
 				event.preventDefault();
 				const formData = new FormData(form);
-				const commentSave = formData.get('comment');
+				const comment = formData.get('comment');
 				this.dispatchEvent(
 					new CustomEvent('comment-submitted', {
-						detail: { commentSave },
+						detail: { comment },
 						bubbles: true,
 						composed: true,
 					})
