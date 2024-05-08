@@ -5,7 +5,7 @@ import { ProfileData } from '../../types/profileData';
 import { PostData } from '../../types/postData';
 import { CommentsData } from '../../types/commentsData';
 import SingleCardProfile from '../../components/SingleCardProfile/singleCardProfile';
-import { createPost } from '../../utils/firebase';
+import { createPost, addCommentToPost } from '../../utils/firebase';
 import { SingleCardPost } from '../../components/index';
 
 class ScreenDashboard extends HTMLElement {
@@ -168,7 +168,9 @@ class ScreenDashboard extends HTMLElement {
 		}
 	}
 
-	async addCommentToPost(comment: string, idPost: string) {}
+	async addCommentToPost(comment: string, idPost: string) {
+		await addCommentToPost(idPost, comment);
+	}
 
 	render() {
 		if (this.shadowRoot) {
