@@ -1,3 +1,5 @@
+import styles from './singleButtonComment.css';
+
 export enum Attribute {
 	'avatar' = 'avatar',
 	'username' = 'username',
