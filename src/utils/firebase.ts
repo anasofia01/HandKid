@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, addDoc, getDocs, getDoc, doc, updateDoc } from 'firebase/firestore/lite';
+import { getFirestore, collection, addDoc, getDocs, getDoc, doc, updateDoc, arrayUnion } from 'firebase/firestore/lite';
 import { PostData } from '../types/postData';
 
 const firebaseConfig = {
@@ -47,5 +47,12 @@ export const updateLikesById = async (id: string, newLikes: number): Promise<voi
 	const postReference = doc(db, 'post', id);
 	await updateDoc(postReference, {
 		likes: newLikes,
+	});
+};
+
+export const addCommentToPost = async (postId: string, newComment: string) => {
+	const commentReference = doc(db, 'post', postId);
+	await updateDoc(commentReference, {
+		commentsText: arrayUnion(newComment),
 	});
 };
