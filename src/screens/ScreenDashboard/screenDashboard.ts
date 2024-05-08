@@ -172,7 +172,7 @@ class ScreenDashboard extends HTMLElement {
 
 	async addCommentToPost(comment: string, idPost: string) {
 		await addCommentToPost(idPost, comment);
-		this.updateCommentsList();
+		await this.updateCommentsList();
 	}
 
 	updateCommentsList() {}
