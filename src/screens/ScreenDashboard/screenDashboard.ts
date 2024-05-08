@@ -168,6 +168,8 @@ class ScreenDashboard extends HTMLElement {
 		}
 	}
 
+	async addCommentToPost(comment: string, idPost: string) {}
+
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
