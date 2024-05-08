@@ -6,7 +6,7 @@ import { PostData } from '../../types/postData';
 import { CommentsData } from '../../types/commentsData';
 import SingleCardProfile from '../../components/SingleCardProfile/singleCardProfile';
 import { createPost, addCommentToPost, getCommentsById } from '../../utils/firebase';
-import { SingleCardPost } from '../../components/index';
+import { SingleButtonComment, SingleCardPost } from '../../components/index';
 
 class ScreenDashboard extends HTMLElement {
 	constructor() {
@@ -181,6 +181,9 @@ class ScreenDashboard extends HTMLElement {
 		if (container) {
 			if (comments) {
 				const commentElements = container.querySelectorAll('.comment');
+				commentElements.forEach((element) => {
+					element.remove();
+				});
 			}
 		}
 	}
