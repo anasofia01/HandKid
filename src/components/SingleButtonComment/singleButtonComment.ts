@@ -38,11 +38,11 @@ class SingleButtonComment extends HTMLElement {
 			this.shadowRoot.innerHTML = `
         <div class = "container-comment">
           <div class = "user-info">
-            <img src = "" class = "avatar" alt = "avatar-user">
-            <small class = "username">Username:</small>
+            <img src = "https://mir-s3-cdn-cf.behance.net/project_modules/fs/c34725103626861.5f50fea8ae0be.png" class = "avatar" alt = "avatar-user">
+            <small class = "username">@chloe.laMasBonita</small>
           </div>
           <div class = "description-comment">
-            <p class = "comment"></p>
+            <p class = "comment">${this.comment}</p>
           </div>
         </div>
       `;
