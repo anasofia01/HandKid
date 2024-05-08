@@ -14,7 +14,7 @@ class CreateFormComment extends HTMLElement {
 			this.shadowRoot.innerHTML = `
       <style>${styles}</style>
       <div class = "container-form">
-        <form id = "form-create-comment">
+        <form id = "form-create-comment" class = "grid-form">
           <div class = "comment-text">
             <textarea name = "comment" placeholder = "Comment Here" required></textarea>
           </div>
