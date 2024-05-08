@@ -160,6 +160,10 @@ class ScreenDashboard extends HTMLElement {
 			postCard.comments = detail.comments;
 			container.appendChild(postCard);
 			container.appendChild(formComment);
+
+			formComment.addEventListener('comment-submitted', (event: any) => {
+				const comment = event.detail.comment;
+			});
 		}
 	}
 
