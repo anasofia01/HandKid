@@ -8,6 +8,22 @@ class CreateFormComment extends HTMLElement {
 
 	connectedCallback() {
 		this.render();
+		const form = this.shadowRoot?.querySelector('#form-create-comment') as HTMLFormElement;
+		if (form) {
+			form.addEventListener('submit', (event) => {
+				event.preventDefault();
+				const formData = new FormData(form);
+				const commentSave = formData.get('comment');
+				this.dispatchEvent(
+					new CustomEvent('comment-submitted', {
+						detail: { commentSave },
+						bubbles: true,
+						composed: true,
+					})
+				);
+				form.reset();
+			});
+		}
 	}
 	render() {
 		if (this.shadowRoot) {
