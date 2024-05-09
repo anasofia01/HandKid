@@ -12,3 +12,6 @@ class ScreenCardPassword extends HTMLElement {
 
 	render() {}
 }
+
+customElements.define('screen-card-password', ScreenCardPassword);
+export default ScreenCardPassword;
