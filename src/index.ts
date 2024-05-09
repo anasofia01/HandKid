@@ -15,8 +15,6 @@ class AppContainer extends HTMLElement {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
         <style>${styles}</style>
-				<single-card-login></single-card-login>
-
       `;
 			// <screen-dashboard></screen-dashboard>
 		}
