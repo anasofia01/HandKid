@@ -15,9 +15,8 @@ class AppContainer extends HTMLElement {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
         <style>${styles}</style>
-				<screen-card-login></screen-card-login>
+				<screen-dashboard></screen-dashboard>
       `;
-			// <screen-dashboard></screen-dashboard>
 		}
 	}
 }
