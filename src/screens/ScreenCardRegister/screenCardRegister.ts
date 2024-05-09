@@ -1,4 +1,5 @@
 import styles from './screenCardRegister.css';
+import '../../components/index';
 
 class ScreenCardRegister extends HTMLElement {
 	constructor() {
