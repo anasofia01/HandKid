@@ -67,3 +67,14 @@ export const getCommentsById = async (postId: string) => {
 		return null;
 	}
 };
+
+export const getCommentById = async (id: string): Promise<Number | null> => {
+	const commentReferenceNumber = doc(db, 'post', id);
+	const postDoc = await getDoc(commentReferenceNumber);
+	if (postDoc.exists()) {
+		const postData = postDoc.data() as PostData;
+		return postData.comments ?? 0;
+	} else {
+		return null;
+	}
+};
