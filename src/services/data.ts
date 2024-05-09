@@ -123,8 +123,7 @@ export const dataFriends = [
 		friends: 5,
 		avatar:
 			'https://devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/5X/0/a/f/3/0af3387f719ee7aebf2b96cd5fb1a9a4d7984a20.jpeg',
-		banner:
-			'https://png.pngtree.com/background/20230524/original/pngtree-emojiees-with-different-expressions-on-a-table-picture-image_2710520.jpg',
+		banner: 'https://i.pinimg.com/564x/26/48/82/2648822fffa9ad3bfa9bf232adaf2d85.jpg',
 	},
 	{
 		id: 2,
