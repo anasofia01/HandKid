@@ -42,6 +42,7 @@
 .name-data,
 .username-data,
 .email-data,
+.date-data,
 .btn-data {
 	width: 100%;
 	margin-bottom: 15px;
@@ -77,6 +78,7 @@
 	padding: 10px 30px 10px 30px;
 	color: #fff;
 	font-weight: 600;
+	cursor: pointer;
 }
 
 .btn-data {
@@ -91,6 +93,7 @@ form {
 }
 
 .email-data input[type='email'],
+.date-data input[type='date'],
 .username-data input[type='text'],
 .name-data input[type='text'] {
 	width: 100%;
