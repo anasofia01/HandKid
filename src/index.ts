@@ -15,7 +15,6 @@ class AppContainer extends HTMLElement {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
         <style>${styles}</style>
-				<screen-dashboard></screen-dashboard>
       `;
 		}
 	}
