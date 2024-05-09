@@ -16,8 +16,6 @@ class SingleCardRegister extends HTMLElement {
       <style>${styles}</style>
       <div class = "container-register">
         <div class = "container-img">
-          <img src = "">
-          <img src = "">
         </div>
         <div class = "form-register">
           <div class = "container-logo">
