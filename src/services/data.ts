@@ -142,8 +142,7 @@ export const dataFriends = [
 		age: 8,
 		friends: 5,
 		avatar: 'https://pbs.twimg.com/media/FTxaVfEXsAImsYM?format=png&name=small',
-		banner:
-			'https://png.pngtree.com/background/20230524/original/pngtree-emojiees-with-different-expressions-on-a-table-picture-image_2710520.jpg',
+		banner: 'https://i.pinimg.com/564x/a7/9c/dd/a79cdd6808687ef0ef59ed13baf2d97b.jpg',
 	},
 	{
 		id: 4,
