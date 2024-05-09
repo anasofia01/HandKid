@@ -44,8 +44,12 @@ class CreateFormPost extends HTMLElement {
 							<textarea name="description" rows="10" cols="50" placeholder="Description"></textarea>
 						</div>
 						<div class = "tag-inputs">
-							<input type = "text" placeHolder = "Hashtags" name = "tags1"></input>
-							<input type = "text" placeHolder = "Hashtags" name = "tags2"></input>
+							<div class = "tag-input1">
+								<input type = "text" placeHolder = "Hashtags" name = "tags1"></input>
+							</div>
+							<div class = "tag-input2">
+								<input type = "text" placeHolder = "Hashtags" name = "tags2"></input>
+							</div>
 						</div>
 						<div>
 							<input type = "submit" id = "save-post" value = "Post"></input>
