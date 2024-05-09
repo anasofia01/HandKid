@@ -1,4 +1,5 @@
 import styles from './screenPageInit.css';
+import '../../components/index';
 
 class ScreenPageInit extends HTMLElement {
 	constructor() {
