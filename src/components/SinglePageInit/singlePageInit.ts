@@ -12,3 +12,6 @@ class SinglePageInit extends HTMLElement {
 
 	render() {}
 }
+
+customElements.define('single-page-init', SinglePageInit);
+export default SinglePageInit;
