@@ -14,6 +14,7 @@ class AppContainer extends HTMLElement {
 		this.shadowRoot?.addEventListener('register-view-clicked', () => this.renderRegister());
 		this.shadowRoot?.addEventListener('log-in-clicked', () => this.renderDashboard());
 		this.shadowRoot?.addEventListener('register-next-clicked', () => this.renderPassword());
+		this.shadowRoot?.addEventListener('password-button-clicked', () => this.renderDashboard());
 	}
 
 	renderPageInit() {
