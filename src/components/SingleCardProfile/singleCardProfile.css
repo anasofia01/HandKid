@@ -39,7 +39,7 @@
 	display: flex;
 	flex-direction: column;
 	text-align: left;
-	margin: 80px;
+	margin: 50px;
 }
 
 .span-user-name {
@@ -54,4 +54,26 @@
 .footer-container span {
 	color: gray;
 	margin-right: 40px;
+}
+
+.btn-edit-settings {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	margin: 20px;
+}
+
+.btn-setting {
+	margin-top: 10px;
+	width: 150px;
+	height: 25px;
+	background-color: #fecd1a;
+	padding: 5px;
+	border-radius: 25px;
+	color: white;
+}
+
+svg {
+	width: 20px;
+	height: 20px;
 }
