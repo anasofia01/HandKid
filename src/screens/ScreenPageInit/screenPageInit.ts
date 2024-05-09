@@ -12,3 +12,6 @@ class ScreenPageInit extends HTMLElement {
 
 	render() {}
 }
+
+customElements.define('screen-page-init', ScreenPageInit);
+export default ScreenPageInit;
