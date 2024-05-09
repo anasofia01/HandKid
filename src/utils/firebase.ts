@@ -78,3 +78,10 @@ export const getCommentById = async (id: string): Promise<number | null> => {
 		return null;
 	}
 };
+
+export const updateCommentsById = async (id: string, newComments: number): Promise<void> => {
+	const updateCommentsReference = doc(db, 'post', id);
+	await updateDoc(updateCommentsReference, {
+		comments: newComments,
+	});
+};
