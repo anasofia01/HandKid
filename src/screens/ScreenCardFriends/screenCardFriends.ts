@@ -23,6 +23,7 @@ class ScreenCardFriends extends HTMLElement {
 				friendComponent.avatar = friend.avatar;
 				friendComponent.name = friend.name;
 				friendComponent.username = friend.username;
+				friendComponent.description = friend.description;
 				friendComponent.banner = friend.banner;
 				friendComponent.age = friend.age;
 				friendComponent.friends = friend.friends;
