@@ -16,6 +16,7 @@ class ScreenCardPassword extends HTMLElement {
 			this.shadowRoot.innerHTML = `
       <style>${styles}</style>
       <div class = "container-password">
+        <single-card-password></single-card-password>
       </div>
       `;
 		}
