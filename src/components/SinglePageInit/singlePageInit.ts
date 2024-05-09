@@ -8,7 +8,10 @@ class SinglePageInit extends HTMLElement {
 
 	connectedCallback() {
 		this.render();
+		this.addLoginButtonListener();
 	}
+
+	addLoginButtonListener() {}
 
 	render() {
 		if (this.shadowRoot) {
