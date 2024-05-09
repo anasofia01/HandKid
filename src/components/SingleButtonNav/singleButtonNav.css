@@ -8,6 +8,7 @@
 
 .container-btn-home,
 .container-btn-add,
+.container-btn-logout,
 .container-btn-profile {
 	display: flex;
 	align-items: center;
@@ -21,6 +22,7 @@
 
 .container-btn-home svg,
 .container-btn-add svg,
+.container-btn-logout svg,
 .container-btn-profile svg {
 	width: 50%;
 	height: 50%;
