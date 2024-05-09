@@ -160,7 +160,6 @@ export const dataFriends = [
 		username: '@HowarGo1',
 		age: 8,
 		avatar: 'https://i.pinimg.com/736x/eb/d6/64/ebd664d8ec2f4458ffd55681292a578d.jpg',
-		banner:
-			'https://png.pngtree.com/background/20230524/original/pngtree-emojiees-with-different-expressions-on-a-table-picture-image_2710520.jpg',
+		banner: 'https://i.pinimg.com/736x/ec/0e/bf/ec0ebfc0830f5a074c4723371bf3bcde.jpg',
 	},
 ];
