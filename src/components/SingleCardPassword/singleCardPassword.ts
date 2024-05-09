@@ -11,6 +11,7 @@ class SingleCardPassword extends HTMLElement {
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
+      <style>${styles}</style>
       <div class = "container-password">
         <div class = "container-img"></div>
         <div class = "form-password">
