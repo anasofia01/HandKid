@@ -31,8 +31,8 @@ class SingleCardRegister extends HTMLElement {
                 <div class = "username-data">
                   <input type = "text" placeholder = "Username" name = "username" required>
                 </div>
-                <div class = "phone-number-data">
-                  <input type = "number" placeholder = "Phone Number" name = "phoneNumber" required>
+                <div class = "email-data">
+                  <input type = "email" placeholder = "Email" name = "email" required>
                 </div>
                 <div class = "btn-data">
                   <input type = "submit" id = "next-screen" value = "Next">
