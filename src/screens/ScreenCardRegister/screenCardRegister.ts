@@ -10,7 +10,13 @@ class ScreenCardRegister extends HTMLElement {
 		this.render();
 	}
 
-	render() {}
+	render() {
+		if (this.shadowRoot) {
+			this.shadowRoot.innerHTML = `
+      <style>${styles}</style>
+      `;
+		}
+	}
 }
 
 customElements.define('screen-card-register', ScreenCardRegister);
