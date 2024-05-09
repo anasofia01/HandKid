@@ -1,4 +1,5 @@
 import styles from './screenCardPassword.css';
+import '../../components/index';
 
 class ScreenCardPassword extends HTMLElement {
 	constructor() {
