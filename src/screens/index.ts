@@ -5,3 +5,4 @@ export { default as ScreenFormPost } from './ScreenFormPost/screenFormPost';
 export { default as ScreenDashboard } from './ScreenDashboard/screenDashboard';
 export { default as ScreenCardLogin } from './ScreenCardLogin/screenCardLogin';
 export { default as ScreenCardRegister } from './ScreenCardRegister/screenCardRegister';
+export { default as ScreenCardPassword } from './ScreenCardPassword/screenCardPassword';
