@@ -3,3 +3,4 @@ export { default as ScreenCardFriends } from './ScreenCardFriends/screenCardFrie
 export { default as ScreenNavBar } from './ScreenNavBar/screenNavBar';
 export { default as ScreenFormPost } from './ScreenFormPost/screenFormPost';
 export { default as screenDashboard } from './ScreenDashboard/screenDashboard';
+export { default as ScreenCardLogin } from './ScreenCardLogin/screenCardLogin';
