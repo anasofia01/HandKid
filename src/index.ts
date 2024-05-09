@@ -22,7 +22,14 @@ class AppContainer extends HTMLElement {
 		}
 	}
 
-	renderLogin() {}
+	renderLogin() {
+		const container = this.shadowRoot?.querySelector('.app-container');
+		if (container) {
+			container.innerHTML = '';
+			const screenLogin = document.createElement('screen-card-login');
+			container.appendChild(screenLogin);
+		}
+	}
 
 	render() {
 		if (this.shadowRoot) {
