@@ -49,7 +49,7 @@ class SingleCardProfile extends HTMLElement {
             <img class = "avatar" src = "${this.avatar}">
           </div>
           <div class = "info-user-container">
-            <span class = "span-name">${this.name}</span>
+            <span class = "span-name"><b>${this.name}</b></span>
             <span class = "span-user-name">${this.username}</span>
           </div>
           <div class = "footer-container">
