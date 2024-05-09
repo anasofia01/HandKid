@@ -133,8 +133,7 @@ export const dataFriends = [
 		friends: 5,
 		avatar:
 			'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/176427a9-0ff1-4cb0-b4a8-40359ec9ea53/dcw96pn-0a17a3eb-058c-44d0-91a3-61a2567680a8.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzE3NjQyN2E5LTBmZjEtNGNiMC1iNGE4LTQwMzU5ZWM5ZWE1M1wvZGN3OTZwbi0wYTE3YTNlYi0wNThjLTQ0ZDAtOTFhMy02MWEyNTY3NjgwYTgucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.FN3O4Hbo53ozlGUyf31AO7qcrIKomcjkMo6G4z32ef0',
-		banner:
-			'https://png.pngtree.com/background/20230524/original/pngtree-emojiees-with-different-expressions-on-a-table-picture-image_2710520.jpg',
+		banner: 'https://i.pinimg.com/564x/14/6e/ee/146eee96fa0878787943a19252d5720d.jpg',
 	},
 	{
 		id: 3,
