@@ -4,6 +4,7 @@ export enum Attribute {
 	'avatar' = 'avatar',
 	'name' = 'name',
 	'username' = 'username',
+	'description' = 'description',
 	'banner' = 'banner',
 	'age' = 'age',
 	'friends' = 'friends',
@@ -13,6 +14,7 @@ class SingleCardFriend extends HTMLElement {
 	avatar?: string;
 	name?: string;
 	username?: string;
+	description?: string;
 	banner?: string;
 	age?: number;
 	friends?: number;
@@ -22,6 +24,7 @@ class SingleCardFriend extends HTMLElement {
 			avatar: null,
 			name: null,
 			username: null,
+			description: null,
 			banner: null,
 			age: null,
 			friends: null,
@@ -44,6 +47,7 @@ class SingleCardFriend extends HTMLElement {
 						avatar: this.avatar,
 						name: this.name,
 						username: this.username,
+						description: this.description,
 						banner: this.banner,
 						age: this.age,
 						friends: this.friends,
