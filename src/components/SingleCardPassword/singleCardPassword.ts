@@ -11,7 +11,19 @@ class SingleCardPassword extends HTMLElement {
 		this.addPasswordListener();
 	}
 
-	addPasswordListener() {}
+	addPasswordListener() {
+		const passwordButton = this.shadowRoot?.querySelector('#password-password');
+		if (passwordButton) {
+			passwordButton.addEventListener('click', () => {
+				this.dispatchEvent(
+					new CustomEvent('password-button-clicked', {
+						bubbles: true,
+						composed: true,
+					})
+				);
+			});
+		}
+	}
 
 	render() {
 		if (this.shadowRoot) {
