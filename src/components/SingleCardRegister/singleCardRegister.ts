@@ -13,6 +13,7 @@ class SingleCardRegister extends HTMLElement {
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
+      <style>${styles}</style>
       <div class = "container-register">
         <div class = "container-img">
           <img src = "">
