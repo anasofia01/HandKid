@@ -8,3 +8,4 @@ export { default as SingleCardRegister } from './SingleCardRegister/singleCardRe
 export { default as SingleCardPassword } from './SingleCardPassword/singleCardPassword';
 export { default as SingleButtonComment } from './SingleButtonComment/singleButtonComment';
 export { default as CreateFormComment } from './CreateFormComment/createFormComment';
+export { default as SinglePageInit } from './SinglePageInit/singlePageInit';
