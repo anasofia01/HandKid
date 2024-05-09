@@ -9,6 +9,16 @@ class AppContainer extends HTMLElement {
 
 	connectedCallback() {
 		this.render();
+		this.renderPageInit();
+	}
+
+	renderPageInit() {
+		const container = this.shadowRoot?.querySelector('.app-container');
+		if (container) {
+			container.innerHTML = '';
+			const screenPage = document.createElement('screen-page-init');
+			container.appendChild(screenPage);
+		}
 	}
 
 	render() {
