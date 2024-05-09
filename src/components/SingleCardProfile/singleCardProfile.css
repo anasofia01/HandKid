@@ -57,10 +57,10 @@
 }
 
 .btn-edit-settings {
+	width: 80%;
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
-	margin: 20px;
 }
 
 .btn-setting {
