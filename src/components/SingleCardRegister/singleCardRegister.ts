@@ -8,7 +8,10 @@ class SingleCardRegister extends HTMLElement {
 
 	connectedCallback() {
 		this.render();
+		this.addNextListener();
 	}
+
+	addNextListener() {}
 
 	render() {
 		if (this.shadowRoot) {
