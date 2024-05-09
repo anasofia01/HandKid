@@ -10,6 +10,7 @@ class AppContainer extends HTMLElement {
 	connectedCallback() {
 		this.render();
 		this.renderPageInit();
+		this.shadowRoot?.addEventListener('login-view-clicked', () => this.renderLogin());
 	}
 
 	renderPageInit() {
