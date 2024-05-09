@@ -119,6 +119,7 @@ export const dataFriends = [
 		id: 1,
 		name: 'Santi Lucky',
 		username: '@Santzz12_',
+		description: 'Me gusta el robloxxx klk',
 		age: 8,
 		friends: 5,
 		avatar:
@@ -129,6 +130,7 @@ export const dataFriends = [
 		id: 2,
 		name: 'NayooLover',
 		username: '@Skynet8_2',
+		description: 'Me gusta el robloxxx klk',
 		age: 8,
 		friends: 5,
 		avatar:
@@ -139,6 +141,7 @@ export const dataFriends = [
 		id: 3,
 		name: 'Mari Ruizzz',
 		username: '@MarRR_24',
+		description: 'Me gusta el robloxxx klk',
 		age: 8,
 		friends: 5,
 		avatar: 'https://pbs.twimg.com/media/FTxaVfEXsAImsYM?format=png&name=small',
@@ -148,6 +151,7 @@ export const dataFriends = [
 		id: 4,
 		name: 'Sofi Pachaa',
 		username: '@Sof_Pache',
+		description: 'Me gusta el robloxxx klk',
 		age: 8,
 		friends: 5,
 		avatar:
@@ -158,6 +162,7 @@ export const dataFriends = [
 		id: 6,
 		name: 'Gomecito H',
 		username: '@HowarGo1',
+		description: 'Me gusta el robloxxx klk',
 		age: 8,
 		avatar: 'https://i.pinimg.com/736x/eb/d6/64/ebd664d8ec2f4458ffd55681292a578d.jpg',
 		banner: 'https://i.pinimg.com/736x/ec/0e/bf/ec0ebfc0830f5a074c4723371bf3bcde.jpg',
