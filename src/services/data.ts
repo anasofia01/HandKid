@@ -152,8 +152,7 @@ export const dataFriends = [
 		friends: 5,
 		avatar:
 			'https://media.karousell.com/media/photos/products/2021/8/29/pet_commissions_updated_1630236394_c862862b_progressive.jpg',
-		banner:
-			'https://png.pngtree.com/background/20230524/original/pngtree-emojiees-with-different-expressions-on-a-table-picture-image_2710520.jpg',
+		banner: 'https://i.pinimg.com/564x/23/d6/07/23d607d6ca927a861f67d64a8c324e3d.jpg',
 	},
 	{
 		id: 6,
