@@ -12,3 +12,6 @@ class ScreenCardRegister extends HTMLElement {
 
 	render() {}
 }
+
+customElements.define('screen-card-register', ScreenCardRegister);
+export default ScreenCardRegister;
