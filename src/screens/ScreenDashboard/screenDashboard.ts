@@ -5,7 +5,7 @@ import { ProfileData } from '../../types/profileData';
 import { PostData } from '../../types/postData';
 import { CommentsData } from '../../types/commentsData';
 import SingleCardProfile from '../../components/SingleCardProfile/singleCardProfile';
-import { createPost, addCommentToPost, getCommentsById } from '../../utils/firebase';
+import { createPost, addCommentToPost, getCommentsById, getCommentById } from '../../utils/firebase';
 import { SingleButtonComment, SingleCardPost } from '../../components/index';
 
 class ScreenDashboard extends HTMLElement {
