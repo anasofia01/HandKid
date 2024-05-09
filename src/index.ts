@@ -43,6 +43,15 @@ class AppContainer extends HTMLElement {
 		}
 	}
 
+	renderPassword() {
+		const container = this.shadowRoot?.querySelector('.app-container');
+		if (container) {
+			container.innerHTML = '';
+			const screenPassword = document.createElement('screen-card-password');
+			container.appendChild(screenPassword);
+		}
+	}
+
 	renderDashboard() {
 		const container = this.shadowRoot?.querySelector('.app-container');
 		if (container) {
