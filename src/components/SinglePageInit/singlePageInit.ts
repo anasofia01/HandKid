@@ -9,6 +9,7 @@ class SinglePageInit extends HTMLElement {
 	connectedCallback() {
 		this.render();
 		this.addLoginButtonListener();
+		this.addRegisterButtonListener();
 	}
 
 	addLoginButtonListener() {
@@ -24,6 +25,8 @@ class SinglePageInit extends HTMLElement {
 			});
 		}
 	}
+
+	addRegisterButtonListener() {}
 
 	render() {
 		if (this.shadowRoot) {
