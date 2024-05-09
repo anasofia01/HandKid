@@ -5,6 +5,7 @@ class SingleCardProfile extends HTMLElement {
 	avatar?: string;
 	name?: string;
 	username?: string;
+	description?: string;
 	age?: number;
 	friends?: number;
 
