@@ -32,6 +32,15 @@ class AppContainer extends HTMLElement {
 		}
 	}
 
+	renderRegister() {
+		const container = this.shadowRoot?.querySelector('.app-container');
+		if (container) {
+			container.innerHTML = '';
+			const screenRegister = document.createElement('screen-card-register');
+			container.appendChild(screenRegister);
+		}
+	}
+
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
