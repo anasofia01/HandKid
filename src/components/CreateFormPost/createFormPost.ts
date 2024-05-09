@@ -42,7 +42,7 @@ class CreateFormPost extends HTMLElement {
 							<input type = "text" placeHolder = "Hashtags" name = "tags2" required></input>
 						</div>
 						<div>
-							<input type = "submit" id = "save-post" value = "save"></input>
+							<input type = "submit" id = "save-post" value = "Post"></input>
 						</div>
           </form>
         </div>
