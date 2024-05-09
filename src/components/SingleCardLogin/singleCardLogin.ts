@@ -8,7 +8,10 @@ class SingleCardLogin extends HTMLElement {
 
 	connectedCallback() {
 		this.render();
+		this.addLoginListener();
 	}
+
+	addLoginListener() {}
 
 	render() {
 		if (this.shadowRoot) {
