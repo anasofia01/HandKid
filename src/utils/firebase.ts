@@ -68,7 +68,7 @@ export const getCommentsById = async (postId: string) => {
 	}
 };
 
-export const getCommentById = async (id: string): Promise<Number | null> => {
+export const getCommentById = async (id: string): Promise<number | null> => {
 	const commentReferenceNumber = doc(db, 'post', id);
 	const postDoc = await getDoc(commentReferenceNumber);
 	if (postDoc.exists()) {
