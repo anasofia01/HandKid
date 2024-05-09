@@ -12,3 +12,6 @@ class ScreenCardLogin extends HTMLElement {
 
 	render() {}
 }
+
+customElements.define('screen-card-login', ScreenCardLogin);
+export default ScreenCardLogin;
