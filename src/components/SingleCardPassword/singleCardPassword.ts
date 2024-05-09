@@ -1,3 +1,5 @@
+import styles from './singleCardPassword.css';
+
 class SingleCardPassword extends HTMLElement {
 	constructor() {
 		super();
