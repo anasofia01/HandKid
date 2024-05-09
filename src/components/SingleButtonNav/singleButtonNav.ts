@@ -11,6 +11,7 @@ class SingleButtonNav extends HTMLElement {
 		this.addProfileButtonListener();
 		this.addHomeButtonListener();
 		this.addFormButtonListener();
+		this.addLogoutButtonListener();
 	}
 
 	addProfileButtonListener() {
@@ -39,6 +40,8 @@ class SingleButtonNav extends HTMLElement {
 			});
 		}
 	}
+
+	addLogoutButtonListener() {}
 
 	render() {
 		if (this.shadowRoot) {
