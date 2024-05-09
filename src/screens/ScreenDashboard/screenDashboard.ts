@@ -167,6 +167,7 @@ class ScreenDashboard extends HTMLElement {
 			});
 
 			this.updateCommentsList(detail.idPost);
+			this.updateComments(detail.idPost);
 		}
 	}
 
@@ -193,6 +194,8 @@ class ScreenDashboard extends HTMLElement {
 			}
 		}
 	}
+
+	updateComments(idPost: string) {}
 
 	render() {
 		if (this.shadowRoot) {
