@@ -77,3 +77,12 @@ svg {
 	width: 20px;
 	height: 20px;
 }
+
+@media (max-width: 768px) {
+	.btn-setting {
+		margin-top: 80px;
+	}
+	.container-profile {
+		height: 600px;
+	}
+}
