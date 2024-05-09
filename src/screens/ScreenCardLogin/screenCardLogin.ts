@@ -1,4 +1,5 @@
 import styles from './screenCardLogin.css';
+import '../../components/index';
 
 class ScreenCardLogin extends HTMLElement {
 	constructor() {
@@ -15,6 +16,7 @@ class ScreenCardLogin extends HTMLElement {
 			this.shadowRoot.innerHTML = `
       <style>${styles}</style>
       <div class = "container-login">
+        <single-card-login></single-card-login>
       </div>
       `;
 		}
