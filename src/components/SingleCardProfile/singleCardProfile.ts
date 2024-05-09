@@ -35,7 +35,7 @@ class SingleCardProfile extends HTMLElement {
 	}
 
 	static get observedAttributes() {
-		return ['banner', 'avatar', 'name', 'username', 'age', 'friends'];
+		return ['banner', 'avatar', 'name', 'username', 'description', 'age', 'friends'];
 	}
 
 	connectedCallback() {
