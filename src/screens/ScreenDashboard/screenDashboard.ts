@@ -85,6 +85,7 @@ class ScreenDashboard extends HTMLElement {
 			profileContent.avatar = profileData.avatar;
 			profileContent.name = profileData.name;
 			profileContent.username = profileData.username;
+			profileContent.description = profileData.description;
 			profileContent.age = Number(profileData.age);
 			profileContent.friends = Number(profileData.friends);
 			container.appendChild(profileContent);
