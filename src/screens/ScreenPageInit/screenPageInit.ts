@@ -15,7 +15,9 @@ class ScreenPageInit extends HTMLElement {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
       <style>${styles}</style>
-      <div class = "container-page-init"></div>
+      <div class = "container-page-init">
+        <single-page-init></single-page-init>
+      </div>
       `;
 		}
 	}
