@@ -31,8 +31,12 @@ class CreateFormPost extends HTMLElement {
         <div class = "container-form">
           <form id = "form-create-post">
 						<div class = "image-inputs">
-							<input type = "text" placeHolder = "Add Media" name = "img1" required></input>
-							<input type = "text" placeHolder = "Add Media" name = "img2" required></input>
+							<div class = "img-1">
+								<input type = "text" placeHolder = "Add Media" name = "img1" required></input>
+							</div>
+							<div class = "img-2">
+								<input type = "text" placeHolder = "Add Media" name = "img2" required></input>
+							</div>
 						</div>
 						<div>
 							<textarea name="description" rows="10" cols="50" placeholder="Description" required></textarea>
