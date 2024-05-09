@@ -32,6 +32,11 @@
 	border-bottom: 1px solid #ccc;
 }
 
+svg {
+	width: 20px;
+	height: 20px;
+}
+
 #save-post {
 	background-color: #fecd1a;
 	cursor: pointer;
