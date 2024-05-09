@@ -23,6 +23,8 @@ class SingleCardProfile extends HTMLElement {
 			this.name = newValue;
 		} else if (name === 'username') {
 			this.username = newValue;
+		} else if (name === 'description') {
+			this.description = newValue;
 		} else if (name === 'age') {
 			this.age = newValue ? Number(newValue) : undefined;
 		} else if (name === 'friends') {
