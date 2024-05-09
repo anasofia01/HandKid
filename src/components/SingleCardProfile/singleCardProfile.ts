@@ -54,7 +54,7 @@ class SingleCardProfile extends HTMLElement {
           <div class = "info-user-container">
             <span class = "span-name"><b>${this.name}</b></span>
             <span class = "span-user-name">${this.username}</span>
-						<p class = "span-description"></p>
+						<p class = "span-description">${this.description}</p>
           </div>
           <div class = "footer-container">
             <span class = "span-age">Age: ${this.age}</span>
