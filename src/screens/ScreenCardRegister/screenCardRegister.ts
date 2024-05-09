@@ -14,6 +14,9 @@ class ScreenCardRegister extends HTMLElement {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
       <style>${styles}</style>
+      <div class = "container-register">
+
+      </div>
       `;
 		}
 	}
