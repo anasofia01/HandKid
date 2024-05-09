@@ -26,16 +26,16 @@ class SingleCardRegister extends HTMLElement {
             <div class = "title-register">Sign Up</div>
               <form id = "form-info">
                 <div class = "name-data">
-                  <input type = "text" placeholder = "Name" name = "fullName" required>
+                  <input type = "text" placeholder = "Name" name = "fullName">
                 </div>
                 <div class = "username-data">
-                  <input type = "text" placeholder = "Username" name = "username" required>
+                  <input type = "text" placeholder = "Username" name = "username">
                 </div>
                 <div class = "email-data">
-                  <input type = "email" placeholder = "Email" name = "email" required>
+                  <input type = "email" placeholder = "Email" name = "email">
                 </div>
                 <div class = "date-data">
-                  <input type = "date" placeholder = "Birthdate" name = "birthdate" required>
+                  <input type = "date" placeholder = "Birthdate" name = "birthdate">
                 </div>
                 <div class = "btn-data">
                   <input type = "submit" id = "next-screen" value = "Next">
