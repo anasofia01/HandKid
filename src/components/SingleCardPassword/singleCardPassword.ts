@@ -8,7 +8,10 @@ class SingleCardPassword extends HTMLElement {
 
 	connectedCallback() {
 		this.render();
+		this.addPasswordListener();
 	}
+
+	addPasswordListener() {}
 
 	render() {
 		if (this.shadowRoot) {
