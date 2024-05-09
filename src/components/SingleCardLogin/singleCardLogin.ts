@@ -13,9 +13,6 @@ class SingleCardLogin extends HTMLElement {
 			this.shadowRoot.innerHTML = `
       <div class = "container-login">
         <div class = "container-img">
-          <img src = "">
-          <img src = "">
-          <img src = "">
         </div>
         <div class = "form-login">
           <div class = "container-logo">
