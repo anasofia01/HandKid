@@ -42,7 +42,14 @@ class AppContainer extends HTMLElement {
 		}
 	}
 
-	renderDashboard() {}
+	renderDashboard() {
+		const container = this.shadowRoot?.querySelector('.app-container');
+		if (container) {
+			container.innerHTML = '';
+			const screenDashboard = document.createElement('screen-dashboard');
+			container.appendChild(screenDashboard);
+		}
+	}
 
 	render() {
 		if (this.shadowRoot) {
