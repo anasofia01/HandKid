@@ -75,7 +75,7 @@ class SingleCardFriend extends HTMLElement {
 				<style>${styles}</style>
         <div class = "container-friend card-friend">
 					<div class = "text-container">
-						<span class = "friend-name">${this.name}</span>
+						<span class = "friend-name"><b>${this.name}</b></span>
 						<span class = "friend-username">${this.username}</span>
 					</div>
 					<div class = "avatar-container">
