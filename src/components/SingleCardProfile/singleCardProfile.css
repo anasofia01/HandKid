@@ -65,17 +65,21 @@
 
 .btn-setting {
 	margin-top: 10px;
-	width: 150px;
+	width: 130px;
 	height: 30px;
 	background-color: #fecd1a;
 	padding: 5px;
 	border-radius: 25px;
 	color: white;
+	display: flex;
+	align-items: center;
+	padding-left: 20px;
 }
 
 svg {
 	width: 20px;
 	height: 20px;
+	margin-right: 5px;
 }
 
 @media (max-width: 768px) {
