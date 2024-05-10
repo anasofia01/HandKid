@@ -141,7 +141,7 @@ export const dataFriends = [
 		id: 3,
 		name: 'Mari Ruizzz',
 		username: '@MarRR_24',
-		description: 'Me gusta el robloxxx klk',
+		description: 'En Among Us siempre cazo impostores',
 		age: 8,
 		friends: 5,
 		avatar: 'https://pbs.twimg.com/media/FTxaVfEXsAImsYM?format=png&name=small',
