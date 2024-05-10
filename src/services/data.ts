@@ -119,7 +119,7 @@ export const dataFriends = [
 		id: 1,
 		name: 'Santi Lucky',
 		username: '@Santzz12_',
-		description: 'Me gusta el robloxxx klk',
+		description: 'Soy un pro en el Fortnite 😎',
 		age: 8,
 		friends: 5,
 		avatar:
