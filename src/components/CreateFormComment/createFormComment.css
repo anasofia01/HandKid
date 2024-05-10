@@ -31,5 +31,6 @@
 	cursor: pointer;
 	background-color: #fecd1a;
 	color: white;
-	border-radius: 5px;
+	border-radius: 15px;
+	font-size: 17px;
 }
