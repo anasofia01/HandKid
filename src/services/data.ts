@@ -130,7 +130,7 @@ export const dataFriends = [
 		id: 2,
 		name: 'NayooLover',
 		username: '@Skynet8_2',
-		description: 'Me gusta el robloxxx klk',
+		description: 'En GTA soy la que manda',
 		age: 8,
 		friends: 5,
 		avatar:
