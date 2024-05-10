@@ -22,6 +22,7 @@
 	border: none;
 	outline: none;
 	padding: 10px;
+	border-radius: 10px;
 }
 
 .btn-form input[type='submit'] {
