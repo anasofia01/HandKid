@@ -151,7 +151,7 @@ export const dataFriends = [
 		id: 4,
 		name: 'Sofi Pachaa',
 		username: '@Sof_Pache',
-		description: 'Me gusta el robloxxx klk',
+		description: 'Soy explotada en Papas Sushiria 😭😭',
 		age: 8,
 		friends: 5,
 		avatar:
