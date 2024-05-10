@@ -162,7 +162,7 @@ export const dataFriends = [
 		id: 6,
 		name: 'Gomecito H',
 		username: '@HowarGo1',
-		description: 'Me gusta el robloxxx klk',
+		description: 'Soy imparable en Rocket League',
 		age: 8,
 		avatar: 'https://i.pinimg.com/736x/eb/d6/64/ebd664d8ec2f4458ffd55681292a578d.jpg',
 		banner: 'https://i.pinimg.com/736x/ec/0e/bf/ec0ebfc0830f5a074c4723371bf3bcde.jpg',
