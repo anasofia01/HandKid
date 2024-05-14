@@ -14,14 +14,7 @@ class SingleCardRegister extends HTMLElement {
 	addNextListener() {
 		const nextButton = this.shadowRoot?.querySelector('#next-screen');
 		if (nextButton) {
-			nextButton.addEventListener('click', () => {
-				this.dispatchEvent(
-					new CustomEvent('register-next-clicked', {
-						bubbles: true,
-						composed: true,
-					})
-				);
-			});
+			nextButton.addEventListener('click', () => {});
 		}
 	}
 
