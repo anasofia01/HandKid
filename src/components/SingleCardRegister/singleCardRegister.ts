@@ -18,7 +18,17 @@ class SingleCardRegister extends HTMLElement {
 		}
 	}
 
-	handleNext() {}
+	handleNext(event: any) {
+		event.preventDefault();
+		const formData = new FormData(event.target);
+		let formValues = [];
+		formValues.push({
+			fullname: formData.get('fullName'),
+			username: formData.get('username'),
+			email: formData.get('email'),
+			birthdate: formData.get('birthdate'),
+		});
+	}
 
 	render() {
 		if (this.shadowRoot) {
