@@ -34,6 +34,10 @@ class SingleCardPassword extends HTMLElement {
 			alert('La contraseña debe tener al menos 8 caracteres');
 			return;
 		}
+		if (passwordConfirm !== password) {
+			alert('Las contraseñas no coinciden, verifica');
+			return;
+		}
 	}
 
 	calculateAge(birthdate: string): number {
