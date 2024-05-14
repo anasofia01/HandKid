@@ -12,9 +12,9 @@ class SingleCardRegister extends HTMLElement {
 	}
 
 	addNextListener() {
-		const nextButton = this.shadowRoot?.querySelector('#next-screen');
-		if (nextButton) {
-			nextButton.addEventListener('click', () => {});
+		const form = this.shadowRoot?.querySelector('#form-info');
+		if (form) {
+			form.addEventListener('submit', this.handleNext.bind(this));
 		}
 	}
 
