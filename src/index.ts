@@ -13,10 +13,7 @@ class AppContainer extends HTMLElement {
 
 	render() {
 		if (this.shadowRoot) {
-			this.shadowRoot.innerHTML = `
-        <style>${styles}</style>
-				<div class = "app-container"></div>
-      `;
+			this.shadowRoot.innerHTML = '';
 		}
 	}
 }
