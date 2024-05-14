@@ -27,8 +27,8 @@ class SingleCardPassword extends HTMLElement {
 		event.preventDefault();
 		const formNextData = getInfoRegister();
 		const formData = new FormData(event.target);
-		const password = formData.get('password') as String;
-		const passwordConfirm = formData.get('passwordConfirmed') as String;
+		const password = formData.get('password') as string;
+		const passwordConfirm = formData.get('passwordConfirmed') as string;
 		const policyCheck = this.shadowRoot?.querySelector('#policy-check') as HTMLInputElement;
 		const age = this.calculateAge(formNextData.birthdate ?? '');
 		if (password.length < 8) {
@@ -43,6 +43,19 @@ class SingleCardPassword extends HTMLElement {
 			alert('Por favor acepta las políticas de privacidad');
 			return;
 		}
+		const userData: UserData = {
+			fullname: formNextData.fullname ?? '',
+			username: '@' + (formNextData.username ?? ''),
+			birthdate: formNextData.birthdate ?? '',
+			email: formNextData.email ?? '',
+			password: password,
+			policy: policyCheck.checked,
+			avatar: 'https://www.autoocupacio.org/wp-content/uploads/2017/07/Usuario-Vacio.png',
+			banner:
+				'https://image-assets.eu-2.volcanic.cloud/api/v1/assets/images/00acdc9462f3b2ccd275d65f3f42e5d3?t=1710413812&webp_fallback=png',
+			friends: 0,
+			age: age,
+		};
 	}
 
 	calculateAge(birthdate: string): number {
