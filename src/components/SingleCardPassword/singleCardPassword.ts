@@ -21,7 +21,9 @@ class SingleCardPassword extends HTMLElement {
 		}
 	}
 
-	handleSubmit() {}
+	async handleSubmit(event: any) {
+		event.preventDefault();
+	}
 
 	render() {
 		if (this.shadowRoot) {
