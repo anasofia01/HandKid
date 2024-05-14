@@ -14,3 +14,10 @@ export const addObserver = (ref: Observer) => {
 };
 
 const notifyObservers = () => observers.forEach((o) => o.render());
+
+export const dispatch = (action: any) => {
+	const clone = JSON.parse(JSON.stringify(appState));
+	const newState = reducer(action, clone);
+	appState = newState;
+	notifyObservers();
+};
