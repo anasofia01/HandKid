@@ -17,7 +17,7 @@ class SingleCardPassword extends HTMLElement {
 	addPasswordListener() {
 		const form = this.shadowRoot?.querySelector('#form-info');
 		if (form) {
-			form.addEventListener('submit', () => {});
+			form.addEventListener('submit', this.handleSubmit.bind(this));
 		}
 	}
 
