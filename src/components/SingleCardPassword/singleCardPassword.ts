@@ -38,6 +38,10 @@ class SingleCardPassword extends HTMLElement {
 			alert('Las contraseñas no coinciden, verifica');
 			return;
 		}
+		if (!policyCheck.checked) {
+			alert('Por favor acepta las políticas de privacidad');
+			return;
+		}
 	}
 
 	calculateAge(birthdate: string): number {
