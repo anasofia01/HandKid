@@ -1,4 +1,5 @@
 import styles from './singleCardRegister.css';
+import { setInfoRegister } from '../../utils/storage';
 
 class SingleCardRegister extends HTMLElement {
 	constructor() {
