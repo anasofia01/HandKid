@@ -17,7 +17,6 @@ class AppContainer extends HTMLElement {
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = '';
-			console.log(appState.screen);
 			switch (appState.screen) {
 				case Screens.MAIN:
 					const initView = this.ownerDocument.createElement('screen-page-init');
