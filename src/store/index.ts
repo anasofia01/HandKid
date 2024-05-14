@@ -9,4 +9,6 @@ const emptyState = {
 
 export let appState = emptyState;
 let observers: Observer[] = [];
-let observers = [...observers, ref];
+export const addObserver = (ref: Observer) => {
+	let observers = [...observers, ref];
+};
