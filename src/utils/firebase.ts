@@ -1,6 +1,7 @@
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, addDoc, getDocs, getDoc, doc, updateDoc, arrayUnion } from 'firebase/firestore/lite';
 import { PostData } from '../types/postData';
+import { UserData } from '../types/userData';
 
 const firebaseConfig = {
 	apiKey: 'AIzaSyADVrIwsy_xKZ_t5G56WxoSTFQ0WIIEn_g',
@@ -85,3 +86,5 @@ export const updateCommentsById = async (id: string, newComments: number): Promi
 		comments: newComments,
 	});
 };
+
+export const createUser = async (data: UserData) => {};
