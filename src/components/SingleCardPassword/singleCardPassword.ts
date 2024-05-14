@@ -3,6 +3,7 @@ import { dispatch } from '../../store';
 import { Screens } from '../../types/navigation';
 import { navigate } from '../../store/actions';
 import { getInfoRegister } from '../../utils/storage';
+import { UserData } from '../../types/userData';
 
 class SingleCardPassword extends HTMLElement {
 	constructor() {
