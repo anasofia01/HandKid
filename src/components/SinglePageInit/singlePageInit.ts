@@ -1,4 +1,7 @@
 import styles from './singlePageInit.css';
+import { dispatch } from '../../store';
+import { Screens } from '../../types/navigation';
+import { navigate } from '../../store/actions';
 
 class SinglePageInit extends HTMLElement {
 	constructor() {
