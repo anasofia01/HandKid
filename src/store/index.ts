@@ -6,3 +6,7 @@ const emptyState = {
 	screen: Screens.MAIN,
 	user: {},
 };
+
+export let appState = emptyState;
+let observers: Observer[] = [];
+let observers = [...observers, ref];
