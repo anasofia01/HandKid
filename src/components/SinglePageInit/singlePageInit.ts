@@ -22,14 +22,7 @@ class SinglePageInit extends HTMLElement {
 	addRegisterButtonListener() {
 		const registerButton = this.shadowRoot?.querySelector('#btn-register');
 		if (registerButton) {
-			registerButton.addEventListener('click', () => {
-				this.dispatchEvent(
-					new CustomEvent('register-view-clicked', {
-						bubbles: true,
-						composed: true,
-					})
-				);
-			});
+			registerButton.addEventListener('click', () => {});
 		}
 	}
 
