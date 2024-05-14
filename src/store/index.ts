@@ -12,3 +12,5 @@ let observers: Observer[] = [];
 export const addObserver = (ref: Observer) => {
 	let observers = [...observers, ref];
 };
+
+const notifyObservers = () => observers.forEach((o) => o.render());
