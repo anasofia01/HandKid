@@ -23,7 +23,7 @@ class SingleCardRegister extends HTMLElement {
 		const formData = new FormData(event.target);
 		let formValues = [];
 		formValues.push({
-			fullname: formData.get('fullName'),
+			fullname: formData.get('fullname'),
 			username: formData.get('username'),
 			email: formData.get('email'),
 			birthdate: formData.get('birthdate'),
@@ -46,7 +46,7 @@ class SingleCardRegister extends HTMLElement {
             <div class = "title-register">Sign Up</div>
               <form id = "form-info">
                 <div class = "name-data">
-                  <input type = "text" placeholder = "Name" name = "fullName" required>
+                  <input type = "text" placeholder = "Name" name = "fullname" required>
                 </div>
                 <div class = "username-data">
                   <input type = "text" placeholder = "Username" name = "username" required>
