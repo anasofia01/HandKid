@@ -24,6 +24,12 @@ class SingleCardPassword extends HTMLElement {
 
 	async handleSubmit(event: any) {
 		event.preventDefault();
+		const formNextData = getInfoRegister();
+		const formData = new FormData(event.target);
+		const password = formData.get('password') as String;
+		const passwordConfirm = formData.get('passwordConfirmed') as String;
+		const policyCheck = this.shadowRoot?.querySelector('#policy-check') as HTMLInputElement;
+		const age = this.calculateAge(formNextData.birthdate ?? '');
 	}
 
 	render() {
