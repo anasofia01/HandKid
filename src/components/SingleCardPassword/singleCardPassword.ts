@@ -1,6 +1,7 @@
 import styles from './singleCardPassword.css';
 import { dispatch } from '../../store';
 import { Screens } from '../../types/navigation';
+import { navigate } from '../../store/actions';
 
 class SingleCardPassword extends HTMLElement {
 	constructor() {
