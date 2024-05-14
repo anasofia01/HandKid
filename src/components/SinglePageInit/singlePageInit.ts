@@ -18,7 +18,9 @@ class SinglePageInit extends HTMLElement {
 	addLoginButtonListener() {
 		const loginButton = this.shadowRoot?.querySelector('#btn-login');
 		if (loginButton) {
-			loginButton.addEventListener('click', () => {});
+			loginButton.addEventListener('click', () => {
+				dispatch(navigate(Screens.LOGIN));
+			});
 		}
 	}
 
