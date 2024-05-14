@@ -14,14 +14,7 @@ class SingleCardLogin extends HTMLElement {
 	addLoginListener() {
 		const loginButton = this.shadowRoot?.querySelector('#login');
 		if (loginButton) {
-			loginButton.addEventListener('click', () => {
-				this.dispatchEvent(
-					new CustomEvent('log-in-clicked', {
-						bubbles: true,
-						composed: true,
-					})
-				);
-			});
+			loginButton.addEventListener('click', () => {});
 		}
 	}
 
