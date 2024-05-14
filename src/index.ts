@@ -34,6 +34,10 @@ class AppContainer extends HTMLElement {
 					const passwordView = this.ownerDocument.createElement('screen-card-password');
 					this.shadowRoot?.appendChild(passwordView);
 					break;
+				case Screens.DASHBOARD:
+					const dashboardView = this.ownerDocument.createElement('screen-dashboard');
+					this.shadowRoot?.appendChild(dashboardView);
+					break;
 			}
 		}
 	}
