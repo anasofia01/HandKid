@@ -21,6 +21,8 @@ class AppContainer extends HTMLElement {
 			switch (appState.screen) {
 				case Screens.MAIN:
 					const initView = this.ownerDocument.createElement('screen-page-init');
+					this.shadowRoot?.appendChild(initView);
+					break;
 			}
 		}
 	}
