@@ -18,6 +18,8 @@ class SingleCardRegister extends HTMLElement {
 		}
 	}
 
+	handleNext() {}
+
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
