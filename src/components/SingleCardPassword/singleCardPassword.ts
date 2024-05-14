@@ -1,4 +1,5 @@
 import styles from './singleCardPassword.css';
+import { dispatch } from '../../store';
 
 class SingleCardPassword extends HTMLElement {
 	constructor() {
