@@ -1,5 +1,6 @@
 import styles from './index.css';
 import './screens/index';
+import { addObserver } from './store';
 
 class AppContainer extends HTMLElement {
 	constructor() {
