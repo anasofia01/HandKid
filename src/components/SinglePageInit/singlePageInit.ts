@@ -27,7 +27,9 @@ class SinglePageInit extends HTMLElement {
 	addRegisterButtonListener() {
 		const registerButton = this.shadowRoot?.querySelector('#btn-register');
 		if (registerButton) {
-			registerButton.addEventListener('click', () => {});
+			registerButton.addEventListener('click', () => {
+				dispatch(navigate(Screens.REGISTER));
+			});
 		}
 	}
 
