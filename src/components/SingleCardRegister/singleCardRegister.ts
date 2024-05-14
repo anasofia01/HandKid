@@ -1,5 +1,8 @@
 import styles from './singleCardRegister.css';
 import { setInfoRegister } from '../../utils/storage';
+import { dispatch } from '../../store';
+import { navigate } from '../../store/actions';
+import { Screens } from '../../types/navigation';
 
 class SingleCardRegister extends HTMLElement {
 	constructor() {
@@ -29,6 +32,9 @@ class SingleCardRegister extends HTMLElement {
 			email: formData.get('email'),
 			birthdate: formData.get('birthdate'),
 		});
+		if (setInfoRegister(JSON.stringify(formValues))) {
+			dispatch(navigate(Screens.PASSWORD));
+		}
 	}
 
 	render() {
