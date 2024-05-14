@@ -23,6 +23,10 @@ class AppContainer extends HTMLElement {
 					const initView = this.ownerDocument.createElement('screen-page-init');
 					this.shadowRoot?.appendChild(initView);
 					break;
+				case Screens.LOGIN:
+					const loginView = this.ownerDocument.createElement('screen-card-login');
+					this.shadowRoot?.appendChild(loginView);
+					break;
 			}
 		}
 	}
