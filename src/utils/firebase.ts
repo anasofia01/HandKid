@@ -2,6 +2,7 @@ import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, addDoc, getDocs, getDoc, doc, updateDoc, arrayUnion } from 'firebase/firestore/lite';
 import { PostData } from '../types/postData';
 import { UserData } from '../types/userData';
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/Auth';
 
 const firebaseConfig = {
 	apiKey: 'AIzaSyADVrIwsy_xKZ_t5G56WxoSTFQ0WIIEn_g',
@@ -100,11 +101,11 @@ export const createUser = async (data: UserData) => {
 				code?: string;
 				message?: string;
 			};
-			if (firebaseError.code === 'outh/email-already-in-use') {
+			if (firebaseError.code === 'auth/email-already-in-use') {
 				alert('Este correo ya esta en uso');
-			} else if (firebaseError.code === 'outh/invalid-email') {
+			} else if (firebaseError.code === 'auth/invalid-email') {
 				alert('El correo no es valido');
-			} else if (firebaseError.code === 'outh/weak-password') {
+			} else if (firebaseError.code === 'auth/weak-password') {
 				alert('La contraseña es debil');
 			} else {
 				alert('Algo salió mal' + firebaseError);
