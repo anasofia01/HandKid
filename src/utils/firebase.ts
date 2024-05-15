@@ -19,6 +19,8 @@ const db = getFirestore(app);
 
 const postDocument = collection(db, 'post');
 
+export const auth = getAuth(app);
+
 const userDocument = collection(db, 'users');
 
 export const createPost = async (data: PostData) => {
