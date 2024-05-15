@@ -18,3 +18,13 @@ export const getInfoRegister = () => {
 		return false;
 	}
 };
+
+export const clearInfoRegister = () => {
+	try {
+		localStorage.removeItem('infoRegister');
+		return true;
+	} catch (error) {
+		console.error('Error: ', error);
+		return false;
+	}
+};
