@@ -1,5 +1,15 @@
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, addDoc, getDocs, getDoc, doc, updateDoc, arrayUnion } from 'firebase/firestore/lite';
+import {
+	getFirestore,
+	collection,
+	addDoc,
+	getDocs,
+	getDoc,
+	doc,
+	setDoc,
+	updateDoc,
+	arrayUnion,
+} from 'firebase/firestore/lite';
 import { PostData } from '../types/postData';
 import { UserData } from '../types/userData';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
@@ -99,6 +109,20 @@ export const createUser = async (data: UserData) => {
 	} else {
 		try {
 			const userCredential = await createUserWithEmailAndPassword(auth, data.email, data.password);
+			const dataRegister = doc(db, 'users', userCredential.user.uid);
+			const register = {
+				email: data.email,
+				password: data.password,
+				fullname: data.fullname,
+				username: data.username,
+				birthdate: data.birthdate,
+				avatar: data.avatar,
+				banner: data.banner,
+				friends: data.friends,
+				age: data.age,
+				policy: data.policy,
+			};
+			await setDoc(dataRegister, register);
 		} catch (error) {
 			const firebaseError = error as {
 				code?: string;
