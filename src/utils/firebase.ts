@@ -89,4 +89,10 @@ export const updateCommentsById = async (id: string, newComments: number): Promi
 	});
 };
 
-export const createUser = async (data: UserData) => {};
+export const createUser = async (data: UserData) => {
+	if (!data.email || !data.password) {
+		console.error('El email y la password no llegaron, están vacíos');
+		return false;
+	} else {
+	}
+};
