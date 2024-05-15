@@ -98,6 +98,8 @@ export const createUser = async (data: UserData) => {
 		return false;
 	} else {
 		try {
+			const userCredential = await createUserWithEmailAndPassword(auth, data.email, data.password);
+			console.log(userCredential);
 		} catch (error) {
 			const firebaseError = error as {
 				code?: string;
