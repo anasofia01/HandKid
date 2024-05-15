@@ -18,6 +18,8 @@ const db = getFirestore(app);
 
 const postDocument = collection(db, 'post');
 
+const userDocument = collection(db, 'users');
+
 export const createPost = async (data: PostData) => {
 	await addDoc(postDocument, data);
 };
