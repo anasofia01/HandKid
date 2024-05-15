@@ -3,6 +3,7 @@ import { Screens } from '../types/navigation';
 import { reducer } from './reducer';
 import { auth } from '../utils/firebase';
 import { onAuthStateChanged } from 'firebase/auth';
+import { setUserCredentials } from './actions';
 
 const emptyState = {
 	screen: Screens.MAIN,
