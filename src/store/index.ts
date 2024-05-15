@@ -28,5 +28,8 @@ export const dispatch = (action: any) => {
 onAuthStateChanged(auth, (user: any) => {
 	if (user) {
 		user.uid !== null ? dispatch(setUserCredentials(user.uid)) : '';
+		dispatch(navigate(Screens.DASHBOARD));
+	} else {
+		dispatch(navigate(Screens.MAIN));
 	}
 });
