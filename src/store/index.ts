@@ -23,3 +23,9 @@ export const dispatch = (action: any) => {
 	appState = newState;
 	notifyObservers();
 };
+
+onAuthStateChanged(auth, (user: any) => {
+	if (user) {
+		user.uid !== null ? dispatch(setUserCredentials(user.uid)) : '';
+	}
+});
