@@ -57,6 +57,8 @@ class SingleCardPassword extends HTMLElement {
 			friends: 0,
 			age: age,
 		};
+		const result = await createUser(userData);
+		dispatch(navigate(Screens.DASHBOARD));
 	}
 
 	calculateAge(birthdate: string): number {
