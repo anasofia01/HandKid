@@ -63,6 +63,7 @@ class ScreenDashboard extends HTMLElement {
 			profileContent.description = 'Me gusta el robloxxx klk';
 			profileContent.age = 8;
 			profileContent.friends = 5;
+			profileContent.btnEdit = true;
 			container.appendChild(profileContent);
 		}
 	}
