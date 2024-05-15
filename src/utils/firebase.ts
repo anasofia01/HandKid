@@ -94,5 +94,22 @@ export const createUser = async (data: UserData) => {
 		console.error('El email y la password no llegaron, están vacíos');
 		return false;
 	} else {
+		try {
+		} catch (error) {
+			const firebaseError = error as {
+				code?: string;
+				message?: string;
+			};
+			if (firebaseError.code === 'outh/email-already-in-use') {
+				alert('Este correo ya esta en uso');
+			} else if (firebaseError.code === 'outh/invalid-email') {
+				alert('El correo no es valido');
+			} else if (firebaseError.code === 'outh/weak-password') {
+				alert('La contraseña es debil');
+			} else {
+				alert('Algo salió mal' + firebaseError);
+			}
+			return false;
+		}
 	}
 };
