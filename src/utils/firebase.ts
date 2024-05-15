@@ -89,6 +89,4 @@ export const updateCommentsById = async (id: string, newComments: number): Promi
 	});
 };
 
-export const createUser = async (data: UserData) => {
-	await addDoc(userDocument, data);
-};
+export const createUser = async (data: UserData) => {};
