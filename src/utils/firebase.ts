@@ -2,7 +2,7 @@ import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, addDoc, getDocs, getDoc, doc, updateDoc, arrayUnion } from 'firebase/firestore/lite';
 import { PostData } from '../types/postData';
 import { UserData } from '../types/userData';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/Auth';
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 
 const firebaseConfig = {
 	apiKey: 'AIzaSyADVrIwsy_xKZ_t5G56WxoSTFQ0WIIEn_g',
