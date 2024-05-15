@@ -130,6 +130,11 @@ export const createUser = async (data: UserData) => {
 			};
 			await setDoc(dataRegister, register);
 			const loginResult = await login(data.email, data.password);
+			if (!loginResult) {
+				console.error('Falló');
+				return false;
+			}
+			return true;
 		} catch (error) {
 			const firebaseError = error as {
 				code?: string;
