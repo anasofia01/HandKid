@@ -59,6 +59,7 @@ class SingleCardPassword extends HTMLElement {
 		};
 		const result = await createUser(userData);
 		if (result) {
+			clearInfoRegister();
 			dispatch(navigate(Screens.DASHBOARD));
 		}
 		return;
