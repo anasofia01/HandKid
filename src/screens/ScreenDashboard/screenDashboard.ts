@@ -90,6 +90,7 @@ class ScreenDashboard extends HTMLElement {
 			profileContent.description = profileData.description;
 			profileContent.age = Number(profileData.age);
 			profileContent.friends = Number(profileData.friends);
+			profileContent.btnEdit = false;
 			container.appendChild(profileContent);
 		}
 	}
