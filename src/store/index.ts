@@ -2,6 +2,7 @@ import { Observer } from '../types/store';
 import { Screens } from '../types/navigation';
 import { reducer } from './reducer';
 import { auth } from '../utils/firebase';
+import { onAuthStateChanged } from 'firebase/auth';
 
 const emptyState = {
 	screen: Screens.MAIN,
