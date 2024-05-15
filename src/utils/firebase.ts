@@ -12,7 +12,13 @@ import {
 } from 'firebase/firestore/lite';
 import { PostData } from '../types/postData';
 import { UserData } from '../types/userData';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
+import {
+	getAuth,
+	createUserWithEmailAndPassword,
+	signInWithEmailAndPassword,
+	setPersistence,
+	browserLocalPersistence,
+} from 'firebase/auth';
 
 const firebaseConfig = {
 	apiKey: 'AIzaSyADVrIwsy_xKZ_t5G56WxoSTFQ0WIIEn_g',
@@ -140,5 +146,16 @@ export const createUser = async (data: UserData) => {
 			}
 			return false;
 		}
+	}
+};
+
+export const login = async (email: string, password: string): Promise<boolean> => {
+	try {
+		await setPersistence(auth, browserLocalPersistence);
+		const loginResults = await signInWithEmailAndPassword(auth, email, password);
+		return true;
+	} catch (error) {
+		console.error(error);
+		return false;
 	}
 };
