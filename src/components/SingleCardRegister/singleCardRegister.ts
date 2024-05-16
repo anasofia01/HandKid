@@ -69,6 +69,10 @@ class SingleCardRegister extends HTMLElement {
                 </div>
               </form>
             </div>
+						<div class = "link-login">
+							<small>Already have an account?</small>
+							<small class = "small-link">Sign In</small>
+          	</div>
           </div>
         </div>
         `;
