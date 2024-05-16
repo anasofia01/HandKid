@@ -200,3 +200,16 @@ export const getUserById = async (id: string): Promise<any> => {
 		return false;
 	}
 };
+
+export const getFriends = async (idUserLogin: string): Promise<UserData[]> => {
+	const friends = await getDocs(userDocument);
+	const userArray: UserData[] = [];
+	friends.docs.forEach((doc) => {
+		if (doc.id !== idUserLogin) {
+			const userInfo = doc.data() as UserData;
+			userInfo.id = doc.id;
+			userArray.push(userInfo);
+		}
+	});
+	return userArray;
+};
