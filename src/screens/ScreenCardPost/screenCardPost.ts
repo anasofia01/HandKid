@@ -24,6 +24,8 @@ class ScreenCardPost extends HTMLElement {
 			for (const post of dataNewPost) {
 				const postCard = this.ownerDocument.createElement('single-card-post') as SingleCardPost;
 				const userId = await getUserLogin();
+				if (userId) {
+				}
 				postCard.idPost = post.id;
 				postCard.avatar = 'https://i.pinimg.com/474x/75/23/31/752331da9e7d5256b512f92c6de24849.jpg';
 				postCard.name = 'El Guapito';
