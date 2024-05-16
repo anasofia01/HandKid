@@ -18,6 +18,7 @@ import {
 	signInWithEmailAndPassword,
 	setPersistence,
 	browserLocalPersistence,
+	signOut,
 } from 'firebase/auth';
 
 const firebaseConfig = {
@@ -163,4 +164,16 @@ export const login = async (email: string, password: string): Promise<boolean> =
 		console.error(error);
 		return false;
 	}
+};
+
+export const logout = async (): Promise<boolean> => {
+	signOut(auth)
+		.then(() => {
+			alert('La sesión se ha cerrado');
+			return true;
+		})
+		.catch((error) => {
+			alert('Hubo un error al cerrar la sesión');
+			return false;
+		});
 };
