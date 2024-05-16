@@ -18,6 +18,7 @@ class ScreenCardFriends extends HTMLElement {
 	async loadFriends() {
 		const friendsContainer = this.shadowRoot?.querySelector('.friends-cards-container');
 		if (friendsContainer) {
+			const friends = await getFriends();
 			friendsContainer.innerHTML = '';
 			dataFriends.forEach((friend: any) => {
 				const friendComponent = this.ownerDocument.createElement('single-card-friend') as SingleCardFriend;
