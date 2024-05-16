@@ -38,6 +38,15 @@ class SingleCardRegister extends HTMLElement {
 		}
 	}
 
+	buttonListenerLogin() {
+		const btnLogin = this.shadowRoot?.querySelector('#');
+		if (btnLogin) {
+			btnLogin.addEventListener('click', () => {
+				dispatch(navigate(Screens.LOGIN));
+			});
+		}
+	}
+
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
