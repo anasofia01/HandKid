@@ -167,13 +167,12 @@ export const login = async (email: string, password: string): Promise<boolean> =
 };
 
 export const logout = async (): Promise<boolean> => {
-	signOut(auth)
-		.then(() => {
-			alert('La sesión se ha cerrado');
-			return true;
-		})
-		.catch((error) => {
-			alert('Hubo un error al cerrar la sesión');
-			return false;
-		});
+	try {
+		await signOut(auth);
+		alert('La sesión se ha cerrado');
+		return true;
+	} catch (error) {
+		alert('Hubo un error al cerrar la sesión');
+		return false;
+	}
 };
