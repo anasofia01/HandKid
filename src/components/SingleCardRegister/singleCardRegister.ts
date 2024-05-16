@@ -13,6 +13,7 @@ class SingleCardRegister extends HTMLElement {
 	connectedCallback() {
 		this.render();
 		this.addNextListener();
+		this.buttonListenerLogin();
 	}
 
 	addNextListener() {
