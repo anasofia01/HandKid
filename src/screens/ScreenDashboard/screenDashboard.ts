@@ -80,7 +80,6 @@ class ScreenDashboard extends HTMLElement {
 	renderFriendProfile(profileData: ProfileData) {
 		const container = this.shadowRoot?.querySelector('.column2');
 		if (container) {
-			console.log(profileData.friends);
 			container.innerHTML = '';
 			const profileContent = document.createElement('single-card-profile') as SingleCardProfile;
 			profileContent.banner = profileData.banner;
