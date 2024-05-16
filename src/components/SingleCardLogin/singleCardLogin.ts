@@ -28,6 +28,11 @@ class SingleCardLogin extends HTMLElement {
 		const email = formData.get('email') as string;
 		const password = formData.get('password') as string;
 		const result = await login(email, password);
+		if (result) {
+			dispatch(navigate(Screens.DASHBOARD));
+		}
+		alert('No se pudo iniciar sesión');
+		return;
 	}
 
 	render() {
