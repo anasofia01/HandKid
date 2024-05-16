@@ -20,7 +20,7 @@ class ScreenCardFriends extends HTMLElement {
 		if (friendsContainer) {
 			const userLogin = await getUserLogin();
 			if (userLogin) {
-				const friends = await getFriends();
+				const friends = await getFriends(userLogin);
 				friendsContainer.innerHTML = '';
 				dataFriends.forEach((friend: any) => {
 					const friendComponent = this.ownerDocument.createElement('single-card-friend') as SingleCardFriend;
