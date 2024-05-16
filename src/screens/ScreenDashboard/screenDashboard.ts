@@ -51,7 +51,7 @@ class ScreenDashboard extends HTMLElement {
 		});
 	}
 
-	renderMyProfile() {
+	async renderMyProfile() {
 		const container = this.shadowRoot?.querySelector('.column2');
 		if (container) {
 			container.innerHTML = '';
