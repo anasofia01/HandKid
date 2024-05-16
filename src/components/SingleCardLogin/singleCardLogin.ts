@@ -21,6 +21,8 @@ class SingleCardLogin extends HTMLElement {
 		}
 	}
 
+	handleSubmit() {}
+
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
