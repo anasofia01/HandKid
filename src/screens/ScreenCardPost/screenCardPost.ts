@@ -23,7 +23,7 @@ class ScreenCardPost extends HTMLElement {
 			/* dataNewPost.forEach((post: any) => { */
 			for (const post of dataNewPost) {
 				const postCard = this.ownerDocument.createElement('single-card-post') as SingleCardPost;
-				const userInfo = await getUserById(post.user);
+				const userInfo = await getUserById(post.user || '');
 				console.log(userInfo.username);
 				postCard.idPost = post.id;
 				postCard.avatar = userInfo.avatar;
