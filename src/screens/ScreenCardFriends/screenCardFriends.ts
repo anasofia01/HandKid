@@ -14,7 +14,7 @@ class ScreenCardFriends extends HTMLElement {
 		this.loadFriends();
 	}
 
-	loadFriends() {
+	async loadFriends() {
 		const friendsContainer = this.shadowRoot?.querySelector('.friends-cards-container');
 		if (friendsContainer) {
 			friendsContainer.innerHTML = '';
