@@ -31,8 +31,8 @@ class ScreenCardPost extends HTMLElement {
 				postCard.username = userInfo.username;
 				postCard.description = post.description;
 				postCard.timestamp = post.timestamp;
-				/* postCard.hashtags = post.hashtags.map((tag: string) => tag.trim());
-				postCard.media = post.media.map((media: string) => media.trim()); */
+				postCard.hashtags = post.hashtags?.map((tag: string) => tag.trim());
+				postCard.media = post.media?.map((media: string) => media.trim());
 				postCard.likes = post.likes;
 				postCard.comments = post.comments;
 				postContainer.appendChild(postCard);
