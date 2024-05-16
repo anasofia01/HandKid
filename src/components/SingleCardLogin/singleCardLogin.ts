@@ -22,11 +22,12 @@ class SingleCardLogin extends HTMLElement {
 		}
 	}
 
-	handleSubmit(event: any) {
+	async handleSubmit(event: any) {
 		event.preventDefault();
 		const formData = new FormData(event.target);
-		const email = formData.get('email');
-		const password = formData.get('password');
+		const email = formData.get('email') as string;
+		const password = formData.get('password') as string;
+		const result = await login(email, password);
 	}
 
 	render() {
