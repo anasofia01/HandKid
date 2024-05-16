@@ -17,7 +17,7 @@ class SingleCardLogin extends HTMLElement {
 	addLoginListener() {
 		const form = this.shadowRoot?.querySelector('#form-info');
 		if (form) {
-			form.addEventListener('submit', () => this.handleSubmit.bind(this));
+			form.addEventListener('submit', this.handleSubmit.bind(this));
 		}
 	}
 
