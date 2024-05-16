@@ -25,7 +25,7 @@ class ScreenCardFriends extends HTMLElement {
 				friends.forEach((friend: any) => {
 					const friendComponent = this.ownerDocument.createElement('single-card-friend') as SingleCardFriend;
 					friendComponent.avatar = friend.avatar;
-					friendComponent.name = friend.name;
+					friendComponent.name = friend.fullname;
 					friendComponent.username = friend.username;
 					friendComponent.description = friend.description;
 					friendComponent.banner = friend.banner;
