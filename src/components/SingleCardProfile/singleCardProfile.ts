@@ -33,6 +33,8 @@ class SingleCardProfile extends HTMLElement {
 			this.friends = newValue ? Number(newValue) : undefined;
 		} else if (name === 'btnEdit') {
 			this.btnEdit = newValue === 'true';
+		} else if (name === 'btnAddFriends') {
+			this.btnAddFriends = newValue === 'true';
 		}
 		this.render();
 	}
