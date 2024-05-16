@@ -128,3 +128,8 @@ form {
 		margin: 10px;
 	}
 }
+
+.small-link {
+	cursor: pointer;
+	color: #9d0191;
+}
