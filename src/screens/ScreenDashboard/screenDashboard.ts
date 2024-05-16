@@ -125,24 +125,24 @@ class ScreenDashboard extends HTMLElement {
 		const datePost = new Date();
 		const userId = await getUserLogin();
 		if (userId) {
+			const postDataInfo: PostData = {
+				user: userId,
+				description: description,
+				timestamp: datePost.toISOString(),
+				likes: 0,
+				comments: 0,
+				media: [img1, img2],
+				hashtags: [tags1, tags2],
+			};
+			try {
+				const result = await createPost(postDataInfo);
+				alert('saved info');
+			} catch (error) {
+				alert('error');
+				console.error(error);
+			}
+			this.renderPost();
 		}
-		const postDataInfo: PostData = {
-			user: userId,
-			description: description,
-			timestamp: datePost.toISOString(),
-			likes: 0,
-			comments: 0,
-			media: [img1, img2],
-			hashtags: [tags1, tags2],
-		};
-		try {
-			const result = await createPost(postDataInfo);
-			alert('saved info');
-		} catch (error) {
-			alert('error');
-			console.error(error);
-		}
-		this.renderPost();
 	}
 
 	renderPhoneMenu() {
