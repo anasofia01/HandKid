@@ -44,10 +44,12 @@ class SingleButtonNav extends HTMLElement {
 		}
 	}
 
-	addLogoutButtonListener() {
+	async addLogoutButtonListener() {
 		const pageInit = this.shadowRoot?.querySelector('#logout');
 		if (pageInit) {
-			pageInit.addEventListener('click', () => {});
+			pageInit.addEventListener('click', () => {
+				dispatch(navigate(Screens.MAIN));
+			});
 		}
 	}
 
