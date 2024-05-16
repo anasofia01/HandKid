@@ -21,7 +21,12 @@ class SingleCardLogin extends HTMLElement {
 		}
 	}
 
-	handleSubmit() {}
+	handleSubmit(event: any) {
+		event.preventDefault();
+		const formData = new FormData(event.target);
+		const email = formData.get('email');
+		const password = formData.get('password');
+	}
 
 	render() {
 		if (this.shadowRoot) {
