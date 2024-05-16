@@ -123,6 +123,7 @@ class ScreenDashboard extends HTMLElement {
 		const tags1 = formInfo.get('tags1') as string;
 		const tags2 = formInfo.get('tags2') as string;
 		const datePost = new Date();
+		const userId = await getUserLogin();
 		const postDataInfo: PostData = {
 			user: '',
 			description: description,
