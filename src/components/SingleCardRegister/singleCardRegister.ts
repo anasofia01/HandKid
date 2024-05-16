@@ -39,7 +39,7 @@ class SingleCardRegister extends HTMLElement {
 	}
 
 	buttonListenerLogin() {
-		const btnLogin = this.shadowRoot?.querySelector('#');
+		const btnLogin = this.shadowRoot?.querySelector('#login');
 		if (btnLogin) {
 			btnLogin.addEventListener('click', () => {
 				dispatch(navigate(Screens.LOGIN));
