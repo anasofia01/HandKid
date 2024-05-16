@@ -67,6 +67,8 @@ class ScreenDashboard extends HTMLElement {
 				profileContent.friends = 5;
 				profileContent.btnEdit = true;
 				container.appendChild(profileContent);
+			} else {
+				alert('No se pudo obtener la información del perfil');
 			}
 		}
 	}
