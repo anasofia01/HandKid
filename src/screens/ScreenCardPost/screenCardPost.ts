@@ -1,6 +1,6 @@
 import SingleCardPost from '../../components/SingleCardPost/singleCardPost';
 import styles from './screenCardPost.css';
-import { getPosts, getUserById } from '../../utils/firebase';
+import { getPosts, getUserById, getUserLogin } from '../../utils/firebase';
 
 class ScreenCardPost extends HTMLElement {
 	cards: SingleCardPost[] = [];
