@@ -64,8 +64,8 @@ class ScreenDashboard extends HTMLElement {
 				profileContent.name = userInfo.fullname;
 				profileContent.username = userInfo.username;
 				profileContent.description = userInfo.description ?? '';
-				profileContent.age = 8;
-				profileContent.friends = 5;
+				profileContent.age = userInfo.age;
+				profileContent.friends = userInfo.friends;
 				profileContent.btnEdit = true;
 				container.appendChild(profileContent);
 			} else {
