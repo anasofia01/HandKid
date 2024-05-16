@@ -187,6 +187,7 @@ export const getUserLogin = async (): Promise<string | false> => {
 };
 
 export const getUserById = async (id: string): Promise<any> => {
+	console.log(id);
 	try {
 		const docReference = doc(db, 'users', id);
 		const result = await getDoc(docReference);
