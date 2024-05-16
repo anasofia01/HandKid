@@ -11,6 +11,7 @@ import {
 	getCommentsById,
 	getCommentById,
 	updateCommentsById,
+	getUserById,
 } from '../../utils/firebase';
 import { SingleButtonComment, SingleCardPost } from '../../components/index';
 
