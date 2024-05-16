@@ -8,6 +8,7 @@ class SingleCardProfile extends HTMLElement {
 	description?: string;
 	age?: number;
 	friends?: number;
+	btnEdit?: boolean;
 
 	constructor() {
 		super();
@@ -29,13 +30,14 @@ class SingleCardProfile extends HTMLElement {
 			this.age = newValue ? Number(newValue) : undefined;
 		} else if (name === 'friends') {
 			this.friends = newValue ? Number(newValue) : undefined;
+		} else if (name === 'btnEdit') {
+			this.btnEdit = newValue === 'true';
 		}
-
 		this.render();
 	}
 
 	static get observedAttributes() {
-		return ['banner', 'avatar', 'name', 'username', 'description', 'age', 'friends'];
+		return ['banner', 'avatar', 'name', 'username', 'description', 'age', 'friends', 'btnEdit'];
 	}
 
 	connectedCallback() {
