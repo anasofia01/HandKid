@@ -37,6 +37,10 @@ class SingleCardLogin extends HTMLElement {
 		return;
 	}
 
+	buttonListenerRegister() {
+		const btnRegister = this.shadowRoot?.querySelector();
+	}
+
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
