@@ -22,6 +22,7 @@ class ScreenCardFriends extends HTMLElement {
 			if (userLogin) {
 				const friends = await getFriends(userLogin);
 				friendsContainer.innerHTML = '';
+				let count = 0;
 				friends.forEach((friend: any) => {
 					const friendComponent = this.ownerDocument.createElement('single-card-friend') as SingleCardFriend;
 					friendComponent.avatar = friend.avatar;
@@ -32,6 +33,10 @@ class ScreenCardFriends extends HTMLElement {
 					friendComponent.age = friend.age;
 					friendComponent.friends = friend.friends;
 					friendsContainer.appendChild(friendComponent);
+					count++;
+					if (count >= 5) {
+						break;
+					}
 				});
 			}
 		}
