@@ -61,6 +61,7 @@ class SingleCardPassword extends HTMLElement {
 		if (result) {
 			clearInfoRegister();
 			dispatch(navigate(Screens.DASHBOARD));
+			return true;
 		}
 		return;
 	}
