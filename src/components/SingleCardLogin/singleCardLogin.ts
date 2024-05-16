@@ -13,6 +13,7 @@ class SingleCardLogin extends HTMLElement {
 	connectedCallback() {
 		this.render();
 		this.addLoginListener();
+		this.buttonListenerRegister();
 	}
 
 	addLoginListener() {
