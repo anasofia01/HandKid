@@ -40,7 +40,6 @@ class SingleCardFriend extends HTMLElement {
 	connectedCallback() {
 		this.render();
 		this.addEventListener('click', () => {
-			console.log(this.friends);
 			this.dispatchEvent(
 				new CustomEvent('friend-clicked', {
 					detail: {
