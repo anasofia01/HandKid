@@ -9,6 +9,7 @@ class SingleCardProfile extends HTMLElement {
 	age?: number;
 	friends?: number;
 	btnEdit?: boolean;
+	btnAddFriends?: boolean;
 
 	constructor() {
 		super();
