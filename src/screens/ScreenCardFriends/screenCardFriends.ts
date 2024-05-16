@@ -1,7 +1,7 @@
 import SingleCardFriend, { Attribute } from '../../components/SingleCardFriend/singleCardFriend';
 import styles from './screenCardFriends.css';
 import { dataFriends } from '../../services/data';
-import { getFriends } from '../../utils/firebase';
+import { getFriends, getUserLogin } from '../../utils/firebase';
 
 class ScreenCardFriends extends HTMLElement {
 	users: SingleCardFriend[] = [];
