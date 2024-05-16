@@ -30,6 +30,7 @@ class SingleCardLogin extends HTMLElement {
 		const result = await login(email, password);
 		if (result) {
 			dispatch(navigate(Screens.DASHBOARD));
+			return true;
 		}
 		alert('No se pudo iniciar sesión');
 		return;
