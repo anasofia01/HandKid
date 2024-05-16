@@ -39,6 +39,11 @@ class SingleCardLogin extends HTMLElement {
 
 	buttonListenerRegister() {
 		const btnRegister = this.shadowRoot?.querySelector('#register');
+		if (btnRegister) {
+			btnRegister.addEventListener('click', () => {
+				dispatch(navigate(Screens.REGISTER));
+			});
+		}
 	}
 
 	render() {
