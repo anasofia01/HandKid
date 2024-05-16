@@ -61,8 +61,8 @@ class ScreenDashboard extends HTMLElement {
 				const userInfo = await getUserById(userId);
 				profileContent.banner = userInfo.banner;
 				profileContent.avatar = userInfo.avatar;
-				profileContent.name = 'El Matiassx';
-				profileContent.username = '@Matixgr1212_';
+				profileContent.name = userInfo.fullname;
+				profileContent.username = userInfo.username;
 				profileContent.description = 'Me gusta el robloxxx klk';
 				profileContent.age = 8;
 				profileContent.friends = 5;
