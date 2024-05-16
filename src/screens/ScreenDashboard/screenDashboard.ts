@@ -47,8 +47,6 @@ class ScreenDashboard extends HTMLElement {
 			const detail = (event as CustomEvent).detail;
 			this.addComment(detail);
 		});
-
-		this.addEventListener('logout-clicked', () => this.renderPageInit());
 	}
 
 	renderMyProfile() {
