@@ -125,7 +125,7 @@ class ScreenDashboard extends HTMLElement {
 		const datePost = new Date();
 		const userId = await getUserLogin();
 		const postDataInfo: PostData = {
-			user: '',
+			user: userId,
 			description: description,
 			timestamp: datePost.toISOString(),
 			likes: 0,
