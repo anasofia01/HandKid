@@ -27,7 +27,7 @@ class ScreenCardPost extends HTMLElement {
 				if (userId) {
 					const userInfo = getUserById(userId);
 					postCard.idPost = post.id;
-					postCard.avatar = 'https://i.pinimg.com/474x/75/23/31/752331da9e7d5256b512f92c6de24849.jpg';
+					postCard.avatar = userInfo.avatar;
 					postCard.name = 'El Guapito';
 					postCard.username = '@guapito.2304';
 					postCard.description = post.description;
