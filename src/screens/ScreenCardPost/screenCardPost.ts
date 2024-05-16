@@ -1,6 +1,7 @@
 import SingleCardPost from '../../components/SingleCardPost/singleCardPost';
 import styles from './screenCardPost.css';
 import { getPosts, getUserById, getUserLogin } from '../../utils/firebase';
+import { dataPost } from '../../services/data';
 
 class ScreenCardPost extends HTMLElement {
 	cards: SingleCardPost[] = [];
@@ -19,7 +20,8 @@ class ScreenCardPost extends HTMLElement {
 		const postContainer = this.shadowRoot?.querySelector('.posts-cards-container');
 		const dataNewPost = await getPosts();
 		if (postContainer) {
-			dataNewPost.forEach((post: any) => {
+			/* dataNewPost.forEach((post: any) => { */
+			for (const post of dataNewPost) {
 				const postCard = this.ownerDocument.createElement('single-card-post') as SingleCardPost;
 				const userId = await getUserLogin();
 				postCard.idPost = post.id;
@@ -33,7 +35,7 @@ class ScreenCardPost extends HTMLElement {
 				postCard.likes = post.likes;
 				postCard.comments = post.comments;
 				postContainer.appendChild(postCard);
-			});
+			}
 		}
 	}
 
