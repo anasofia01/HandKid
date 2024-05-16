@@ -1,6 +1,7 @@
 import styles from './singleButtonNav.css';
 import { navigate } from '../../store/actions';
 import { dispatch } from '../../store';
+import { Screens } from '../../types/navigation';
 
 class SingleButtonNav extends HTMLElement {
 	constructor() {
