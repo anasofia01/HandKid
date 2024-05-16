@@ -72,7 +72,7 @@ class SingleCardLogin extends HTMLElement {
           </div>
           <div class = "link-register">
             <small>Don't have an account yet?</small>
-            <small class = "small-link"><b>Sign Up</b></small>
+            <small class = "small-link" id = "register"><b>Sign Up</b></small>
           </div>
         </div>
       </div>
