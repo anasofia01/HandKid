@@ -28,7 +28,7 @@ class ScreenCardPost extends HTMLElement {
 				postCard.idPost = post.id;
 				postCard.avatar = userInfo.avatar;
 				postCard.name = userInfo.fullname;
-				postCard.username = '@guapito.2304';
+				postCard.username = userInfo.username;
 				postCard.description = post.description;
 				postCard.timestamp = post.timestamp;
 				postCard.hashtags = post.hashtags.map((tag: string) => tag.trim());
