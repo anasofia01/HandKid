@@ -27,7 +27,6 @@ class SingleCardLogin extends HTMLElement {
 		const formData = new FormData(event.target);
 		const email = formData.get('email');
 		const password = formData.get('password');
-		console.log(email, password);
 	}
 
 	render() {
