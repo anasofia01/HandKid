@@ -176,3 +176,12 @@ export const logout = async (): Promise<boolean> => {
 		return false;
 	}
 };
+
+export const getUserLogin = async (): Promise<string | false> => {
+	if (auth.currentUser) {
+		const uid = auth.currentUser.uid;
+		return uid;
+	} else {
+		return false;
+	}
+};
