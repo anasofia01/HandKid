@@ -185,3 +185,18 @@ export const getUserLogin = async (): Promise<string | false> => {
 		return false;
 	}
 };
+
+export const getUserById = async (id: string): Promise<any> => {
+	try {
+		const docReference = doc(db, 'users', id);
+		const result = await getDoc(docReference);
+		if (result.exists()) {
+			return result.data();
+		} else {
+			return null;
+		}
+	} catch (error) {
+		console.error('Error al obtener el usuario', error);
+		return false;
+	}
+};
