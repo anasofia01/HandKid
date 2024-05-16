@@ -24,7 +24,7 @@ class ScreenCardFriends extends HTMLElement {
 				friendsContainer.innerHTML = '';
 				let count = 0;
 				// friends.forEach((friend: any) => {
-				for (let i = 0; i < friends.length && count < 5; i++) {
+				for (let i = 0; i < friends.length && count <= 5; i++) {
 					const friend = friends[i];
 					const friendComponent = this.ownerDocument.createElement('single-card-friend') as SingleCardFriend;
 					friendComponent.avatar = friend.avatar;
