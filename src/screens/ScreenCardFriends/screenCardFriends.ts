@@ -19,19 +19,21 @@ class ScreenCardFriends extends HTMLElement {
 		const friendsContainer = this.shadowRoot?.querySelector('.friends-cards-container');
 		if (friendsContainer) {
 			const userLogin = await getUserLogin();
-			const friends = await getFriends();
-			friendsContainer.innerHTML = '';
-			dataFriends.forEach((friend: any) => {
-				const friendComponent = this.ownerDocument.createElement('single-card-friend') as SingleCardFriend;
-				friendComponent.avatar = friend.avatar;
-				friendComponent.name = friend.name;
-				friendComponent.username = friend.username;
-				friendComponent.description = friend.description;
-				friendComponent.banner = friend.banner;
-				friendComponent.age = friend.age;
-				friendComponent.friends = friend.friends;
-				friendsContainer.appendChild(friendComponent);
-			});
+			if (userLogin) {
+				const friends = await getFriends();
+				friendsContainer.innerHTML = '';
+				dataFriends.forEach((friend: any) => {
+					const friendComponent = this.ownerDocument.createElement('single-card-friend') as SingleCardFriend;
+					friendComponent.avatar = friend.avatar;
+					friendComponent.name = friend.name;
+					friendComponent.username = friend.username;
+					friendComponent.description = friend.description;
+					friendComponent.banner = friend.banner;
+					friendComponent.age = friend.age;
+					friendComponent.friends = friend.friends;
+					friendsContainer.appendChild(friendComponent);
+				});
+			}
 		}
 	}
 
