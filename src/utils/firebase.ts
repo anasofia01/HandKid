@@ -172,7 +172,7 @@ export const logout = async (): Promise<boolean> => {
 		alert('The Session is closed');
 		return true;
 	} catch (error) {
-		alert('Hubo un error al cerrar la sesión');
+		alert('');
 		return false;
 	}
 };
