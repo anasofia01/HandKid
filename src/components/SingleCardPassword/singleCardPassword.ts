@@ -33,7 +33,7 @@ class SingleCardPassword extends HTMLElement {
 		const policyCheck = this.shadowRoot?.querySelector('#policy-check') as HTMLInputElement;
 		const age = this.calculateAge(formNextData.birthdate ?? '');
 		if (password.length < 8) {
-			alert('La contraseña debe tener al menos 8 caracteres');
+			alert('The password must be at least 8 characters long');
 			return;
 		}
 		if (passwordConfirm !== password) {
