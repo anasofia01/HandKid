@@ -148,7 +148,7 @@ export const createUser = async (data: UserData) => {
 			} else if (firebaseError.code === 'auth/weak-password') {
 				alert('The Password is weak');
 			} else {
-				alert('' + firebaseError);
+				alert('Something went wrong' + firebaseError);
 			}
 			return false;
 		}
