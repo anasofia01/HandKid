@@ -146,7 +146,7 @@ export const createUser = async (data: UserData) => {
 			} else if (firebaseError.code === 'auth/invalid-email') {
 				alert('The Email is not valid');
 			} else if (firebaseError.code === 'auth/weak-password') {
-				alert('La contraseña es debil');
+				alert('');
 			} else {
 				alert('Algo salió mal' + firebaseError);
 			}
