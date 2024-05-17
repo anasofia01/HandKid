@@ -142,7 +142,7 @@ export const createUser = async (data: UserData) => {
 				message?: string;
 			};
 			if (firebaseError.code === 'auth/email-already-in-use') {
-				alert('');
+				alert('This Email is already in use');
 			} else if (firebaseError.code === 'auth/invalid-email') {
 				alert('El correo no es valido');
 			} else if (firebaseError.code === 'auth/weak-password') {
