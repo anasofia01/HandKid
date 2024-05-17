@@ -138,7 +138,7 @@ class ScreenDashboard extends HTMLElement {
 				const result = await createPost(postDataInfo);
 				alert('Saved Info');
 			} catch (error) {
-				alert('error');
+				alert('Error');
 				console.error(error);
 			}
 			this.renderPost();
