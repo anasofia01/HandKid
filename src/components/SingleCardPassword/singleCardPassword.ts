@@ -37,7 +37,7 @@ class SingleCardPassword extends HTMLElement {
 			return;
 		}
 		if (passwordConfirm !== password) {
-			alert('');
+			alert('The passwords do not match, check');
 			return;
 		}
 		if (!policyCheck.checked) {
