@@ -70,7 +70,7 @@ class ScreenDashboard extends HTMLElement {
 				profileContent.btnAddFriends = false;
 				container.appendChild(profileContent);
 			} else {
-				alert('');
+				alert('The Profile Information could not be obtained');
 			}
 		}
 	}
