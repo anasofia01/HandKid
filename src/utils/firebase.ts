@@ -144,7 +144,7 @@ export const createUser = async (data: UserData) => {
 			if (firebaseError.code === 'auth/email-already-in-use') {
 				alert('This Email is already in use');
 			} else if (firebaseError.code === 'auth/invalid-email') {
-				alert('');
+				alert('The Email is not valid');
 			} else if (firebaseError.code === 'auth/weak-password') {
 				alert('La contraseña es debil');
 			} else {
