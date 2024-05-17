@@ -37,7 +37,7 @@ class SingleCardPassword extends HTMLElement {
 			return;
 		}
 		if (passwordConfirm !== password) {
-			alert('Las contraseñas no coinciden, verifica');
+			alert('');
 			return;
 		}
 		if (!policyCheck.checked) {
