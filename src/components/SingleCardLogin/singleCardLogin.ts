@@ -33,7 +33,7 @@ class SingleCardLogin extends HTMLElement {
 			dispatch(navigate(Screens.DASHBOARD));
 			return true;
 		}
-		alert('No se pudo iniciar sesión');
+		alert('Unable to Log In');
 		return;
 	}
 
