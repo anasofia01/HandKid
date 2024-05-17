@@ -41,7 +41,7 @@ class SingleCardPassword extends HTMLElement {
 			return;
 		}
 		if (!policyCheck.checked) {
-			alert('');
+			alert('Please accept the Privacy Policy');
 			return;
 		}
 		const userData: UserData = {
