@@ -169,7 +169,7 @@ export const login = async (email: string, password: string): Promise<boolean> =
 export const logout = async (): Promise<boolean> => {
 	try {
 		await signOut(auth);
-		alert('La sesión se ha cerrado');
+		alert('');
 		return true;
 	} catch (error) {
 		alert('Hubo un error al cerrar la sesión');
