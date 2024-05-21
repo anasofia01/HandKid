@@ -14,8 +14,13 @@ class ScreenCardPost extends HTMLElement {
 		addObserver(this);
 	}
 
-	connectedCallback() {
-		this.render();
+	async connectedCallback() {
+		if (appState.post.length === 0) {
+			const action = await getPostsAction();
+			dispatch(action);
+		} else {
+			this.render();
+		}
 	}
 
 	async loadPosts() {
