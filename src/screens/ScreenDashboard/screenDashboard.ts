@@ -215,9 +215,10 @@ class ScreenDashboard extends HTMLElement {
 				commentElements.forEach((element) => {
 					element.remove();
 				});
-				comments.forEach((comment: any) => {
+				comments.forEach(async (comment: any) => {
 					const commentItem = this.ownerDocument.createElement('single-button-comment') as SingleButtonComment;
 					commentItem.classList.add('comment');
+					const userInfo = await getUserById(comment.userId);
 					commentItem.comment = comment;
 					container.appendChild(commentItem);
 				});
