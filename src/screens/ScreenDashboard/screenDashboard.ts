@@ -184,7 +184,8 @@ class ScreenDashboard extends HTMLElement {
 
 			formComment.addEventListener('comment-submitted', (event: any) => {
 				const comment = event.detail.comment;
-				this.addCommentToPost(comment, detail.idPost);
+				await this.addCommentToPost(comment, detail.idPost);
+				postCard.comments = (postCard.comments || 0) + 1;
 			});
 
 			this.updateCommentsList(detail.idPost);
