@@ -1,4 +1,5 @@
 import { Screens } from '../types/navigation';
+import { getPosts } from '../utils/firebase';
 
 export const navigate = (screen: Screens) => {
 	return {
