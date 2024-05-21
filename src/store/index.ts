@@ -8,6 +8,7 @@ import { setUserCredentials, navigate } from './actions';
 const emptyState = {
 	screen: Screens.MAIN,
 	user: {},
+	post: [],
 };
 
 export let appState = emptyState;
