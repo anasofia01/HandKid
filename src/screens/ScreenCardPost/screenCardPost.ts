@@ -23,8 +23,6 @@ class ScreenCardPost extends HTMLElement {
 		}
 	}
 
-	async loadPosts() {}
-
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
