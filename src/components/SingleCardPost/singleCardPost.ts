@@ -26,6 +26,7 @@ class SingleCardPost extends HTMLElement {
 	hashtags?: Array<string>;
 	media?: Array<string>;
 	likes?: number;
+	liked?: boolean = false;
 	comments?: number;
 	images?: string = '';
 	tags?: string = '';
