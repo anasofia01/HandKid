@@ -3,6 +3,7 @@ import styles from './screenCardPost.css';
 import { getPosts, getUserById, getUserLogin } from '../../utils/firebase';
 import { dataPost } from '../../services/data';
 import { addObserver, appState, dispatch } from '../../store';
+import { getPostsAction } from '../../store/actions';
 
 class ScreenCardPost extends HTMLElement {
 	cards: SingleCardPost[] = [];
