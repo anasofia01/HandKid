@@ -7,7 +7,7 @@ export const reducer = (action: any, preventState: any) => {
 			preventState.user = action.payload;
 			break;
 		case 'GETPOSTS':
-			preventState.post = action.post;
+			preventState.post = action.payload;
 			break;
 	}
 	return preventState;
