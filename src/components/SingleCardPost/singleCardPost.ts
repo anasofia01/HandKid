@@ -130,6 +130,7 @@ class SingleCardPost extends HTMLElement {
 				const newLikes = likesPost + 1;
 				await updateLikesById(this.idPost, newLikes);
 				this.likes = newLikes;
+				this.liked = !this.liked;
 			}
 		}
 		this.render();
