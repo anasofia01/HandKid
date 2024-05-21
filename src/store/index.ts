@@ -11,7 +11,7 @@ type PostDataType = PostData[];
 const emptyState = {
 	screen: Screens.MAIN,
 	user: {},
-	post: [],
+	post: [] as PostDataType,
 };
 
 export let appState = emptyState;
