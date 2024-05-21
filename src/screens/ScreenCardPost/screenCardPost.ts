@@ -16,7 +16,6 @@ class ScreenCardPost extends HTMLElement {
 
 	connectedCallback() {
 		this.render();
-		this.loadPosts();
 	}
 
 	async loadPosts() {
