@@ -219,7 +219,7 @@ class ScreenDashboard extends HTMLElement {
 					const commentItem = this.ownerDocument.createElement('single-button-comment') as SingleButtonComment;
 					commentItem.classList.add('comment');
 					const userInfo = await getUserById(comment.userId);
-					commentItem.comment = comment;
+					commentItem.comment = comment.text;
 					commentItem.avatar = userInfo.avatar;
 					commentItem.username = userInfo.username;
 					container.appendChild(commentItem);
