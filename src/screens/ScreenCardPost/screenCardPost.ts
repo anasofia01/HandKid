@@ -32,7 +32,7 @@ class ScreenCardPost extends HTMLElement {
 		}
 		const postContainer = this.shadowRoot?.querySelector('.posts-cards-container');
 		if (postContainer) {
-			for (const post of dataNewPost) {
+			for (const post of appState.post) {
 				const postCard = this.ownerDocument.createElement('single-card-post') as SingleCardPost;
 				const userInfo = await getUserById(post.user || '');
 				postCard.idPost = post.id;
