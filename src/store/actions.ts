@@ -13,3 +13,5 @@ export const setUserCredentials = (user: string) => {
 		payload: user,
 	};
 };
+
+export const getPostsAction = async () => {};
