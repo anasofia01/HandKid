@@ -73,7 +73,7 @@ export const updateLikesById = async (id: string, newLikes: number): Promise<voi
 	});
 };
 
-export const addCommentToPost = async (postId: string, newComment: string) => {
+export const addCommentToPost = async (postId: string, newComment: string, userId: string) => {
 	const commentReference = doc(db, 'post', postId);
 	await updateDoc(commentReference, {
 		commentsText: arrayUnion(newComment),
