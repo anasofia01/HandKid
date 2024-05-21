@@ -6,6 +6,8 @@ import { onAuthStateChanged } from 'firebase/auth';
 import { setUserCredentials, navigate } from './actions';
 import { PostData } from '../types/postData';
 
+type PostDataType = PostData[];
+
 const emptyState = {
 	screen: Screens.MAIN,
 	user: {},
