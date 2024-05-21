@@ -23,27 +23,7 @@ class ScreenCardPost extends HTMLElement {
 		}
 	}
 
-	async loadPosts() {
-		const postContainer = this.shadowRoot?.querySelector('.posts-cards-container');
-		const dataNewPost = await getPosts();
-		if (postContainer) {
-			for (const post of dataNewPost) {
-				const postCard = this.ownerDocument.createElement('single-card-post') as SingleCardPost;
-				const userInfo = await getUserById(post.user || '');
-				postCard.idPost = post.id;
-				postCard.avatar = userInfo.avatar;
-				postCard.name = userInfo.fullname;
-				postCard.username = userInfo.username;
-				postCard.description = post.description;
-				postCard.timestamp = post.timestamp;
-				postCard.hashtags = post.hashtags?.map((tag: string) => tag.trim());
-				postCard.media = post.media?.map((media: string) => media.trim());
-				postCard.likes = post.likes;
-				postCard.comments = post.comments;
-				postContainer.appendChild(postCard);
-			}
-		}
-	}
+	async loadPosts() {}
 
 	render() {
 		if (this.shadowRoot) {
