@@ -15,4 +15,6 @@ export const setUserCredentials = (user: string) => {
 	};
 };
 
-export const getPostsAction = async () => {};
+export const getPostsAction = async () => {
+	const post = await getPosts();
+};
