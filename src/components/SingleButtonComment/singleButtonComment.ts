@@ -42,7 +42,7 @@ class SingleButtonComment extends HTMLElement {
         <div class = "container-comment">
           <div class = "user-info">
             <img src = "${this.avatar}" class = "avatar" alt = "avatar-user">
-            <small class = "username">@chloe.laMasBonita</small>
+            <small class = "username">${this.username}</small>
           </div>
           <div class = "description-comment">
             <p class = "comment">${this.comment}</p>
