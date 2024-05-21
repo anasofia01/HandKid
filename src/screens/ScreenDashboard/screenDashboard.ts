@@ -220,6 +220,8 @@ class ScreenDashboard extends HTMLElement {
 					commentItem.classList.add('comment');
 					const userInfo = await getUserById(comment.userId);
 					commentItem.comment = comment;
+					commentItem.avatar = userInfo.avatar;
+					commentItem.username = userInfo.username;
 					container.appendChild(commentItem);
 				});
 			}
