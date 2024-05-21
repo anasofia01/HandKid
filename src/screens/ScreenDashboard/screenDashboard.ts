@@ -196,7 +196,7 @@ class ScreenDashboard extends HTMLElement {
 	async addCommentToPost(comment: string, idPost: string) {
 		const userId = await getUserLogin();
 		if (userId) {
-			await addCommentToPost(idPost, comment);
+			await addCommentToPost(idPost, comment, userId);
 			const commentsPost = await getCommentById(idPost);
 			if (commentsPost !== null && commentsPost !== undefined) {
 				const newComments = commentsPost + 1;
