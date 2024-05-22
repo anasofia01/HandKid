@@ -12,6 +12,7 @@ export enum Attribute {
 	'media' = 'media',
 	'likes' = 'likes',
 	'comments' = 'comments',
+	'liked' = 'liked',
 	'images' = 'images',
 	'tags' = 'tags',
 }
