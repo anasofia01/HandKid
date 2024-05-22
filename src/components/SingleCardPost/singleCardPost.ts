@@ -1,5 +1,11 @@
 import styles from './singleCardPost.css';
-import { getLikesById, getUserLogin, updateLikesById, checkedIfUserHasLike } from '../../utils/firebase';
+import {
+	getLikesById,
+	getUserLogin,
+	updateLikesById,
+	checkedIfUserHasLike,
+	addUserLikedToPost,
+} from '../../utils/firebase';
 
 export enum Attribute {
 	'idPost' = 'idPost',
@@ -138,6 +144,7 @@ class SingleCardPost extends HTMLElement {
 				if (likesPost !== null && likesPost !== undefined) {
 					const newLikes = likesPost + 1;
 					await updateLikesById(this.idPost, newLikes);
+					await addUserLikedToPost(this.idPost, userLogin);
 					this.likes = newLikes;
 					this.liked = !this.liked;
 				}
