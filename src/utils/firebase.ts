@@ -227,3 +227,10 @@ export const checkedIfUserHasLike = async (postId: string, userId: string) => {
 		return null;
 	}
 };
+
+export const addUserLikedToPost = async (postId: string, userId: string) => {
+	const docReference = doc(db, 'post', postId);
+	await updateDoc(docReference, {
+		userLikes: arrayUnion(userId),
+	});
+};
