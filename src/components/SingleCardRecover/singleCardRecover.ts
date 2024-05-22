@@ -10,3 +10,6 @@ class SingleCardRecover extends HTMLElement {
 
 	render() {}
 }
+
+customElements.define('single-card-recover', SingleCardRecover);
+export default SingleCardRecover;
