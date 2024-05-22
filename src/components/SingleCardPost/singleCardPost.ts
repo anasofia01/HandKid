@@ -146,11 +146,11 @@ class SingleCardPost extends HTMLElement {
 					await updateLikesById(this.idPost, newLikes);
 					await addUserLikedToPost(this.idPost, userLogin);
 					this.likes = newLikes;
-					this.liked = !this.liked;
+					this.liked = true;
+					this.render();
 				}
 			}
 		}
-		this.render();
 	}
 
 	render() {
