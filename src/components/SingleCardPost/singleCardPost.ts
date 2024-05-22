@@ -127,8 +127,13 @@ class SingleCardPost extends HTMLElement {
 
 	async likePost() {
 		if (this.idPost) {
-			const userLogin = getUserLogin();
+			const userLogin = await getUserLogin();
 			if (userLogin) {
+				const hasLikesBefore = await checkedIfUserHasLike(this.idPost, userLogin);
+				if (hasLikesBefore && hasLikesBefore.length > 0) {
+					console.log('Ya tienes un like');
+					return;
+				}
 				const likesPost = await getLikesById(this.idPost);
 				if (likesPost !== null && likesPost !== undefined) {
 					const newLikes = likesPost + 1;
