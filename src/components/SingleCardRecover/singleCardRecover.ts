@@ -1,3 +1,5 @@
+import styles from './singleCardRecover.css';
+
 class SingleCardRecover extends HTMLElement {
 	constructor() {
 		super();
