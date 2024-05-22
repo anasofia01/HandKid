@@ -65,7 +65,7 @@ class SingleCardLogin extends HTMLElement {
                 <input type = "email" placeholder = "Email" name = "email" required>
               </div>
               <div class = "password-data">
-                <input type = "password" placeholder = "Password" name = "password">
+                <input type = "password" placeholder = "Password" name = "password" required>
               </div>
               <div class = "btn-data">
                 <input type = "submit" id = "login" value = "Log In">
