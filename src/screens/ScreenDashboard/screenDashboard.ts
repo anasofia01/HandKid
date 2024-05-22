@@ -13,6 +13,7 @@ import {
 	updateCommentsById,
 	getUserById,
 	getUserLogin,
+	checkedIfUserHasLike,
 } from '../../utils/firebase';
 import { SingleButtonComment, SingleCardPost } from '../../components/index';
 
