@@ -44,6 +44,7 @@ class SingleCardPost extends HTMLElement {
 			media: null,
 			likes: null,
 			comments: null,
+			liked: null,
 			images: null,
 			tags: null,
 		};
