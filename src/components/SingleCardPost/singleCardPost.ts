@@ -1,5 +1,5 @@
 import styles from './singleCardPost.css';
-import { getLikesById, getUserLogin, updateLikesById } from '../../utils/firebase';
+import { getLikesById, getUserLogin, updateLikesById, checkedIfUserHasLike } from '../../utils/firebase';
 
 export enum Attribute {
 	'idPost' = 'idPost',
