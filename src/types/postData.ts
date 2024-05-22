@@ -6,6 +6,7 @@ export interface PostData {
 	likes?: number;
 	comments?: number;
 	commentsText?: Array<string>;
+	userLikes?: Array<string>;
 	media?: Array<string>;
 	hashtags?: Array<string>;
 }
