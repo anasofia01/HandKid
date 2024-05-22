@@ -38,6 +38,11 @@ class ScreenCardPost extends HTMLElement {
 				const userLogin = await getUserLogin();
 				if (userLogin) {
 					const hasLikesBefore = await checkedIfUserHasLike(post.id || '', userLogin);
+					if (hasLikesBefore && hasLikesBefore.length > 0) {
+						postCard.liked = true;
+					} else {
+						postCard.liked = false;
+					}
 				}
 				postCard.idPost = post.id;
 				postCard.avatar = userInfo.avatar;
