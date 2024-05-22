@@ -1,0 +1,124 @@
+* {
+	font-family: 'Poppins';
+}
+
+.container-recover {
+	width: 100%;
+	max-width: 1000px;
+	height: 600px;
+	background-color: #fff;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	border: none;
+	border-radius: 25px;
+	margin: 0 auto;
+}
+
+.container-img {
+	background-image: url('https://m.media-amazon.com/images/M/MV5BMGM5OTM3NzgtODQ4My00OTk3LWI5MmMtODU3NDIyMzc3MzgyXkEyXkFqcGdeQXVyODUwNjEzMzg@.V1_FMjpg_UX1000.jpg');
+	background-size: cover;
+	background-position: center;
+	height: 100%;
+	border-top-left-radius: 25px;
+	border-bottom-left-radius: 25px;
+}
+
+.form-recover {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 60px;
+	padding: 20px;
+}
+
+.container-form {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.email-data,
+.btn-data {
+	width: 100%;
+	margin-bottom: 15px;
+}
+
+.container-logo {
+	color: #fecd1a;
+	padding: 20px;
+	padding-left: 40px;
+	width: 200px;
+	top: 0;
+	left: 0;
+	cursor: pointer;
+	font-size: 32px;
+	font-weight: bold;
+}
+
+.container-logo svg {
+	width: 28px;
+	height: 28px;
+}
+
+.title-recover {
+	color: #120078;
+	font-size: 32px;
+	font-weight: bold;
+}
+
+#recover {
+	background-color: #9d0191;
+	border: none;
+	border-radius: 25px;
+	padding: 10px 30px 10px 30px;
+	color: #fff;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.btn-data {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+form {
+	width: 100%;
+}
+
+.email-data input[type='email'] {
+	width: 100%;
+	border-radius: 15px;
+	box-sizing: border-box;
+	border: 2px solid #9d0191;
+	transition: border-color 0.3s;
+	padding: 10px 20px 10px 20px;
+}
+
+.title-recover {
+	margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+	.container-recover {
+		grid-template-columns: 1fr;
+		grid-template-rows: auto auto;
+		height: auto;
+	}
+
+	.container-img {
+		grid-column: 1;
+		grid-row: 1;
+		border-radius: 25px 25px 0 0;
+		height: 200px;
+	}
+
+	.form-recover {
+		grid-column: 1;
+		grid-row: 2;
+		margin: 10px;
+	}
+}
