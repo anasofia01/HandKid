@@ -164,12 +164,21 @@ class ScreenDashboard extends HTMLElement {
 		}
 	}
 
-	addComment(detail: CommentsData) {
+	async addComment(detail: CommentsData) {
 		const container = this.shadowRoot?.querySelector('.column2');
 		if (container) {
 			container.innerHTML = '';
 			const postCard = document.createElement('single-card-post') as SingleCardPost;
 			const formComment = document.createElement('create-form-comment');
+			const userLogin = await getUserLogin();
+			if (userLogin) {
+				const hasLikesBefore = await checkedIfUserHasLike(detail.idPost || '', userLogin);
+				if (hasLikesBefore && hasLikesBefore.length > 0) {
+					postCard.liked = true;
+				} else {
+					postCard.liked = false;
+				}
+			}
 			postCard.idPost = detail.idPost;
 			postCard.avatar = detail.avatar;
 			postCard.name = detail.name;
