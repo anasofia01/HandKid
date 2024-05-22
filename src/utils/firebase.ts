@@ -216,3 +216,14 @@ export const getFriends = async (idUserLogin: string): Promise<UserData[]> => {
 	});
 	return userArray;
 };
+
+export const checkedIfUserHasLike = async (postId: string, userId: string) => {
+	const docReference = doc(db, 'post', postId);
+	const postDoc = await getDoc(docReference);
+	if (postDoc.exists()) {
+		const postData = postDoc.data() as PostData;
+		return postData.userLikes ?? [];
+	} else {
+		return null;
+	}
+};
