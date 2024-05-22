@@ -35,6 +35,10 @@ class ScreenCardPost extends HTMLElement {
 			for (const post of appState.post) {
 				const postCard = this.ownerDocument.createElement('single-card-post') as SingleCardPost;
 				const userInfo = await getUserById(post.user || '');
+				const userLogin = await getUserLogin();
+				if(userLogin) {
+					const hasLikesBefore = await
+				}
 				postCard.idPost = post.id;
 				postCard.avatar = userInfo.avatar;
 				postCard.name = userInfo.fullname;
