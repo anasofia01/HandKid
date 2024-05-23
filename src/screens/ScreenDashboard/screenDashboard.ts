@@ -173,7 +173,7 @@ class ScreenDashboard extends HTMLElement {
 			const userLogin = await getUserLogin();
 			if (userLogin) {
 				const hasLikesBefore = await checkedIfUserHasLike(detail.idPost || '', userLogin);
-				if (hasLikesBefore && hasLikesBefore.length > 0) {
+				if (hasLikesBefore) {
 					postCard.liked = true;
 				} else {
 					postCard.liked = false;
