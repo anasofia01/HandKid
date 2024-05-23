@@ -22,3 +22,5 @@ export const getPostsAction = async () => {
 		payload: post,
 	};
 };
+
+export const getFriendsAction = async () => {};
