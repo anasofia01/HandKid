@@ -99,6 +99,7 @@ class ScreenDashboard extends HTMLElement {
 			profileContent.friends = Number(profileData.friends);
 			profileContent.btnEdit = false;
 			profileContent.btnAddFriends = true;
+			profileContent.idFriend = profileData.idFriend;
 			container.appendChild(profileContent);
 		}
 	}
