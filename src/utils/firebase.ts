@@ -218,14 +218,15 @@ export const getFriends = async (idUserLogin: string): Promise<UserData[]> => {
 	return userArray;
 };
 
-export const checkedIfUserHasLike = async (postId: string, userId: string) => {
+export const checkedIfUserHasLike = async (postId: string, userId: string): Promise<boolean> => {
 	const docReference = doc(db, 'post', postId);
 	const postDoc = await getDoc(docReference);
 	if (postDoc.exists()) {
 		const postData = postDoc.data() as PostData;
-		return postData.userLikes ?? [];
+		const userLike = postData.userLikes?.includes(userId);
+		return userLike ? true : false;
 	} else {
-		return null;
+		return false;
 	}
 };
 
