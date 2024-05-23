@@ -237,5 +237,11 @@ export const addUserLikedToPost = async (postId: string, userId: string) => {
 };
 
 export const resetPassword = async (email: string): Promise<boolean> => {
-	await setPersistence(auth, browserLocalPersistence);
+	try {
+		await setPersistence(auth, browserLocalPersistence);
+		await sendPasswordResetEmail(auth, email);
+		return true;
+	} catch (error) {
+		return false;
+	}
 };
