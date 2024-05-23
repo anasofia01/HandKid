@@ -23,4 +23,13 @@ export const getPostsAction = async () => {
 	};
 };
 
-export const getFriendsAction = async () => {};
+export const getFriendsAction = async () => {
+	const userLogin = await getUserLogin();
+	if (userLogin) {
+		const friends = await getFriends(userLogin);
+		return {
+			type: 'GETFRIENDS',
+			payload: friends,
+		};
+	}
+};
