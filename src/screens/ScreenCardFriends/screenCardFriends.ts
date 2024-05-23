@@ -33,6 +33,7 @@ class ScreenCardFriends extends HTMLElement {
 					friendComponent.banner = friend.banner;
 					friendComponent.age = friend.age;
 					friendComponent.friends = friend.friends;
+					friendComponent.idFriend = friend.idFriend;
 					friendsContainer.appendChild(friendComponent);
 					count++;
 				}
