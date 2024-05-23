@@ -9,3 +9,4 @@ export { default as SingleCardPassword } from './SingleCardPassword/singleCardPa
 export { default as SingleButtonComment } from './SingleButtonComment/singleButtonComment';
 export { default as CreateFormComment } from './CreateFormComment/createFormComment';
 export { default as SinglePageInit } from './SinglePageInit/singlePageInit';
+export { default as SingleCardRecover } from './SingleCardRecover/singleCardRecover';
