@@ -9,6 +9,9 @@ export const reducer = (action: any, preventState: any) => {
 		case 'GETPOSTS':
 			preventState.post = action.payload;
 			break;
+		case 'GETFRIENDS':
+			preventState.friends = action.payload;
+			break;
 	}
 	return preventState;
 };
