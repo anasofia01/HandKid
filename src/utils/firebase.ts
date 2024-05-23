@@ -246,3 +246,15 @@ export const resetPassword = async (email: string): Promise<boolean> => {
 		return false;
 	}
 };
+
+export const checkedIfUserIsFriend = async (friendId: string, userId: string): Promise<boolean> => {
+	const docReference = doc(db, 'users', friendId);
+	const userDoc = await getDoc(docReference);
+	if (userDoc.exists()) {
+		const userData = userDoc.data() as UserData;
+		const ifUserIdInList = userData.userFriends?.includes(userId);
+		return ifUserIdInList ? true : false;
+	} else {
+		return false;
+	}
+};
