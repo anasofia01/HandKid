@@ -136,7 +136,7 @@ class SingleCardPost extends HTMLElement {
 			const userLogin = await getUserLogin();
 			if (userLogin) {
 				const hasLikesBefore = await checkedIfUserHasLike(this.idPost, userLogin);
-				if (hasLikesBefore && hasLikesBefore.length > 0) {
+				if (hasLikesBefore) {
 					alert('Ya diste like');
 					return;
 				}
