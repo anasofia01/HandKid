@@ -264,6 +264,17 @@ export const addFriendToUser = async (friendId: string, userId: string) => {
 	await updateDoc(docReference, { userFriends: arrayUnion(userId) });
 };
 
+export const getFriendsById = async (userId: string): Promise<number | null> => {
+	const docReference = doc(db, 'users', userId);
+	const userDoc = await getDoc(docReference);
+	if (userDoc.exists()) {
+		const userData = userDoc.data() as UserData;
+		return userData.friends ?? 0;
+	} else {
+		return null;
+	}
+};
+
 export const updateFriendsListById = async (userId: string, newFriends: number) => {
 	const docReference = doc(db, 'users', userId);
 	await updateDoc(docReference, { friends: newFriends });
