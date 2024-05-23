@@ -11,4 +11,5 @@ export interface UserData {
 	friends?: number;
 	age?: number;
 	policy?: boolean;
+	idFriend?: string;
 }
