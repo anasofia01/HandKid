@@ -16,6 +16,12 @@ class ScreenCardFriends extends HTMLElement {
 	async connectedCallback() {
 		this.render();
 		this.loadFriends();
+		if (appState.friends.length === 0) {
+			const action = await getFriendsAction();
+			dispatch(action);
+		} else {
+			this.render();
+		}
 	}
 
 	async loadFriends() {
