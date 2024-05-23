@@ -8,6 +8,7 @@ import { PostData } from '../types/postData';
 import { UserData } from '../types/userData';
 
 type PostDataType = PostData[];
+type FriendDataType = UserData[];
 
 const emptyState = {
 	screen: Screens.MAIN,
