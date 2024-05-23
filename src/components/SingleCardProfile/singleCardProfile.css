@@ -65,7 +65,8 @@
 }
 
 .btn-setting,
-.btn-friends {
+.btn-friends,
+.btn-is-friends {
 	margin-top: 10px;
 	width: 130px;
 	height: 30px;
