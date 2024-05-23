@@ -211,7 +211,7 @@ export const getFriends = async (idUserLogin: string): Promise<UserData[]> => {
 	friends.docs.forEach((doc) => {
 		if (doc.id !== idUserLogin) {
 			const userInfo = doc.data() as UserData;
-			userInfo.id = doc.id;
+			userInfo.idFriend = doc.id;
 			userArray.push(userInfo);
 		}
 	});
