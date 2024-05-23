@@ -78,7 +78,7 @@ class SingleCardLogin extends HTMLElement {
             </form>
           </div>
           <div class = "recover-password">
-            <small>Forgot your password?</small>
+            <small id = "recover">Forgot your password?</small>
           </div>
           <div class = "link-register">
             <small>Don't have an account yet?</small>
