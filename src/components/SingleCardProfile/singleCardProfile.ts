@@ -1,4 +1,5 @@
 import styles from './singleCardProfile.css';
+import { getUserLogin } from '../../utils/firebase';
 
 class SingleCardProfile extends HTMLElement {
 	banner?: string;
