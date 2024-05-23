@@ -1,4 +1,5 @@
 import styles from './singleCardRecover.css';
+import { dispatch } from '../../store';
 
 class SingleCardRecover extends HTMLElement {
 	constructor() {
