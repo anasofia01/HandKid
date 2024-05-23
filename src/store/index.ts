@@ -5,6 +5,7 @@ import { auth } from '../utils/firebase';
 import { onAuthStateChanged } from 'firebase/auth';
 import { setUserCredentials, navigate } from './actions';
 import { PostData } from '../types/postData';
+import { UserData } from '../types/userData';
 
 type PostDataType = PostData[];
 
