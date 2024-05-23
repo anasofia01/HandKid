@@ -12,3 +12,6 @@ class SingleCardSettings extends HTMLElement {
 
 	render() {}
 }
+
+customElements.define('single-card-settings', SingleCardSettings);
+export default SingleCardSettings;
