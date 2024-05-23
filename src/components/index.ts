@@ -10,3 +10,4 @@ export { default as SingleButtonComment } from './SingleButtonComment/singleButt
 export { default as CreateFormComment } from './CreateFormComment/createFormComment';
 export { default as SinglePageInit } from './SinglePageInit/singlePageInit';
 export { default as SingleCardRecover } from './SingleCardRecover/singleCardRecover';
+export { default as SingleCardSettings } from './SingleCardSettings/singleCardSettings';
