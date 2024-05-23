@@ -12,4 +12,5 @@ export interface UserData {
 	age?: number;
 	policy?: boolean;
 	idFriend?: string;
+	userFriends?: Array<string>;
 }
