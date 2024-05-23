@@ -53,6 +53,7 @@ class SingleCardFriend extends HTMLElement {
 						banner: this.banner,
 						age: this.age,
 						friends: this.friends,
+						idFriend: this.idFriend,
 					},
 					bubbles: true,
 					composed: true,
