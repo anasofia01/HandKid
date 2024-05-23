@@ -258,3 +258,8 @@ export const checkedIfUserIsFriend = async (friendId: string, userId: string): P
 		return false;
 	}
 };
+
+export const addFriendToUser = async (friendId: string, userId: string) => {
+	const docReference = doc(db, 'users', friendId);
+	await updateDoc(docReference, { userFriends: arrayUnion(userId) });
+};
