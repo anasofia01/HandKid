@@ -15,6 +15,13 @@ class SingleCardRecover extends HTMLElement {
 		this.addRecoverListener();
 	}
 
+	addRecoverListener() {
+		const form = this.shadowRoot?.querySelector('#form-info');
+		if (form) {
+			form.addEventListener('submit', this.handleSubmit.bind(this));
+		}
+	}
+
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
