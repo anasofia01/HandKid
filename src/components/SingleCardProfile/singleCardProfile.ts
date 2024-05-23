@@ -72,6 +72,7 @@ class SingleCardProfile extends HTMLElement {
 			this.isFriend = true;
 			const friendUsers = 0;
 			const newFriends = friendUsers + 1;
+			await updateFriendsListById(userLogin, newFriends);
 			this.render();
 		}
 	}
