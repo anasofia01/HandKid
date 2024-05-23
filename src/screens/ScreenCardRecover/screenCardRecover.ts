@@ -14,7 +14,7 @@ class ScreenCardRecover extends HTMLElement {
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
-
+      <style>${styles}</style>
       `;
 		}
 	}
