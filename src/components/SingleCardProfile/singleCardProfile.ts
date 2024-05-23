@@ -70,6 +70,8 @@ class SingleCardProfile extends HTMLElement {
 			await addFriendToUser(this.idFriend || '', userLogin);
 			this.btnAddFriends = false;
 			this.isFriend = true;
+			const friendUsers = 0;
+			const newFriends = friendUsers + 1;
 			this.render();
 		}
 	}
