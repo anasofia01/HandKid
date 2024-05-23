@@ -1,5 +1,5 @@
 import styles from './singleCardProfile.css';
-import { getUserLogin, checkedIfUserIsFriend } from '../../utils/firebase';
+import { getUserLogin, addFriendToUser } from '../../utils/firebase';
 
 class SingleCardProfile extends HTMLElement {
 	banner?: string;
