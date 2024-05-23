@@ -22,6 +22,18 @@ class SingleCardRecover extends HTMLElement {
 		}
 	}
 
+	async handleSubmit(event: any) {
+		event.preventDefault();
+		const formData = new FormData(event.target);
+		const email = formData.get('email') as string;
+		const result = await resetPassword(email);
+		if (result) {
+			alert('Se le envió un correo para restablecer su contraseña');
+			dispatch(navigate(Screens.LOGIN));
+			return;
+		}
+	}
+
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
