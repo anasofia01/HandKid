@@ -92,8 +92,14 @@ class ScreenDashboard extends HTMLElement {
 			container.innerHTML = '';
 			const profileContent = document.createElement('single-card-profile') as SingleCardProfile;
 			const userLogin = await getUserLogin();
-			if(userLogin){
-				const hasFriendBefore = await
+			if (userLogin) {
+				const hasFriendBefore = await checkedIfUserIsFriend(profileData.idFriend || '', userLogin);
+				if (hasFriendBefore) {
+					profileContent.btnAddFriends = false;
+					profileContent.isFriend = true;
+				} else {
+					profileContent.btnAddFriends = true;
+				}
 			}
 			profileContent.banner = profileData.banner;
 			profileContent.avatar = profileData.avatar;
@@ -103,7 +109,6 @@ class ScreenDashboard extends HTMLElement {
 			profileContent.age = Number(profileData.age);
 			profileContent.friends = Number(profileData.friends);
 			profileContent.btnEdit = false;
-			profileContent.btnAddFriends = true;
 			profileContent.idFriend = profileData.idFriend;
 			container.appendChild(profileContent);
 		}
