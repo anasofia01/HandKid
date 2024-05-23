@@ -14,7 +14,7 @@ const emptyState = {
 	screen: Screens.MAIN,
 	user: {},
 	post: [] as PostDataType,
-	friends: [],
+	friends: [] as FriendDataType,
 };
 
 export let appState = emptyState;
