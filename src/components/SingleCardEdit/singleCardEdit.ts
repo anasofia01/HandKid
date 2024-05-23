@@ -12,3 +12,6 @@ class SingleCardEdit extends HTMLElement {
 
 	render() {}
 }
+
+customElements.define('single-card-edit', SingleCardEdit);
+export default SingleCardEdit;
