@@ -6,4 +6,5 @@ export interface ProfileData {
 	description?: string;
 	age?: number;
 	friends?: number;
+	idFriend?: string;
 }
