@@ -7,3 +7,4 @@ export { default as ScreenCardLogin } from './ScreenCardLogin/screenCardLogin';
 export { default as ScreenCardRegister } from './ScreenCardRegister/screenCardRegister';
 export { default as ScreenCardPassword } from './ScreenCardPassword/screenCardPassword';
 export { default as ScreenPageInit } from './ScreenPageInit/screenPageInit';
+export { default as ScreenCardRecover } from './ScreenCardRecover/screenCardRecover';
