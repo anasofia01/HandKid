@@ -85,11 +85,15 @@ class ScreenDashboard extends HTMLElement {
 		}
 	}
 
-	renderFriendProfile(profileData: ProfileData) {
+	async renderFriendProfile(profileData: ProfileData) {
 		const container = this.shadowRoot?.querySelector('.column2');
 		if (container) {
 			container.innerHTML = '';
 			const profileContent = document.createElement('single-card-profile') as SingleCardProfile;
+			const userLogin = await getUserLogin();
+			if(userLogin){
+				const hasFriendBefore = await
+			}
 			profileContent.banner = profileData.banner;
 			profileContent.avatar = profileData.avatar;
 			profileContent.name = profileData.name;
