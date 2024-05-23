@@ -10,6 +10,7 @@ class ScreenCardFriends extends HTMLElement {
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
+		addObserver(this);
 	}
 	connectedCallback() {
 		this.render();
