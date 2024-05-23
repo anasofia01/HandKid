@@ -14,6 +14,7 @@ class SingleCardLogin extends HTMLElement {
 		this.render();
 		this.addLoginListener();
 		this.buttonListenerRegister();
+		this.buttonListenerRecover();
 	}
 
 	addLoginListener() {
