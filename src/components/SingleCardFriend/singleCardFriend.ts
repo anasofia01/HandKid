@@ -19,6 +19,7 @@ class SingleCardFriend extends HTMLElement {
 	banner?: string;
 	age?: number;
 	friends?: number;
+	idFriend?: string;
 
 	static get observedAttributes() {
 		const classAttribute: Record<Attribute, null> = {
