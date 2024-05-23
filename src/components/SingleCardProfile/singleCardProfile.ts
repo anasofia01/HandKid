@@ -74,8 +74,12 @@ class SingleCardProfile extends HTMLElement {
 			const userFriend = await getFriendsById(this.idFriend || '');
 			if (friendUsers !== null && friendUsers !== undefined) {
 				const newFriends = friendUsers + 1;
+				if (userFriend !== null && userFriend !== undefined) {
+					const newFriendsUser = userFriend + 1;
+					await updateFriendsListById(this.idFriend || '', newFriendsUser);
+					this.friends = newFriendsUser;
+				}
 				await updateFriendsListById(userLogin, newFriends);
-				this.friends = newFriends;
 				this.render();
 			}
 		}
