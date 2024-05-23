@@ -8,6 +8,7 @@ class SingleCardRecover extends HTMLElement {
 
 	connectedCallback() {
 		this.render();
+		this.addRecoverListener();
 	}
 
 	render() {
