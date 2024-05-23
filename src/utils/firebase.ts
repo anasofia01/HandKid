@@ -234,3 +234,7 @@ export const addUserLikedToPost = async (postId: string, userId: string) => {
 		userLikes: arrayUnion(userId),
 	});
 };
+
+export const resetPassword = async (email: string): Promise<boolean> => {
+	await setPersistence(auth, browserLocalPersistence);
+};
