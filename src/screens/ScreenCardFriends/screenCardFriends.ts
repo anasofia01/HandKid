@@ -22,7 +22,7 @@ class ScreenCardFriends extends HTMLElement {
 		}
 	}
 
-	render() {
+	async render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
 			<style>${styles}</style>
