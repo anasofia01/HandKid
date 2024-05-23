@@ -4,4 +4,5 @@ export enum Screens {
 	REGISTER = 'REGISTER',
 	PASSWORD = 'PASSWORD',
 	DASHBOARD = 'DASHBOARD',
+	RECOVER = 'RECOVER',
 }
