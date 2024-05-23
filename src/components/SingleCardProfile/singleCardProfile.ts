@@ -71,6 +71,7 @@ class SingleCardProfile extends HTMLElement {
 			this.btnAddFriends = false;
 			this.isFriend = true;
 			const friendUsers = await getFriendsById(userLogin);
+			const userFriend = await getFriendsById(this.idFriend || '');
 			if (friendUsers !== null && friendUsers !== undefined) {
 				const newFriends = friendUsers + 1;
 				await updateFriendsListById(userLogin, newFriends);
