@@ -31,6 +31,10 @@ class SingleCardRecover extends HTMLElement {
 			alert('Se le envió un correo para restablecer su contraseña');
 			dispatch(navigate(Screens.LOGIN));
 			return;
+		} else {
+			alert('Hubo un problema, no se envió');
+			dispatch(navigate(Screens.RECOVER));
+			return;
 		}
 	}
 
