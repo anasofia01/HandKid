@@ -8,6 +8,7 @@ export enum Attribute {
 	'banner' = 'banner',
 	'age' = 'age',
 	'friends' = 'friends',
+	'idFriend' = 'idFriend',
 }
 
 class SingleCardFriend extends HTMLElement {
