@@ -14,6 +14,7 @@ import {
 	getUserById,
 	getUserLogin,
 	checkedIfUserHasLike,
+	checkedIfUserIsFriend,
 } from '../../utils/firebase';
 import { SingleButtonComment, SingleCardPost } from '../../components/index';
 
