@@ -47,6 +47,10 @@ class SingleCardLogin extends HTMLElement {
 		}
 	}
 
+	buttonListenerRecover() {
+		const recoverBtn = this.shadowRoot?.querySelector();
+	}
+
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
