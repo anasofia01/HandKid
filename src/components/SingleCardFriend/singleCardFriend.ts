@@ -30,6 +30,7 @@ class SingleCardFriend extends HTMLElement {
 			banner: null,
 			age: null,
 			friends: null,
+			idFriend: null,
 		};
 		return Object.keys(classAttribute);
 	}
