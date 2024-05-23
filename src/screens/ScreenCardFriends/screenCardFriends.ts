@@ -22,32 +22,6 @@ class ScreenCardFriends extends HTMLElement {
 		}
 	}
 
-	async loadFriends() {
-		const friendsContainer = this.shadowRoot?.querySelector('.friends-cards-container');
-		if (friendsContainer) {
-			const userLogin = await getUserLogin();
-			if (userLogin) {
-				const friends = await getFriends(userLogin);
-				friendsContainer.innerHTML = '';
-				let count = 0;
-				for (let i = 0; i < friends.length && count <= 5; i++) {
-					const friend = friends[i];
-					const friendComponent = this.ownerDocument.createElement('single-card-friend') as SingleCardFriend;
-					friendComponent.avatar = friend.avatar;
-					friendComponent.name = friend.fullname;
-					friendComponent.username = friend.username;
-					friendComponent.description = friend.description ?? '';
-					friendComponent.banner = friend.banner;
-					friendComponent.age = friend.age;
-					friendComponent.friends = friend.friends;
-					friendComponent.idFriend = friend.idFriend;
-					friendsContainer.appendChild(friendComponent);
-					count++;
-				}
-			}
-		}
-	}
-
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
