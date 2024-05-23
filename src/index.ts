@@ -38,6 +38,10 @@ class AppContainer extends HTMLElement {
 					const dashboardView = this.ownerDocument.createElement('screen-dashboard');
 					this.shadowRoot?.appendChild(dashboardView);
 					break;
+				case Screens.RECOVER:
+					const recoverView = this.ownerDocument.createElement('screen-card-recover');
+					this.shadowRoot?.appendChild(recoverView);
+					break;
 			}
 		}
 	}
