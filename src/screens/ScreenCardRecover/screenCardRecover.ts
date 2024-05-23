@@ -13,3 +13,6 @@ class ScreenCardRecover extends HTMLElement {
 
 	render() {}
 }
+
+customElements.define('screen-card-recover', ScreenCardRecover);
+export default ScreenCardRecover;
