@@ -1,6 +1,7 @@
 import styles from './singleCardRecover.css';
 import { dispatch } from '../../store';
 import { Screens } from '../../types/navigation';
+import { navigate } from '../../store/actions';
 
 class SingleCardRecover extends HTMLElement {
 	constructor() {
