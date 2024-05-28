@@ -43,7 +43,7 @@ class ScreenCardPost extends HTMLElement {
 						} else {
 							postCard.liked = false;
 						}
-						const result = getUserById(userLogin, (userInfo) => {
+						const result = getUserById(post.id || '', (userInfo) => {
 							if (userInfo) {
 								postCard.idPost = post.id;
 								postCard.avatar = userInfo.avatar;
