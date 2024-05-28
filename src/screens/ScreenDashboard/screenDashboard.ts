@@ -166,15 +166,6 @@ class ScreenDashboard extends HTMLElement {
 		}
 	}
 
-	renderPhoneFriends() {
-		const container = this.shadowRoot?.querySelector('.column2');
-		if (container) {
-			container.innerHTML = '';
-			const friendsView = document.createElement('screen-card-friends');
-			container.appendChild(friendsView);
-		}
-	}
-
 	async addComment(detail: CommentsData) {
 		const container = this.shadowRoot?.querySelector('.column2');
 		if (container) {
