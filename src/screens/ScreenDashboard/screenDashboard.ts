@@ -29,6 +29,7 @@ class ScreenDashboard extends HTMLElement {
 		this.renderPost();
 		this.setUpEventListener();
 		this.setUpLogoClickedListener();
+		this.setUpPhoneMenuListener();
 
 		const getPhoneMenu = this.shadowRoot?.querySelector('.phone-menu');
 		if (getPhoneMenu) {
@@ -60,6 +61,8 @@ class ScreenDashboard extends HTMLElement {
 			logoElement.addEventListener('click', () => this.renderPost());
 		}
 	}
+
+	setUpPhoneMenuListener() {}
 
 	async renderMyProfile() {
 		const container = this.shadowRoot?.querySelector('.column2');
