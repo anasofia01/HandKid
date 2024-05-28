@@ -1,0 +1,53 @@
+.container-form {
+	background-color: white;
+	border-radius: 25px;
+	margin: 20px auto;
+	width: 80%;
+	height: 500px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Poppins';
+}
+
+#form-edit-profile {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+#form-edit-profile input[type='text'],
+#form-edit-profile input[type='file'],
+#form-edit-profile textarea {
+	width: 70%;
+	padding: 10px;
+	margin-bottom: 10px;
+	resize: none;
+	border: none;
+	outline: none;
+}
+
+#form-edit-profile input[type='text']::placeholder,
+#form-edit-profile input[type='file']::placeholder,
+#form-edit-profile textarea::placeholder {
+	color: #ccc;
+	border-bottom: 1px solid #ccc;
+}
+
+svg {
+	width: 20px;
+	height: 20px;
+}
+
+#save-profile {
+	background-color: #fecd1a;
+	cursor: pointer;
+	border: none;
+	border-radius: 25px;
+	color: white;
+	padding: 6px 12px 6px 12px;
+}
+
+#save-profile:hover {
+	background-color: #efc11a;
+}
