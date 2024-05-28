@@ -104,16 +104,18 @@ class ScreenDashboard extends HTMLElement {
 					profileContent.btnAddFriends = true;
 				}
 			}
-			profileContent.banner = profileData.banner;
-			profileContent.avatar = profileData.avatar;
-			profileContent.name = profileData.name;
-			profileContent.username = profileData.username;
-			profileContent.description = profileData.description;
-			profileContent.age = Number(profileData.age);
-			profileContent.friends = Number(profileData.friends);
-			profileContent.btnEdit = false;
-			profileContent.idFriend = profileData.idFriend;
-			container.appendChild(profileContent);
+			const result = getUserById(profileData.idFriend || '', (dataUser) => {
+				profileContent.banner = dataUser?.banner;
+				profileContent.avatar = dataUser?.avatar;
+				profileContent.name = dataUser?.fullname;
+				profileContent.username = dataUser?.username;
+				profileContent.description = dataUser?.description;
+				profileContent.age = Number(dataUser?.age);
+				profileContent.friends = Number(dataUser?.friends);
+				profileContent.btnEdit = false;
+				profileContent.idFriend = dataUser?.idFriend;
+				container.appendChild(profileContent);
+			});
 		}
 	}
 
