@@ -62,7 +62,10 @@ class SingleCardProfile extends HTMLElement {
 	connectedCallback() {
 		this.render();
 		this.shadowRoot?.querySelector('.btn-friends')?.addEventListener('click', this.addFriends.bind(this));
+		this.addListenerSettings();
 	}
+
+	addListenerSettings() {}
 
 	async addFriends() {
 		const userLogin = await getUserLogin();
