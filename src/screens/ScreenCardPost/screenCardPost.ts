@@ -35,7 +35,6 @@ class ScreenCardPost extends HTMLElement {
 			const result = getPosts(async (posts) => {
 				for (const post of posts) {
 					const postCard = this.ownerDocument.createElement('single-card-post') as SingleCardPost;
-					const userInfo = await getUserById(post.user || '');
 					const userLogin = await getUserLogin();
 					if (userLogin) {
 						const hasLikesBefore = await checkedIfUserHasLike(post.id || '', userLogin);
@@ -44,18 +43,24 @@ class ScreenCardPost extends HTMLElement {
 						} else {
 							postCard.liked = false;
 						}
+						const result = getUserById(userLogin, (userInfo) => {
+							if (userInfo) {
+								postCard.idPost = post.id;
+								postCard.avatar = userInfo.avatar;
+								postCard.name = userInfo.fullname;
+								postCard.username = userInfo.username;
+								postCard.description = post.description;
+								postCard.timestamp = post.timestamp;
+								postCard.hashtags = post.hashtags?.map((tag: string) => tag.trim());
+								postCard.media = post.media?.map((media: string) => media.trim());
+								postCard.likes = post.likes;
+								postCard.comments = post.comments;
+								postContainer.appendChild(postCard);
+							} else {
+								console.log('No found User');
+							}
+						});
 					}
-					postCard.idPost = post.id;
-					postCard.avatar = userInfo.avatar;
-					postCard.name = userInfo.fullname;
-					postCard.username = userInfo.username;
-					postCard.description = post.description;
-					postCard.timestamp = post.timestamp;
-					postCard.hashtags = post.hashtags?.map((tag: string) => tag.trim());
-					postCard.media = post.media?.map((media: string) => media.trim());
-					postCard.likes = post.likes;
-					postCard.comments = post.comments;
-					postContainer.appendChild(postCard);
 				}
 			});
 		}
