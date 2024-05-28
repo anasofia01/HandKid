@@ -10,6 +10,7 @@ import {
 	updateDoc,
 	arrayUnion,
 	onSnapshot,
+	QuerySnapshot,
 } from 'firebase/firestore/';
 import { PostData } from '../types/postData';
 import { UserData } from '../types/userData';
@@ -46,15 +47,17 @@ export const createPost = async (data: PostData) => {
 	await addDoc(postDocument, data);
 };
 
-export const getPosts = async (): Promise<PostData[]> => {
-	const posts = await getDocs(postDocument);
-	const postArray: PostData[] = [];
-	posts.docs.forEach((doc) => {
-		const postInfo = doc.data() as PostData;
-		postInfo.id = doc.id;
-		postArray.push(postInfo);
+export const getPosts = (callback: (posts: PostData[]) => void): (() => void) => {
+	const result = onSnapshot(postDocument, (querySnapshot) => {
+		const postArray: PostData[] = [];
+		querySnapshot.forEach((doc: any) => {
+			const postData = doc.data() as PostData;
+			postData.id = doc.id;
+			postArray.push(postData);
+		});
+		callback(postArray);
 	});
-	return postArray;
+	return result;
 };
 
 export const getLikesById = async (id: string): Promise<number | null> => {
