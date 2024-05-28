@@ -1,7 +1,7 @@
 .main-container {
 	background: linear-gradient(180deg, #9d0191 0%, #fd3a69 100%);
 	width: 100%;
-	height: auto;
+	min-height: 100vh;
 	margin: 0;
 	position: relative;
 	font-family: 'Poppins';
@@ -72,9 +72,17 @@ screen-form-post {
 	.column3 {
 		display: none;
 	}
+
+	.logo-container {
+		display: none;
+	}
 }
 
 @media (max-width: 576px) {
+	.logo-container {
+		display: none;
+	}
+
 	.column1 {
 		display: none;
 	}
