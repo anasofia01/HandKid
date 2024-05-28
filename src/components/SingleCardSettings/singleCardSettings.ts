@@ -8,7 +8,10 @@ class SingleCardSettings extends HTMLElement {
 
 	connectedCallback() {
 		this.render();
+		this.addListenerFormEdit();
 	}
+
+	addListenerFormEdit() {}
 
 	render() {
 		if (this.shadowRoot) {
