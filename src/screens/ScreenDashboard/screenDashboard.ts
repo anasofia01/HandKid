@@ -244,11 +244,16 @@ class ScreenDashboard extends HTMLElement {
 				comments.forEach(async (comment: any) => {
 					const commentItem = this.ownerDocument.createElement('single-button-comment') as SingleButtonComment;
 					commentItem.classList.add('comment');
-					const userInfo = await getUserById(comment.userId);
-					commentItem.comment = comment.text;
-					commentItem.avatar = userInfo.avatar;
-					commentItem.username = userInfo.username;
-					container.appendChild(commentItem);
+					const result = getUserById(comment.userId, (userInfo) => {
+						if (userInfo) {
+							commentItem.comment = comment.text;
+							commentItem.avatar = userInfo.avatar;
+							commentItem.username = userInfo.username;
+							container.appendChild(commentItem);
+						} else {
+							alert('No found User');
+						}
+					});
 				});
 			}
 		}
