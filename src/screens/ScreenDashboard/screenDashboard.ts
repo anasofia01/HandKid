@@ -91,15 +91,6 @@ class ScreenDashboard extends HTMLElement {
 		}
 	}
 
-	renderPost() {
-		const container = this.shadowRoot?.querySelector('.column2');
-		if (container) {
-			container.innerHTML = '';
-			const postContent = document.createElement('screen-card-post');
-			container.appendChild(postContent);
-		}
-	}
-
 	async renderFriendProfile(profileData: ProfileData) {
 		const container = this.shadowRoot?.querySelector('.column2');
 		if (container) {
