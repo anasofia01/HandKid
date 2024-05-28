@@ -64,6 +64,31 @@ class ScreenDashboard extends HTMLElement {
 		}
 	}
 
+	renderContent(containerSelector: string, elementTag: string) {
+		const container = this.shadowRoot?.querySelector(containerSelector);
+		if (container) {
+			container.innerHTML = '';
+			const newElement = document.createElement(elementTag);
+			container.appendChild(newElement);
+		}
+	}
+
+	renderPost() {
+		this.renderContent('.column2', 'screen-card-post');
+	}
+
+	renderSettings() {
+		this.renderContent('.column2', 'screen-card-settings');
+	}
+
+	renderPhoneMenu() {
+		this.renderContent('.column2', 'screen-nav-bar');
+	}
+
+	renderPhoneFriends() {
+		this.renderContent('.column2', 'screen-card-friends');
+	}
+
 	async renderMyProfile() {
 		const container = this.shadowRoot?.querySelector('.column2');
 		if (container) {
