@@ -28,13 +28,7 @@ class ScreenDashboard extends HTMLElement {
 		this.render();
 		this.renderPost();
 		this.setUpEventListener();
-		this.addEventListener('profile-clicked', () => this.renderMyProfile());
-		this.addEventListener('home-clicked', () => this.renderPost());
-		this.addEventListener('friend-clicked', (event) => {
-			const detail = (event as CustomEvent).detail;
-			this.renderFriendProfile(detail);
-		});
-		this.addEventListener('add-post-clicked', () => this.renderForm());
+
 		const logoElement = this.shadowRoot?.querySelector('.logo-container');
 		if (logoElement) {
 			logoElement.addEventListener('click', () => this.renderPost());
@@ -47,14 +41,21 @@ class ScreenDashboard extends HTMLElement {
 		if (getPhoneFriends) {
 			getPhoneFriends.addEventListener('click', () => this.renderPhoneFriends());
 		}
+	}
 
+	setUpEventListener() {
+		this.addEventListener('profile-clicked', () => this.renderMyProfile());
+		this.addEventListener('home-clicked', () => this.renderPost());
+		this.addEventListener('friend-clicked', (event) => {
+			const detail = (event as CustomEvent).detail;
+			this.renderFriendProfile(detail);
+		});
+		this.addEventListener('add-post-clicked', () => this.renderForm());
 		this.addEventListener('comment-clicked', (event) => {
 			const detail = (event as CustomEvent).detail;
 			this.addComment(detail);
 		});
 	}
-
-	setUpEventListener() {}
 
 	async renderMyProfile() {
 		const container = this.shadowRoot?.querySelector('.column2');
