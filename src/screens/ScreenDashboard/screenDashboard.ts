@@ -27,6 +27,7 @@ class ScreenDashboard extends HTMLElement {
 	connectedCallback() {
 		this.render();
 		this.renderPost();
+		this.setUpEventListener();
 		this.addEventListener('profile-clicked', () => this.renderMyProfile());
 		this.addEventListener('home-clicked', () => this.renderPost());
 		this.addEventListener('friend-clicked', (event) => {
@@ -52,6 +53,8 @@ class ScreenDashboard extends HTMLElement {
 			this.addComment(detail);
 		});
 	}
+
+	setUpEventListener() {}
 
 	async renderMyProfile() {
 		const container = this.shadowRoot?.querySelector('.column2');
