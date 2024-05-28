@@ -30,10 +30,6 @@ class ScreenDashboard extends HTMLElement {
 		this.setUpEventListener();
 		this.setUpLogoClickedListener();
 
-		const logoElement = this.shadowRoot?.querySelector('.logo-container');
-		if (logoElement) {
-			logoElement.addEventListener('click', () => this.renderPost());
-		}
 		const getPhoneMenu = this.shadowRoot?.querySelector('.phone-menu');
 		if (getPhoneMenu) {
 			getPhoneMenu.addEventListener('click', () => this.renderPhoneMenu());
@@ -58,7 +54,12 @@ class ScreenDashboard extends HTMLElement {
 		});
 	}
 
-	setUpLogoClickedListener() {}
+	setUpLogoClickedListener() {
+		const logoElement = this.shadowRoot?.querySelector('.logo-container');
+		if (logoElement) {
+			logoElement.addEventListener('click', () => this.renderPost());
+		}
+	}
 
 	async renderMyProfile() {
 		const container = this.shadowRoot?.querySelector('.column2');
