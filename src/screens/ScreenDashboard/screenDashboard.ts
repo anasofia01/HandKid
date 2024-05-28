@@ -45,6 +45,7 @@ class ScreenDashboard extends HTMLElement {
 			this.addComment(detail);
 		});
 		this.addEventListener('edit-profile-clicked', this.renderFormEdit.bind(this));
+		this.addEventListener('settings-clicked', this.renderSettings.bind(this));
 	}
 
 	renderFormEdit() {}
