@@ -14,3 +14,6 @@ class EditFormProfile extends HTMLElement {
 
 	render() {}
 }
+
+customElements.define('edit-form-profile', EditFormProfile);
+export default EditFormProfile;
