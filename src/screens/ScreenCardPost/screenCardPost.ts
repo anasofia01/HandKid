@@ -32,30 +32,32 @@ class ScreenCardPost extends HTMLElement {
 		}
 		const postContainer = this.shadowRoot?.querySelector('.posts-cards-container');
 		if (postContainer) {
-			for (const post of appState.post) {
-				const postCard = this.ownerDocument.createElement('single-card-post') as SingleCardPost;
-				const userInfo = await getUserById(post.user || '');
-				const userLogin = await getUserLogin();
-				if (userLogin) {
-					const hasLikesBefore = await checkedIfUserHasLike(post.id || '', userLogin);
-					if (hasLikesBefore) {
-						postCard.liked = true;
-					} else {
-						postCard.liked = false;
+			const result = getPosts(async (posts) => {
+				for (const post of posts) {
+					const postCard = this.ownerDocument.createElement('single-card-post') as SingleCardPost;
+					const userInfo = await getUserById(post.user || '');
+					const userLogin = await getUserLogin();
+					if (userLogin) {
+						const hasLikesBefore = await checkedIfUserHasLike(post.id || '', userLogin);
+						if (hasLikesBefore) {
+							postCard.liked = true;
+						} else {
+							postCard.liked = false;
+						}
 					}
+					postCard.idPost = post.id;
+					postCard.avatar = userInfo.avatar;
+					postCard.name = userInfo.fullname;
+					postCard.username = userInfo.username;
+					postCard.description = post.description;
+					postCard.timestamp = post.timestamp;
+					postCard.hashtags = post.hashtags?.map((tag: string) => tag.trim());
+					postCard.media = post.media?.map((media: string) => media.trim());
+					postCard.likes = post.likes;
+					postCard.comments = post.comments;
+					postContainer.appendChild(postCard);
 				}
-				postCard.idPost = post.id;
-				postCard.avatar = userInfo.avatar;
-				postCard.name = userInfo.fullname;
-				postCard.username = userInfo.username;
-				postCard.description = post.description;
-				postCard.timestamp = post.timestamp;
-				postCard.hashtags = post.hashtags?.map((tag: string) => tag.trim());
-				postCard.media = post.media?.map((media: string) => media.trim());
-				postCard.likes = post.likes;
-				postCard.comments = post.comments;
-				postContainer.appendChild(postCard);
-			}
+			});
 		}
 	}
 }
