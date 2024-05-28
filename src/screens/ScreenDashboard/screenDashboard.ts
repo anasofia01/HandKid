@@ -30,15 +30,6 @@ class ScreenDashboard extends HTMLElement {
 		this.setUpEventListener();
 		this.setUpLogoClickedListener();
 		this.setUpPhoneMenuListener();
-
-		const getPhoneMenu = this.shadowRoot?.querySelector('.phone-menu');
-		if (getPhoneMenu) {
-			getPhoneMenu.addEventListener('click', () => this.renderPhoneMenu());
-		}
-		const getPhoneFriends = this.shadowRoot?.querySelector('.phone-friends');
-		if (getPhoneFriends) {
-			getPhoneFriends.addEventListener('click', () => this.renderPhoneFriends());
-		}
 	}
 
 	setUpEventListener() {
@@ -62,7 +53,16 @@ class ScreenDashboard extends HTMLElement {
 		}
 	}
 
-	setUpPhoneMenuListener() {}
+	setUpPhoneMenuListener() {
+		const getPhoneMenu = this.shadowRoot?.querySelector('.phone-menu');
+		if (getPhoneMenu) {
+			getPhoneMenu.addEventListener('click', () => this.renderPhoneMenu());
+		}
+		const getPhoneFriends = this.shadowRoot?.querySelector('.phone-friends');
+		if (getPhoneFriends) {
+			getPhoneFriends.addEventListener('click', () => this.renderPhoneFriends());
+		}
+	}
 
 	async renderMyProfile() {
 		const container = this.shadowRoot?.querySelector('.column2');
