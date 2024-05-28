@@ -9,7 +9,8 @@ import {
 	setDoc,
 	updateDoc,
 	arrayUnion,
-} from 'firebase/firestore/lite';
+	onSnapshot,
+} from 'firebase/firestore/';
 import { PostData } from '../types/postData';
 import { UserData } from '../types/userData';
 import {
