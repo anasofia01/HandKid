@@ -16,11 +16,11 @@ export const setUserCredentials = (user: string) => {
 };
 
 export const getPostsAction = async () => {
-	const post = await getPosts();
+	/* 	const post = await getPosts();
 	return {
 		type: 'GETPOSTS',
 		payload: post,
-	};
+	}; */
 };
 
 export const getFriendsAction = async () => {
