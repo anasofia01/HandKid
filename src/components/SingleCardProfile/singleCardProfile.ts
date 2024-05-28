@@ -65,7 +65,19 @@ class SingleCardProfile extends HTMLElement {
 		this.addListenerSettings();
 	}
 
-	addListenerSettings() {}
+	addListenerSettings() {
+		const settingsBtn = this.shadowRoot?.querySelector('.btn-setting');
+		if (settingsBtn) {
+			settingsBtn.addEventListener('click', () => {
+				this.dispatchEvent(
+					new CustomEvent('settings-clicked', {
+						bubbles: true,
+						composed: true,
+					})
+				);
+			});
+		}
+	}
 
 	async addFriends() {
 		const userLogin = await getUserLogin();
