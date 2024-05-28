@@ -105,16 +105,18 @@ class ScreenDashboard extends HTMLElement {
 				}
 			}
 			const result = getUserById(profileData.idFriend || '', (dataUser) => {
-				profileContent.banner = dataUser?.banner;
-				profileContent.avatar = dataUser?.avatar;
-				profileContent.name = dataUser?.fullname;
-				profileContent.username = dataUser?.username;
-				profileContent.description = dataUser?.description || '';
-				profileContent.age = Number(dataUser?.age);
-				profileContent.friends = Number(dataUser?.friends);
-				profileContent.btnEdit = false;
-				profileContent.idFriend = dataUser?.idFriend;
-				container.appendChild(profileContent);
+				if (dataUser) {
+					profileContent.banner = dataUser?.banner;
+					profileContent.avatar = dataUser?.avatar;
+					profileContent.name = dataUser?.fullname;
+					profileContent.username = dataUser?.username;
+					profileContent.description = dataUser?.description || '';
+					profileContent.age = Number(dataUser?.age);
+					profileContent.friends = dataUser?.friends;
+					profileContent.btnEdit = false;
+					profileContent.idFriend = dataUser?.idFriend;
+					container.appendChild(profileContent);
+				}
 			});
 		}
 	}
