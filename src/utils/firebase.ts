@@ -10,8 +10,7 @@ import {
 	updateDoc,
 	arrayUnion,
 	onSnapshot,
-	QuerySnapshot,
-} from 'firebase/firestore/';
+} from 'firebase/firestore';
 import { PostData } from '../types/postData';
 import { UserData } from '../types/userData';
 import {
