@@ -193,19 +193,17 @@ export const getUserLogin = async (): Promise<string | false> => {
 	}
 };
 
-export const getUserById = async (id: string): Promise<any> => {
-	try {
-		const docReference = doc(db, 'users', id);
-		const result = await getDoc(docReference);
-		if (result.exists()) {
-			return result.data();
+export const getUserById = (id: string, callback: (userData: UserData | null) => void): (() => void) => {
+	const docReference = doc(db, 'users', id);
+	const result = onSnapshot(docReference, (docSnapshot) => {
+		if (docSnapshot.exists()) {
+			const userData = docSnapshot.data() as UserData;
+			callback(userData);
 		} else {
-			return null;
+			callback(null);
 		}
-	} catch (error) {
-		console.error('Error al obtener el usuario', error);
-		return false;
-	}
+	});
+	return result;
 };
 
 export const getFriends = async (idUserLogin: string): Promise<UserData[]> => {
