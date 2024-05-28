@@ -11,7 +11,19 @@ class SingleCardSettings extends HTMLElement {
 		this.addListenerFormEdit();
 	}
 
-	addListenerFormEdit() {}
+	addListenerFormEdit() {
+		const editBtn = this.shadowRoot?.querySelector('.item-1');
+		if (editBtn) {
+			editBtn.addEventListener('click', () => {
+				this.dispatchEvent(
+					new CustomEvent('edit-profile-clicked', {
+						bubbles: true,
+						composed: true,
+					})
+				);
+			});
+		}
+	}
 
 	render() {
 		if (this.shadowRoot) {
