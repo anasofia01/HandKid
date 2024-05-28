@@ -15,12 +15,12 @@ class ScreenCardPost extends HTMLElement {
 	}
 
 	async connectedCallback() {
-		if (appState.post.length === 0) {
+		/* 		if (appState.post.length === 0) {
 			const action = await getPostsAction();
 			dispatch(action);
-		} else {
-			this.render();
-		}
+		} else { */
+		this.render();
+		// }
 	}
 
 	async render() {
