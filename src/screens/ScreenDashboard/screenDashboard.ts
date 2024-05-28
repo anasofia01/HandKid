@@ -28,6 +28,7 @@ class ScreenDashboard extends HTMLElement {
 		this.render();
 		this.renderPost();
 		this.setUpEventListener();
+		this.setUpLogoClickedListener();
 
 		const logoElement = this.shadowRoot?.querySelector('.logo-container');
 		if (logoElement) {
@@ -56,6 +57,8 @@ class ScreenDashboard extends HTMLElement {
 			this.addComment(detail);
 		});
 	}
+
+	setUpLogoClickedListener() {}
 
 	async renderMyProfile() {
 		const container = this.shadowRoot?.querySelector('.column2');
