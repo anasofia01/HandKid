@@ -12,3 +12,6 @@ class EditFormPassword extends HTMLElement {
 
 	render() {}
 }
+
+customElements.define('edit-form-password', EditFormPassword);
+export default EditFormPassword;
