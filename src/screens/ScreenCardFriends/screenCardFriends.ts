@@ -1,6 +1,6 @@
 import SingleCardFriend, { Attribute } from '../../components/SingleCardFriend/singleCardFriend';
 import styles from './screenCardFriends.css';
-import { getUserLogin } from '../../utils/firebase';
+import { onUserLogin } from '../../utils/firebase';
 import { addObserver, dispatch, appState } from '../../store';
 import { getFriendsAction } from '../../store/actions';
 
