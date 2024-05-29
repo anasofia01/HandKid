@@ -1,6 +1,6 @@
 import SingleCardPost from '../../components/SingleCardPost/singleCardPost';
 import styles from './screenCardPost.css';
-import { getPosts, getUserById, getUserLogin, checkedIfUserHasLike } from '../../utils/firebase';
+import { getPosts, getUserById, onUserLogin, checkedIfUserHasLike } from '../../utils/firebase';
 import { dataPost } from '../../services/data';
 import { addObserver, appState, dispatch } from '../../store';
 import { getPostsAction } from '../../store/actions';
