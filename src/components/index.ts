@@ -11,3 +11,4 @@ export { default as CreateFormComment } from './CreateFormComment/createFormComm
 export { default as SinglePageInit } from './SinglePageInit/singlePageInit';
 export { default as SingleCardRecover } from './SingleCardRecover/singleCardRecover';
 export { default as SingleCardSettings } from './SingleCardSettings/singleCardSettings';
+export { default as EditFormProfile } from './EditFormProfile/editFormProfile';
