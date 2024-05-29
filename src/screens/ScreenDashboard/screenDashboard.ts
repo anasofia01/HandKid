@@ -52,7 +52,8 @@ class ScreenDashboard extends HTMLElement {
 		const container = this.shadowRoot?.querySelector('.column2');
 		if (container) {
 			container.innerHTML = '';
-			const formContent = document.createElement();
+			const formContent = document.createElement('screen-form-edit');
+			container.appendChild(formContent);
 		}
 	}
 
