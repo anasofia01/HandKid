@@ -1,7 +1,7 @@
 import styles from './singleCardPost.css';
 import {
 	getLikesById,
-	getUserLogin,
+	onUserLogin,
 	updateLikesById,
 	checkedIfUserHasLike,
 	addUserLikedToPost,
