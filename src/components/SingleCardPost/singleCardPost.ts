@@ -131,26 +131,27 @@ class SingleCardPost extends HTMLElement {
 		}
 	}
 
-	async likePost() {
-		if (this.idPost) {
-			const userLogin = await getUserLogin();
-			if (userLogin) {
-				const hasLikesBefore = await checkedIfUserHasLike(this.idPost, userLogin);
-				if (hasLikesBefore) {
-					alert('Ya diste like');
-					return;
-				}
-				const likesPost = await getLikesById(this.idPost);
-				if (likesPost !== null && likesPost !== undefined) {
-					const newLikes = likesPost + 1;
-					await updateLikesById(this.idPost, newLikes);
-					await addUserLikedToPost(this.idPost, userLogin);
-					this.likes = newLikes;
-					this.liked = true;
-					this.render();
+	likePost() {
+		const result = onUserLogin(async (userLogin) => {
+			if (this.idPost) {
+				if (userLogin) {
+					const hasLikesBefore = await checkedIfUserHasLike(this.idPost, userLogin);
+					if (hasLikesBefore) {
+						alert('Ya diste like');
+						return;
+					}
+					const likesPost = await getLikesById(this.idPost);
+					if (likesPost !== null && likesPost !== undefined) {
+						const newLikes = likesPost + 1;
+						await updateLikesById(this.idPost, newLikes);
+						await addUserLikedToPost(this.idPost, userLogin);
+						this.likes = newLikes;
+						this.liked = true;
+						this.render();
+					}
 				}
 			}
-		}
+		});
 	}
 
 	render() {
