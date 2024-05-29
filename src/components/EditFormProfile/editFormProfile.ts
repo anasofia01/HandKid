@@ -39,7 +39,22 @@ class EditFormProfile extends HTMLElement {
 		});
 	}
 
-	setUpFormSubmit() {}
+	setUpFormSubmit() {
+		const form = this.shadowRoot?.querySelector('#form-edit-profile') as HTMLFormElement;
+		if (form) {
+			form.addEventListener('submit', (event) => {
+				event.preventDefault();
+				const formData = new FormData(form);
+				this.dispatchEvent(
+					new CustomEvent('form-edit-submitted', {
+						detail: formData,
+						bubbles: true,
+						composed: true,
+					})
+				);
+			});
+		}
+	}
 
 	render() {
 		if (this.shadowRoot) {
