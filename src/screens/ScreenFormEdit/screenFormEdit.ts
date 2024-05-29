@@ -13,3 +13,6 @@ class ScreenFormEdit extends HTMLElement {
 
 	render() {}
 }
+
+customElements.define('screen-form-edit', ScreenFormEdit);
+export default ScreenFormEdit;
