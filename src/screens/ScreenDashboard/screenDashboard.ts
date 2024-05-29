@@ -12,7 +12,7 @@ import {
 	getCommentById,
 	updateCommentsById,
 	getUserById,
-	getUserLogin,
+	onUserLogin,
 	checkedIfUserHasLike,
 	checkedIfUserIsFriend,
 } from '../../utils/firebase';
