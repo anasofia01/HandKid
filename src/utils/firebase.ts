@@ -284,3 +284,13 @@ export const updateFriendsListById = async (userId: string, newFriends: number) 
 	const docReference = doc(db, 'users', userId);
 	await updateDoc(docReference, { friends: newFriends });
 };
+
+export const updateUserInfo = async (userId: string, userData: UserData): Promise<boolean> => {
+	const docReference = doc(db, 'users', userId);
+	try {
+		await updateDoc(docReference, userData as { [key: string]: any });
+		return true;
+	} catch (error) {
+		return false;
+	}
+};
