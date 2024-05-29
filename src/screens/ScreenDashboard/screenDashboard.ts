@@ -61,6 +61,16 @@ class ScreenDashboard extends HTMLElement {
 		}
 	}
 
+	processFormDataEdit(formInfo: FormData) {
+		const result = onUserLogin(async (userLogin) => {
+			if (userLogin) {
+				const description = formInfo.get('description') as string;
+				const fullname = formInfo.get('fullname') as string;
+				const username = formInfo.get('username') as string;
+			}
+		});
+	}
+
 	setUpLogoClickedListener() {
 		const logoElement = this.shadowRoot?.querySelector('.logo-container');
 		if (logoElement) {
