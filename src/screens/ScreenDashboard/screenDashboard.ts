@@ -68,6 +68,15 @@ class ScreenDashboard extends HTMLElement {
 				const description = formInfo.get('description') as string;
 				const fullname = formInfo.get('fullname') as string;
 				const username = formInfo.get('username') as string;
+				const userDataEdit: UserData = {
+					username: username,
+					fullname: fullname,
+					description: description,
+				};
+				try {
+				} catch (error) {
+					alert('No se actualizó el perfil');
+				}
 			}
 		});
 	}
