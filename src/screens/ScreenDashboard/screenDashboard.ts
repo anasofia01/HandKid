@@ -259,14 +259,15 @@ class ScreenDashboard extends HTMLElement {
 				comments.forEach(async (comment: any) => {
 					const commentItem = this.ownerDocument.createElement('single-button-comment') as SingleButtonComment;
 					commentItem.classList.add('comment');
-					const result = getUserById(comment.userId, (userInfo) => {
-						if (userInfo) {
+
+					const unsubscribe = getUserById(comment.userId, (userData) => {
+						if (userData) {
 							commentItem.comment = comment.text;
-							commentItem.avatar = userInfo.avatar;
-							commentItem.username = userInfo.username;
+							commentItem.avatar = userData.avatar;
+							commentItem.username = userData.username;
 							container.appendChild(commentItem);
 						} else {
-							alert('No found User');
+							console.log('Usuario no encontrado');
 						}
 					});
 				});
