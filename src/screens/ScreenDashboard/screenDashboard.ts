@@ -2,6 +2,7 @@ import styles from './screenDashboard.css';
 import '../../components/index';
 import '../../screens/index';
 import { ProfileData } from '../../types/profileData';
+import { UserData } from '../../types/userData';
 import { PostData } from '../../types/postData';
 import { CommentsData } from '../../types/commentsData';
 import SingleCardProfile from '../../components/SingleCardProfile/singleCardProfile';
