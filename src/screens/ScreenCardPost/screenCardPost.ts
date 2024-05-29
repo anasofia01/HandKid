@@ -35,32 +35,33 @@ class ScreenCardPost extends HTMLElement {
 			const result = getPosts(async (posts) => {
 				for (const post of posts) {
 					const postCard = this.ownerDocument.createElement('single-card-post') as SingleCardPost;
-					const userLogin = await getUserLogin();
-					if (userLogin) {
-						const hasLikesBefore = await checkedIfUserHasLike(post.id || '', userLogin);
-						if (hasLikesBefore) {
-							postCard.liked = true;
-						} else {
-							postCard.liked = false;
-						}
-						const result = getUserById(post.user || '', (userInfo) => {
-							if (userInfo) {
-								postCard.idPost = post.id;
-								postCard.avatar = userInfo.avatar;
-								postCard.name = userInfo.fullname;
-								postCard.username = userInfo.username;
-								postCard.description = post.description;
-								postCard.timestamp = post.timestamp;
-								postCard.hashtags = post.hashtags?.map((tag: string) => tag.trim());
-								postCard.media = post.media?.map((media: string) => media.trim());
-								postCard.likes = post.likes;
-								postCard.comments = post.comments;
-								postContainer.appendChild(postCard);
+					const result = onUserLogin(async (userLogin) => {
+						if (userLogin) {
+							const hasLikesBefore = await checkedIfUserHasLike(post.id || '', userLogin);
+							if (hasLikesBefore) {
+								postCard.liked = true;
 							} else {
-								console.log('No found User');
+								postCard.liked = false;
 							}
-						});
-					}
+							const result = getUserById(post.user || '', (userInfo) => {
+								if (userInfo) {
+									postCard.idPost = post.id;
+									postCard.avatar = userInfo.avatar;
+									postCard.name = userInfo.fullname;
+									postCard.username = userInfo.username;
+									postCard.description = post.description;
+									postCard.timestamp = post.timestamp;
+									postCard.hashtags = post.hashtags?.map((tag: string) => tag.trim());
+									postCard.media = post.media?.map((media: string) => media.trim());
+									postCard.likes = post.likes;
+									postCard.comments = post.comments;
+									postContainer.appendChild(postCard);
+								} else {
+									console.log('No found User');
+								}
+							});
+						}
+					});
 				}
 			});
 		}
