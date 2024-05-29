@@ -48,7 +48,13 @@ class ScreenDashboard extends HTMLElement {
 		this.addEventListener('settings-clicked', this.renderSettings.bind(this));
 	}
 
-	renderFormEdit() {}
+	renderFormEdit() {
+		const container = this.shadowRoot?.querySelector('.column2');
+		if (container) {
+			container.innerHTML = '';
+			const formContent = document.createElement();
+		}
+	}
 
 	setUpLogoClickedListener() {
 		const logoElement = this.shadowRoot?.querySelector('.logo-container');
