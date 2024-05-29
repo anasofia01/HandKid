@@ -80,24 +80,25 @@ class SingleCardProfile extends HTMLElement {
 	}
 
 	async addFriends() {
-		const userLogin = await getUserLogin();
-		if (userLogin) {
-			await addFriendToUser(this.idFriend || '', userLogin);
-			this.btnAddFriends = false;
-			this.isFriend = true;
-			const friendUsers = await getFriendsById(userLogin);
-			const userFriend = await getFriendsById(this.idFriend || '');
-			if (friendUsers !== null && friendUsers !== undefined) {
-				const newFriends = friendUsers + 1;
-				if (userFriend !== null && userFriend !== undefined) {
-					const newFriendsUser = userFriend + 1;
-					await updateFriendsListById(this.idFriend || '', newFriendsUser);
-					this.friends = newFriendsUser;
+		const result = onUserLogin(async (userLogin) => {
+			if (userLogin) {
+				await addFriendToUser(this.idFriend || '', userLogin);
+				this.btnAddFriends = false;
+				this.isFriend = true;
+				const friendUsers = await getFriendsById(userLogin);
+				const userFriend = await getFriendsById(this.idFriend || '');
+				if (friendUsers !== null && friendUsers !== undefined) {
+					const newFriends = friendUsers + 1;
+					if (userFriend !== null && userFriend !== undefined) {
+						const newFriendsUser = userFriend + 1;
+						await updateFriendsListById(this.idFriend || '', newFriendsUser);
+						this.friends = newFriendsUser;
+					}
+					await updateFriendsListById(userLogin, newFriends);
+					this.render();
 				}
-				await updateFriendsListById(userLogin, newFriends);
-				this.render();
 			}
-		}
+		});
 	}
 
 	render() {
