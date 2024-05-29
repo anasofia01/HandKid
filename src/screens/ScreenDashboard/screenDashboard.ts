@@ -98,7 +98,7 @@ class ScreenDashboard extends HTMLElement {
 		if (container) {
 			container.innerHTML = '';
 			const profileContent = document.createElement('single-card-profile') as SingleCardProfile;
-			const userId = await getUserLogin();
+			const result = onUserLogin(async (userLogin) => {});
 			if (userId) {
 				const result = getUserById(userId, (userInfo) => {
 					if (userInfo) {
