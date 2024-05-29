@@ -75,9 +75,12 @@ class ScreenDashboard extends HTMLElement {
 					description: description,
 				};
 				try {
+					await updateUserInfo(userLogin, userDataEdit);
+					alert('Se editó la información con éxito');
 				} catch (error) {
 					alert('No se actualizó el perfil');
 				}
+				this.renderPost();
 			}
 		});
 	}
