@@ -36,26 +36,27 @@ class ScreenCardFriends extends HTMLElement {
 			`;
 			const friendsContainer = this.shadowRoot?.querySelector('.friends-cards-container');
 			if (friendsContainer) {
-				const userLogin = await getUserLogin();
-				if (userLogin) {
-					friendsContainer.innerHTML = '';
-					const friends = appState.friends;
-					let count = 0;
-					for (let i = 0; i < friends.length && count <= 5; i++) {
-						const friend = friends[i];
-						const friendComponent = this.ownerDocument.createElement('single-card-friend') as SingleCardFriend;
-						friendComponent.avatar = friend.avatar;
-						friendComponent.name = friend.fullname;
-						friendComponent.username = friend.username;
-						friendComponent.description = friend.description ?? '';
-						friendComponent.banner = friend.banner;
-						friendComponent.age = friend.age;
-						friendComponent.friends = friend.friends;
-						friendComponent.idFriend = friend.idFriend;
-						friendsContainer.appendChild(friendComponent);
-						count++;
+				const result = onUserLogin(async (userLogin) => {
+					if (userLogin) {
+						friendsContainer.innerHTML = '';
+						const friends = appState.friends;
+						let count = 0;
+						for (let i = 0; i < friends.length && count <= 5; i++) {
+							const friend = friends[i];
+							const friendComponent = this.ownerDocument.createElement('single-card-friend') as SingleCardFriend;
+							friendComponent.avatar = friend.avatar;
+							friendComponent.name = friend.fullname;
+							friendComponent.username = friend.username;
+							friendComponent.description = friend.description ?? '';
+							friendComponent.banner = friend.banner;
+							friendComponent.age = friend.age;
+							friendComponent.friends = friend.friends;
+							friendComponent.idFriend = friend.idFriend;
+							friendsContainer.appendChild(friendComponent);
+							count++;
+						}
 					}
-				}
+				});
 			}
 		}
 	}
