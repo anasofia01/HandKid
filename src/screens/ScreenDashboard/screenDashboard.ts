@@ -239,16 +239,17 @@ class ScreenDashboard extends HTMLElement {
 	}
 
 	async addCommentToPost(comment: string, idPost: string) {
-		const userId = await getUserLogin();
-		if (userId) {
-			await addCommentToPost(idPost, comment, userId);
-			const commentsPost = await getCommentById(idPost);
-			if (commentsPost !== null && commentsPost !== undefined) {
-				const newComments = commentsPost + 1;
-				await updateCommentsById(idPost, newComments);
+		const result = onUserLogin(async (userLogin) => {
+			if (userLogin) {
+				await addCommentToPost(idPost, comment, userLogin);
+				const commentsPost = await getCommentById(idPost);
+				if (commentsPost !== null && commentsPost !== undefined) {
+					const newComments = commentsPost + 1;
+					await updateCommentsById(idPost, newComments);
+				}
+				await this.updateCommentsList(idPost);
 			}
-			await this.updateCommentsList(idPost);
-		}
+		});
 	}
 
 	async updateCommentsList(idPost: string) {
