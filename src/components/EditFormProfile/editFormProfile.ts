@@ -13,6 +13,31 @@ class EditFormProfile extends HTMLElement {
 		this.render();
 	}
 
+	async loadUserData() {
+		const result = onUserLogin(async (userLogin) => {
+			if (userLogin) {
+				const result = getUserById(userLogin, (userData) => {
+					if (userData) {
+						const fullnameInput = this.shadowRoot?.querySelector('#fullname') as HTMLFormElement;
+						if (fullnameInput) {
+							fullnameInput.value = userData?.fullname || '';
+						}
+						const usernameInput = this.shadowRoot?.querySelector('#username') as HTMLFormElement;
+						if (usernameInput) {
+							usernameInput.value = userData?.username || '';
+						}
+						const descriptionInput = this.shadowRoot?.querySelector('#description') as HTMLFormElement;
+						if (descriptionInput) {
+							descriptionInput.value = userData?.description || '';
+						}
+					} else {
+						alert('No Found User');
+					}
+				});
+			}
+		});
+	}
+
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
