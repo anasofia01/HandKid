@@ -22,6 +22,7 @@ import {
 	signOut,
 	sendPasswordResetEmail,
 	onAuthStateChanged,
+	User,
 } from 'firebase/auth';
 
 const firebaseConfig = {
