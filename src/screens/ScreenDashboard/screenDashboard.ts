@@ -54,6 +54,10 @@ class ScreenDashboard extends HTMLElement {
 			container.innerHTML = '';
 			const formContent = document.createElement('screen-form-edit');
 			container.appendChild(formContent);
+			formContent.addEventListener('form-edit-submitted', (event) => {
+				const formInfo = (event as CustomEvent).detail;
+				this.processFormDataEdit(formInfo);
+			});
 		}
 	}
 
