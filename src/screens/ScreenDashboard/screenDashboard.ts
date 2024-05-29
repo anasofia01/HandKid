@@ -169,32 +169,33 @@ class ScreenDashboard extends HTMLElement {
 	}
 
 	async processFormData(formInfo: FormData) {
-		const img1 = formInfo.get('img1') as string;
-		const img2 = formInfo.get('img2') as string;
-		const description = formInfo.get('description') as string;
-		const tags1 = formInfo.get('tags1') as string;
-		const tags2 = formInfo.get('tags2') as string;
-		const datePost = new Date();
-		const userId = await getUserLogin();
-		if (userId) {
-			const postDataInfo: PostData = {
-				user: userId,
-				description: description,
-				timestamp: datePost.toISOString(),
-				likes: 0,
-				comments: 0,
-				media: [img1, img2],
-				hashtags: [tags1, tags2],
-			};
-			try {
-				const result = await createPost(postDataInfo);
-				alert('Saved Info');
-			} catch (error) {
-				alert('Error');
-				console.error(error);
+		const result = onUserLogin(async (userLogin) => {
+			const img1 = formInfo.get('img1') as string;
+			const img2 = formInfo.get('img2') as string;
+			const description = formInfo.get('description') as string;
+			const tags1 = formInfo.get('tags1') as string;
+			const tags2 = formInfo.get('tags2') as string;
+			const datePost = new Date();
+			if (userLogin) {
+				const postDataInfo: PostData = {
+					user: userLogin,
+					description: description,
+					timestamp: datePost.toISOString(),
+					likes: 0,
+					comments: 0,
+					media: [img1, img2],
+					hashtags: [tags1, tags2],
+				};
+				try {
+					const result = await createPost(postDataInfo);
+					alert('Saved Info');
+				} catch (error) {
+					alert('Error');
+					console.error(error);
+				}
+				this.renderPost();
 			}
-			this.renderPost();
-		}
+		});
 	}
 
 	async addComment(detail: CommentsData) {
