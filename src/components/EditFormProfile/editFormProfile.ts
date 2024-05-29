@@ -8,7 +8,8 @@ class EditFormProfile extends HTMLElement {
 		this.attachShadow({ mode: 'open' });
 	}
 
-	connectedCallback() {
+	async connectedCallback() {
+		await this.loadUserData();
 		this.render();
 	}
 
