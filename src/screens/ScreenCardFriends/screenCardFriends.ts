@@ -40,6 +40,7 @@ class ScreenCardFriends extends HTMLElement {
 					if (userLogin) {
 						friendsContainer.innerHTML = '';
 						// const friends = appState.friends;
+						const friends = await getFriends(userLogin);
 						let count = 0;
 						for (let i = 0; i < friends.length && count <= 5; i++) {
 							const friend = friends[i];
