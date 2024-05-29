@@ -184,15 +184,6 @@ export const logout = async (): Promise<boolean> => {
 	}
 };
 
-export const getUserLogin = async (): Promise<string | false> => {
-	if (auth.currentUser) {
-		const uid = auth.currentUser.uid;
-		return uid;
-	} else {
-		return false;
-	}
-};
-
 export const getUserById = (id: string, callback: (userData: UserData | null) => void): (() => void) => {
 	const docReference = doc(db, 'users', id);
 	const result = onSnapshot(docReference, (docSnapshot) => {
