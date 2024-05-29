@@ -126,29 +126,30 @@ class ScreenDashboard extends HTMLElement {
 		if (container) {
 			container.innerHTML = '';
 			const profileContent = document.createElement('single-card-profile') as SingleCardProfile;
-			const userLogin = await getUserLogin();
-			if (userLogin) {
-				const hasFriendBefore = await checkedIfUserIsFriend(profileData.idFriend || '', userLogin);
-				if (hasFriendBefore) {
-					profileContent.btnAddFriends = false;
-					profileContent.isFriend = true;
-				} else {
-					profileContent.btnAddFriends = true;
+			const result = onUserLogin(async (userLogin) => {
+				if (userLogin) {
+					const hasFriendBefore = await checkedIfUserIsFriend(profileData.idFriend || '', userLogin);
+					if (hasFriendBefore) {
+						profileContent.btnAddFriends = false;
+						profileContent.isFriend = true;
+					} else {
+						profileContent.btnAddFriends = true;
+					}
 				}
-			}
-			const result = getUserById(profileData.idFriend || '', (dataUser) => {
-				if (dataUser) {
-					profileContent.banner = dataUser?.banner;
-					profileContent.avatar = dataUser?.avatar;
-					profileContent.name = dataUser?.fullname;
-					profileContent.username = dataUser?.username;
-					profileContent.description = dataUser?.description || '';
-					profileContent.age = Number(dataUser?.age);
-					profileContent.friends = dataUser?.friends;
-					profileContent.btnEdit = false;
-					profileContent.idFriend = dataUser?.idFriend;
-					container.appendChild(profileContent);
-				}
+				const result = getUserById(profileData.idFriend || '', (dataUser) => {
+					if (dataUser) {
+						profileContent.banner = dataUser?.banner;
+						profileContent.avatar = dataUser?.avatar;
+						profileContent.name = dataUser?.fullname;
+						profileContent.username = dataUser?.username;
+						profileContent.description = dataUser?.description || '';
+						profileContent.age = Number(dataUser?.age);
+						profileContent.friends = dataUser?.friends;
+						profileContent.btnEdit = false;
+						profileContent.idFriend = dataUser?.idFriend;
+						container.appendChild(profileContent);
+					}
+				});
 			});
 		}
 	}
