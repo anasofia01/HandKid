@@ -15,6 +15,9 @@ class ScreenFormEdit extends HTMLElement {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
       <style>${styles}</style>
+      <div class = "container-form">
+        <edit-form-profile></edit-form-profile>
+      </div>
       `;
 		}
 	}
