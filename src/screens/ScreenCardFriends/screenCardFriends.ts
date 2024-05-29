@@ -14,12 +14,12 @@ class ScreenCardFriends extends HTMLElement {
 	}
 
 	async connectedCallback() {
-		if (appState.friends.length === 0) {
+		/* if (appState.friends.length === 0) {
 			const action = await getFriendsAction();
 			dispatch(action);
-		} else {
-			this.render();
-		}
+		} else { */
+		this.render();
+		// }
 	}
 
 	async render() {
