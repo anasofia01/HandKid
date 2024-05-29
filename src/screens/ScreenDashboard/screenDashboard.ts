@@ -98,25 +98,26 @@ class ScreenDashboard extends HTMLElement {
 		if (container) {
 			container.innerHTML = '';
 			const profileContent = document.createElement('single-card-profile') as SingleCardProfile;
-			const result = onUserLogin(async (userLogin) => {});
-			if (userId) {
-				const result = getUserById(userId, (userInfo) => {
-					if (userInfo) {
-						profileContent.banner = userInfo.banner;
-						profileContent.avatar = userInfo.avatar;
-						profileContent.name = userInfo.fullname;
-						profileContent.username = userInfo.username;
-						profileContent.description = userInfo.description ?? '';
-						profileContent.age = userInfo.age;
-						profileContent.friends = userInfo.friends;
-						profileContent.btnEdit = true;
-						profileContent.btnAddFriends = false;
-						container.appendChild(profileContent);
-					} else {
-						alert('The Profile Information could not be obtained');
-					}
-				});
-			}
+			const result = onUserLogin(async (userLogin) => {
+				if (userLogin) {
+					const result = getUserById(userLogin, (userInfo) => {
+						if (userInfo) {
+							profileContent.banner = userInfo.banner;
+							profileContent.avatar = userInfo.avatar;
+							profileContent.name = userInfo.fullname;
+							profileContent.username = userInfo.username;
+							profileContent.description = userInfo.description ?? '';
+							profileContent.age = userInfo.age;
+							profileContent.friends = userInfo.friends;
+							profileContent.btnEdit = true;
+							profileContent.btnAddFriends = false;
+							container.appendChild(profileContent);
+						} else {
+							alert('The Profile Information could not be obtained');
+						}
+					});
+				}
+			});
 		}
 	}
 
