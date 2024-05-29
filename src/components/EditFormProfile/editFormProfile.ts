@@ -1,5 +1,4 @@
 import styles from './editFormProfile.css';
-import { UserData } from '../../types/userData';
 import { onUserLogin, getUserById } from '../../utils/firebase';
 
 class EditFormProfile extends HTMLElement {
