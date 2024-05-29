@@ -197,7 +197,7 @@ export const getUserById = (id: string, callback: (userData: UserData | null) =>
 	const docReference = doc(db, 'users', id);
 	const result = onSnapshot(docReference, (docSnapshot) => {
 		if (docSnapshot.exists()) {
-			const userData = docSnapshot.data() as UserData;
+			const userData = { idFriend: docSnapshot.id, ...docSnapshot.data() } as UserData;
 			callback(userData);
 		} else {
 			callback(null);
