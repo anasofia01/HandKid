@@ -186,6 +186,17 @@ export const logout = async (): Promise<boolean> => {
 	}
 };
 
+export const onUserLogin = (callback: (uid: string | null) => void): (() => void) => {
+	const result = onAuthStateChanged(auth, (user: User | null) => {
+		if (user) {
+			callback(user.uid);
+		} else {
+			callback(null);
+		}
+	});
+	return result;
+};
+
 export const getUserById = (id: string, callback: (userData: UserData | null) => void): (() => void) => {
 	const docReference = doc(db, 'users', id);
 	const result = onSnapshot(docReference, (docSnapshot) => {
