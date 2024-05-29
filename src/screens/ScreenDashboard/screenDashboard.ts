@@ -199,42 +199,43 @@ class ScreenDashboard extends HTMLElement {
 	}
 
 	async addComment(detail: CommentsData) {
-		const container = this.shadowRoot?.querySelector('.column2');
-		if (container) {
-			container.innerHTML = '';
-			const postCard = document.createElement('single-card-post') as SingleCardPost;
-			const formComment = document.createElement('create-form-comment');
-			const userLogin = await getUserLogin();
-			if (userLogin) {
-				const hasLikesBefore = await checkedIfUserHasLike(detail.idPost || '', userLogin);
-				if (hasLikesBefore) {
-					postCard.liked = true;
-				} else {
-					postCard.liked = false;
+		const result = onUserLogin(async (userLogin) => {
+			const container = this.shadowRoot?.querySelector('.column2');
+			if (container) {
+				container.innerHTML = '';
+				const postCard = document.createElement('single-card-post') as SingleCardPost;
+				const formComment = document.createElement('create-form-comment');
+				if (userLogin) {
+					const hasLikesBefore = await checkedIfUserHasLike(detail.idPost || '', userLogin);
+					if (hasLikesBefore) {
+						postCard.liked = true;
+					} else {
+						postCard.liked = false;
+					}
 				}
+				postCard.idPost = detail.idPost;
+				postCard.avatar = detail.avatar;
+				postCard.name = detail.name;
+				postCard.username = detail.username;
+				postCard.description = detail.description;
+				postCard.timestamp = detail.timestamp;
+				postCard.hashtags = detail.hashtags.map((tag: string) => tag.trim());
+				postCard.media = detail.media.map((media: string) => media.trim());
+				postCard.likes = detail.likes;
+				postCard.comments = detail.comments;
+				container.appendChild(postCard);
+				container.appendChild(formComment);
+
+				formComment.addEventListener('comment-submitted', async (event: any) => {
+					const comment = event.detail.comment;
+					await this.addCommentToPost(comment, detail.idPost);
+					postCard.comments = (postCard.comments || 0) + 1;
+					postCard.render();
+				});
+
+				this.updateCommentsList(detail.idPost);
 			}
-			postCard.idPost = detail.idPost;
-			postCard.avatar = detail.avatar;
-			postCard.name = detail.name;
-			postCard.username = detail.username;
-			postCard.description = detail.description;
-			postCard.timestamp = detail.timestamp;
-			postCard.hashtags = detail.hashtags.map((tag: string) => tag.trim());
-			postCard.media = detail.media.map((media: string) => media.trim());
-			postCard.likes = detail.likes;
-			postCard.comments = detail.comments;
-			container.appendChild(postCard);
-			container.appendChild(formComment);
-
-			formComment.addEventListener('comment-submitted', async (event: any) => {
-				const comment = event.detail.comment;
-				await this.addCommentToPost(comment, detail.idPost);
-				postCard.comments = (postCard.comments || 0) + 1;
-				postCard.render();
-			});
-
-			this.updateCommentsList(detail.idPost);
-		}
+		});
 	}
 
 	async addCommentToPost(comment: string, idPost: string) {
