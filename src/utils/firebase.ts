@@ -21,6 +21,7 @@ import {
 	browserLocalPersistence,
 	signOut,
 	sendPasswordResetEmail,
+	onAuthStateChanged,
 } from 'firebase/auth';
 
 const firebaseConfig = {
