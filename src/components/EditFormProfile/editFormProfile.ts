@@ -11,6 +11,7 @@ class EditFormProfile extends HTMLElement {
 	async connectedCallback() {
 		await this.loadUserData();
 		this.render();
+		this.setUpFormSubmit();
 	}
 
 	async loadUserData() {
@@ -37,6 +38,8 @@ class EditFormProfile extends HTMLElement {
 			}
 		});
 	}
+
+	setUpFormSubmit() {}
 
 	render() {
 		if (this.shadowRoot) {
