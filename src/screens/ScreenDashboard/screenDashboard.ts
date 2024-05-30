@@ -70,6 +70,10 @@ class ScreenDashboard extends HTMLElement {
 			container.innerHTML = '';
 			const formContent = document.createElement('screen-edit-password');
 			container.appendChild(formContent);
+			formContent.addEventListener('form-edit-password-submitted', (event) => {
+				const formInfo = (event as CustomEvent).detail;
+				this.processFormEditPassword(formInfo);
+			});
 		}
 	}
 
