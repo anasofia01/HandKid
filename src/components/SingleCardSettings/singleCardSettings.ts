@@ -9,6 +9,7 @@ class SingleCardSettings extends HTMLElement {
 	connectedCallback() {
 		this.render();
 		this.addListenerFormEdit();
+		this.addListenerFormEditPassword();
 	}
 
 	addListenerFormEdit() {
@@ -24,6 +25,8 @@ class SingleCardSettings extends HTMLElement {
 			});
 		}
 	}
+
+	addListenerFormEditPassword() {}
 
 	render() {
 		if (this.shadowRoot) {
