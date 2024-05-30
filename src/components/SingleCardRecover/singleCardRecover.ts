@@ -59,6 +59,9 @@ class SingleCardRecover extends HTMLElement {
                 <input type = "submit" id = "recover" value = "Recover">
               </div>
             </form>
+						<div class = "return-main">
+							<small class = "main">Return to Main</small>
+						</div>
           </div>
         </div>
       </div>
