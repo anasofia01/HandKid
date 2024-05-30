@@ -10,3 +10,4 @@ export { default as ScreenPageInit } from './ScreenPageInit/screenPageInit';
 export { default as ScreenCardRecover } from './ScreenCardRecover/screenCardRecover';
 export { default as ScreenCardSettings } from './ScreenCardSettings/screenCardSettings';
 export { default as ScreenFormEdit } from './ScreenFormEdit/screenFormEdit';
+export { default as ScreenEditPassword } from './ScreenEditPassword/screenEditPassword';
