@@ -13,3 +13,6 @@ class ScreenEditPassword extends HTMLElement {
 
 	render() {}
 }
+
+customElements.define('screen-edit-password', ScreenEditPassword);
+export default ScreenEditPassword;
