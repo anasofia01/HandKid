@@ -127,3 +127,9 @@ form {
 	cursor: pointer;
 	color: #9d0191;
 }
+
+.return-main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
