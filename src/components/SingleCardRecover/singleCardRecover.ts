@@ -32,7 +32,7 @@ class SingleCardRecover extends HTMLElement {
 			dispatch(navigate(Screens.LOGIN));
 			return;
 		} else {
-			alert('Hubo un problema, no se envió');
+			alert('There was a problem, it was not sent.');
 			dispatch(navigate(Screens.RECOVER));
 			return;
 		}
