@@ -13,12 +13,22 @@ class SingleCardRecover extends HTMLElement {
 	connectedCallback() {
 		this.render();
 		this.addRecoverListener();
+		this.buttonListenerMain();
 	}
 
 	addRecoverListener() {
 		const form = this.shadowRoot?.querySelector('#form-info');
 		if (form) {
 			form.addEventListener('submit', this.handleSubmit.bind(this));
+		}
+	}
+
+	buttonListenerMain() {
+		const mainButton = this.shadowRoot?.querySelector('.main');
+		if (mainButton) {
+			mainButton.addEventListener('click', () => {
+				dispatch(navigate(Screens.MAIN));
+			});
 		}
 	}
 
