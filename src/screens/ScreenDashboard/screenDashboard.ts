@@ -48,6 +48,7 @@ class ScreenDashboard extends HTMLElement {
 		});
 		this.addEventListener('edit-profile-clicked', this.renderFormEdit.bind(this));
 		this.addEventListener('settings-clicked', this.renderSettings.bind(this));
+		this.addEventListener('edit-password-clicked', this.renderFormEditPassword.bind(this));
 	}
 
 	renderFormEdit() {
