@@ -26,7 +26,19 @@ class SingleCardSettings extends HTMLElement {
 		}
 	}
 
-	addListenerFormEditPassword() {}
+	addListenerFormEditPassword() {
+		const passwordBtn = this.shadowRoot?.querySelector('.item-2');
+		if (passwordBtn) {
+			passwordBtn.addEventListener('click', () => {
+				this.dispatchEvent(
+					new CustomEvent('edit-password-clicked', {
+						bubbles: true,
+						composed: true,
+					})
+				);
+			});
+		}
+	}
 
 	render() {
 		if (this.shadowRoot) {
