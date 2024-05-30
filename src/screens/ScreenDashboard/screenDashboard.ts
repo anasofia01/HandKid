@@ -82,8 +82,15 @@ class ScreenDashboard extends HTMLElement {
 		}
 	}
 
-	processFormEditPassword(formInfo: FormData) {
+	async processFormEditPassword(formInfo: FormData) {
 		const email = formInfo.get('email') as string;
+		const result = await resetPassword(email);
+		if (result) {
+			await logout();
+			dispatch(navigate(Screens.MAIN));
+		} else {
+			alert('No se pudo enviar el correo');
+		}
 	}
 
 	processFormDataEdit(formInfo: FormData) {
