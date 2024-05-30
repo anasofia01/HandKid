@@ -64,6 +64,15 @@ class ScreenDashboard extends HTMLElement {
 		}
 	}
 
+	renderFormEditPassword() {
+		const container = this.shadowRoot?.querySelector('.column2');
+		if (container) {
+			container.innerHTML = '';
+			const formContent = document.createElement('screen-edit-password');
+			container.appendChild(formContent);
+		}
+	}
+
 	processFormDataEdit(formInfo: FormData) {
 		const result = onUserLogin(async (userLogin) => {
 			if (userLogin) {
