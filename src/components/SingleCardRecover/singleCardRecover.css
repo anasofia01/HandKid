@@ -122,3 +122,8 @@ form {
 		margin: 10px;
 	}
 }
+
+.return-main small {
+	cursor: pointer;
+	color: #9d0191;
+}
