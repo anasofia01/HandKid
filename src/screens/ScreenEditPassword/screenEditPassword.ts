@@ -11,7 +11,16 @@ class ScreenEditPassword extends HTMLElement {
 		this.render();
 	}
 
-	render() {}
+	render() {
+		if (this.shadowRoot) {
+			this.shadowRoot.innerHTML = `
+      <style>${styles}</style>
+      <div class = "container-form">
+        <edit-form-password></edit-form-password>
+      </div>
+      `;
+		}
+	}
 }
 
 customElements.define('screen-edit-password', ScreenEditPassword);
