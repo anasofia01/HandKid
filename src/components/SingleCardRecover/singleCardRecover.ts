@@ -28,7 +28,7 @@ class SingleCardRecover extends HTMLElement {
 		const email = formData.get('email') as string;
 		const result = await resetPassword(email);
 		if (result) {
-			alert('Se le envió un correo para restablecer su contraseña');
+			alert('An email was sent to you to reset your password.');
 			dispatch(navigate(Screens.LOGIN));
 			return;
 		} else {
