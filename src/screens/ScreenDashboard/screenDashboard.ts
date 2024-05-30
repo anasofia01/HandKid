@@ -21,6 +21,7 @@ import {
 } from '../../utils/firebase';
 import { SingleButtonComment, SingleCardPost } from '../../components/index';
 import { navigate } from '../../store/actions';
+import { dispatch } from '../../store';
 
 class ScreenDashboard extends HTMLElement {
 	constructor() {
