@@ -60,7 +60,7 @@ class SingleCardRecover extends HTMLElement {
               </div>
             </form>
 						<div class = "return-main">
-							<small class = "main">Return to Main</small>
+							<small class = "main"><b>Return to Main</b></small>
 						</div>
           </div>
         </div>
