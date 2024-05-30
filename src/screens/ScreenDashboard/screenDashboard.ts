@@ -18,6 +18,7 @@ import {
 	checkedIfUserIsFriend,
 	updateUserInfo,
 	resetPassword,
+	logout,
 } from '../../utils/firebase';
 import { SingleButtonComment, SingleCardPost } from '../../components/index';
 import { navigate } from '../../store/actions';
