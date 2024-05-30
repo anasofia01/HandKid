@@ -77,6 +77,10 @@ class ScreenDashboard extends HTMLElement {
 		}
 	}
 
+	processFormEditPassword(formInfo: FormData) {
+		const email = formInfo.get('email') as string;
+	}
+
 	processFormDataEdit(formInfo: FormData) {
 		const result = onUserLogin(async (userLogin) => {
 			if (userLogin) {
