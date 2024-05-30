@@ -8,6 +8,24 @@ class EditFormPassword extends HTMLElement {
 
 	connectedCallback() {
 		this.render();
+		this.setUpFormSubmit();
+	}
+
+	setUpFormSubmit() {
+		const form = this.shadowRoot?.querySelector('#form-edit-password') as HTMLFormElement;
+		if (form) {
+			form.addEventListener('submit', (event) => {
+				event.preventDefault();
+				const formData = new FormData(form);
+				this.dispatchEvent(
+					new CustomEvent('form-edit-password-submitted', {
+						detail: formData,
+						bubbles: true,
+						composed: true,
+					})
+				);
+			});
+		}
 	}
 
 	render() {
