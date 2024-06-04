@@ -264,7 +264,7 @@ class ScreenDashboard extends HTMLElement {
 		});
 	}
 
-	async addComment(detail: CommentsData) {
+	addComment(detail: CommentsData) {
 		const userLoginResult = onUserLogin(async (userLogin) => {
 			const postResult = getPostById(detail.idPost, async (postData) => {
 				if (postData) {
@@ -287,9 +287,11 @@ class ScreenDashboard extends HTMLElement {
 		const newDiv1 = document.createElement('div');
 		newDiv1.className = 'postsDiv';
 		container.appendChild(newDiv1);
+
 		const newDiv2 = document.createElement('div');
 		newDiv2.className = 'formDiv';
 		container.appendChild(newDiv2);
+
 		const newDiv3 = document.createElement('div');
 		newDiv3.className = 'commentsDiv';
 		container.appendChild(newDiv3);
@@ -334,13 +336,27 @@ class ScreenDashboard extends HTMLElement {
 		}
 	}
 
+	addCommentToPost(comment: string, idPost: string) {
+		const unsubscribe = onUserLogin(async (userLogin) => {
+			if (userLogin) {
+				await addCommentToPost(idPost, comment, userLogin);
+				const commentsPost = await getCommentById(idPost);
+				if (commentsPost !== null && commentsPost !== undefined) {
+					const newComments = commentsPost + 1;
+					await updateCommentsById(idPost, newComments);
+				}
+			}
+			unsubscribe();
+		});
+	}
+
 	listComments(idPost: any) {
-		const result = getCommentsById(idPost, (comments) => {
+		const unsubscribe = getCommentsById(idPost, (comments) => {
 			const container = this.shadowRoot?.querySelector('.commentsDiv');
 			if (container && comments) {
 				container.innerHTML = '';
 				comments.forEach(async (comment: any) => {
-					const unsubscribe = getUserById(comment.userId, (userData) => {
+					const unsubscribeUser = getUserById(comment.userId, (userData) => {
 						const commentItem = this.ownerDocument.createElement('single-button-comment') as SingleButtonComment;
 						if (userData) {
 							commentItem.comment = comment.text;
@@ -353,20 +369,6 @@ class ScreenDashboard extends HTMLElement {
 					});
 				});
 			}
-		});
-	}
-
-	async addCommentToPost(comment: string, idPost: string) {
-		const unsubscribe = onUserLogin(async (userLogin) => {
-			if (userLogin) {
-				await addCommentToPost(idPost, comment, userLogin);
-				const commentsPost = await getCommentById(idPost);
-				if (commentsPost !== null && commentsPost !== undefined) {
-					const newComments = commentsPost + 1;
-					await updateCommentsById(idPost, newComments);
-				}
-			}
-			unsubscribe();
 		});
 	}
 
