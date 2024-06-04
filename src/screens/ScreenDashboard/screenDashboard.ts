@@ -345,15 +345,6 @@ class ScreenDashboard extends HTMLElement {
 		}
 	}
 
-	renderPageInit() {
-		const container = this.shadowRoot?.querySelector('.main-container');
-		if (container) {
-			container.innerHTML = '';
-			const initContent = document.createElement('screen-page-init');
-			container.appendChild(initContent);
-		}
-	}
-
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
