@@ -274,21 +274,11 @@ class ScreenDashboard extends HTMLElement {
 							container.innerHTML = '';
 							this.addNewContainers(container);
 							this.addContainerCardPost(postData, userData, userLogin);
+							this.addContainerFormComment(postData.id);
 						}
 					});
 				}
 			});
-
-				/* const formComment = document.createElement('create-form-comment');
-				formComment.addEventListener('comment-submitted', async (event: any) => {
-					const comment = event.detail.comment;
-					await this.addCommentToPost(comment, detail.idPost);
-					postCard.comments = (postCard.comments || 0) + 1;
-					postCard.render();
-				});
-
-				this.updateCommentsList(detail.idPost); */
-			// } */
 		});
 	}
 
@@ -305,28 +295,43 @@ class ScreenDashboard extends HTMLElement {
 	}
 
 	async addContainerCardPost(postData: PostData, userData: UserData, userLogin: any) {
-		const container = this.shadowRoot?.querySelector('.postDiv');
-			if (container) {
-				const postCard = document.createElement('single-card-post') as SingleCardPost;
-					const hasLikesBefore = await checkedIfUserHasLike(postData.id || '', userLogin);
-					if (hasLikesBefore) {
-						postCard.liked = true;
-					} else {
-						postCard.liked = false;
-					}
-				postCard.idPost = postData.id;
-				postCard.avatar = userData.avatar;
-				postCard.name = userData.fullname;
-				postCard.username = userData.username;
-				postCard.description = postData.description;
-				postCard.timestamp = postData.timestamp;
-				postCard.hashtags = postData.hashtags? postData.hashtags.map((tag: string) => tag.trim());
-				postCard.media = postData.media? postData.media.map((media: string) => media.trim());
-				postCard.likes = postData.likes;
-				postCard.comments = postData.comments;
-				container.appendChild(postCard);
+		const container = this.shadowRoot?.querySelector('.postsDiv');
+		if (container) {
+			const postCard = document.createElement('single-card-post') as SingleCardPost;
+			const hasLikesBefore = await checkedIfUserHasLike(postData.id || '', userLogin);
+
+			if (hasLikesBefore) {
+				postCard.liked = true;
+			} else {
+				postCard.liked = false;
+			}
+
+			postCard.idPost = postData.id;
+			postCard.avatar = userData.avatar;
+			postCard.name = userData.fullname;
+			postCard.username = userData.username;
+			postCard.description = postData.description;
+			postCard.timestamp = postData.timestamp;
+			postCard.hashtags = postData.hashtags ? postData.hashtags.map((tag: string) => tag.trim()) : [];
+			postCard.media = postData.media ? postData.media.map((media: string) => media.trim()) : [];
+			postCard.likes = postData.likes;
+			postCard.comments = postData.comments;
+			container.appendChild(postCard);
+		}
 	}
-}
+
+	addContainerFormComment(idPost: any) {
+		const container = this.shadowRoot?.querySelector('.formDiv');
+		if (container) {
+			const formComment = document.createElement('create-form-comment');
+			container.appendChild(formComment);
+
+			formComment.addEventListener('comment-submitted', async (event: any) => {
+				const comment = event.detail.comment;
+				await this.addCommentToPost(comment, idPost);
+			});
+		}
+	}
 
 	async addCommentToPost(comment: string, idPost: string) {
 		const result = onUserLogin(async (userLogin) => {
