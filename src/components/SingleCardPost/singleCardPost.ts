@@ -107,6 +107,7 @@ class SingleCardPost extends HTMLElement {
 		this.shadowRoot?.querySelector('.btn-like')?.addEventListener('click', this.likePost.bind(this));
 
 		this.setUpCommentButtonListener();
+		this.setUpLikeButtonListener();
 	}
 
 	likePost() {
@@ -156,6 +157,13 @@ class SingleCardPost extends HTMLElement {
 				});
 				this.dispatchEvent(commentEvent);
 			});
+		}
+	}
+
+	setUpLikeButtonListener() {
+		const likeButton = this.shadowRoot?.querySelector('.btn-like');
+		if (likeButton) {
+			likeButton.addEventListener('click', this.likePost.bind(this));
 		}
 	}
 
