@@ -10,6 +10,7 @@ class SingleCardSettings extends HTMLElement {
 		this.render();
 		this.addListenerFormEdit();
 		this.addListenerFormEditPassword();
+		this.addListenerArrow();
 	}
 
 	addListenerFormEdit() {
@@ -32,6 +33,20 @@ class SingleCardSettings extends HTMLElement {
 			passwordBtn.addEventListener('click', () => {
 				this.dispatchEvent(
 					new CustomEvent('edit-password-clicked', {
+						bubbles: true,
+						composed: true,
+					})
+				);
+			});
+		}
+	}
+
+	addListenerArrow() {
+		const arrowBtn = this.shadowRoot?.querySelector('.arrow-left');
+		if (arrowBtn) {
+			arrowBtn.addEventListener('click', () => {
+				this.dispatchEvent(
+					new CustomEvent('profile-clicked', {
 						bubbles: true,
 						composed: true,
 					})
