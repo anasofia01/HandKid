@@ -9,6 +9,7 @@ class EditFormPassword extends HTMLElement {
 	connectedCallback() {
 		this.render();
 		this.setUpFormSubmit();
+		this.addListenerArrow();
 	}
 
 	setUpFormSubmit() {
@@ -20,6 +21,20 @@ class EditFormPassword extends HTMLElement {
 				this.dispatchEvent(
 					new CustomEvent('form-edit-password-submitted', {
 						detail: formData,
+						bubbles: true,
+						composed: true,
+					})
+				);
+			});
+		}
+	}
+
+	addListenerArrow() {
+		const arrowBtn = this.shadowRoot?.querySelector('.arrow-left');
+		if (arrowBtn) {
+			arrowBtn.addEventListener('click', () => {
+				this.dispatchEvent(
+					new CustomEvent('settings-clicked', {
 						bubbles: true,
 						composed: true,
 					})
