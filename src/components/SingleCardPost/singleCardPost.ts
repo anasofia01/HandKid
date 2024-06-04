@@ -110,7 +110,7 @@ class SingleCardPost extends HTMLElement {
 	}
 
 	likePost() {
-		const result = onUserLogin(async (userLogin) => {
+		this.authUnsuscribe = onUserLogin(async (userLogin) => {
 			if (this.idPost) {
 				if (userLogin) {
 					const hasLikesBefore = await checkedIfUserHasLike(this.idPost, userLogin);
@@ -126,8 +126,13 @@ class SingleCardPost extends HTMLElement {
 						this.likes = newLikes;
 						this.liked = true;
 						this.render();
+						this.setUpCommentButtonListener();
 					}
 				}
+			}
+			if (this.authUnsuscribe) {
+				this.authUnsuscribe();
+				this.authUnsuscribe = null;
 			}
 		});
 	}
