@@ -273,36 +273,13 @@ class ScreenDashboard extends HTMLElement {
 						if (container && postData && userLogin && userData) {
 							container.innerHTML = '';
 							this.addNewContainers(container);
+							this.addContainerCardPost(postData, userData, userLogin);
 						}
 					});
 				}
 			});
-			// const container = this.shadowRoot?.querySelector('.column2');
-			// if (container) {
-			/* container.innerHTML = '';
-				const postCard = document.createElement('single-card-post') as SingleCardPost;
-				const formComment = document.createElement('create-form-comment');
-				if (userLogin) {
-					const hasLikesBefore = await checkedIfUserHasLike(detail.idPost || '', userLogin);
-					if (hasLikesBefore) {
-						postCard.liked = true;
-					} else {
-						postCard.liked = false;
-					}
-				}
-				postCard.idPost = detail.idPost;
-				postCard.avatar = detail.avatar;
-				postCard.name = detail.name;
-				postCard.username = detail.username;
-				postCard.description = detail.description;
-				postCard.timestamp = detail.timestamp;
-				postCard.hashtags = detail.hashtags.map((tag: string) => tag.trim());
-				postCard.media = detail.media.map((media: string) => media.trim());
-				postCard.likes = detail.likes;
-				postCard.comments = detail.comments;
-				container.appendChild(postCard);
-				container.appendChild(formComment);
 
+				/* const formComment = document.createElement('create-form-comment');
 				formComment.addEventListener('comment-submitted', async (event: any) => {
 					const comment = event.detail.comment;
 					await this.addCommentToPost(comment, detail.idPost);
@@ -311,7 +288,7 @@ class ScreenDashboard extends HTMLElement {
 				});
 
 				this.updateCommentsList(detail.idPost); */
-			// }
+			// } */
 		});
 	}
 
@@ -325,6 +302,29 @@ class ScreenDashboard extends HTMLElement {
 		const newDiv3 = document.createElement('div');
 		newDiv3.className = 'commentsDiv';
 		container.appendChild(newDiv3);
+	}
+
+	async addContainerCardPost(postData: PostData, userData: UserData, userLogin: any) {
+		const container = this.shadowRoot?.querySelector('.postDiv');
+			if (container) {
+				const postCard = document.createElement('single-card-post') as SingleCardPost;
+					const hasLikesBefore = await checkedIfUserHasLike(postData.id || '', userLogin);
+					if (hasLikesBefore) {
+						postCard.liked = true;
+					} else {
+						postCard.liked = false;
+					}
+				postCard.idPost = postData.id;
+				postCard.avatar = userData.avatar;
+				postCard.name = userData.fullname;
+				postCard.username = userData.username;
+				postCard.description = postData.description;
+				postCard.timestamp = postData.timestamp;
+				postCard.hashtags = postData.hashtags? postData.hashtags.map((tag: string) => tag.trim());
+				postCard.media = postData.media? postData.media.map((media: string) => media.trim());
+				postCard.likes = postData.likes;
+				postCard.comments = postData.comments;
+				container.appendChild(postCard);
 	}
 
 	async addCommentToPost(comment: string, idPost: string) {
