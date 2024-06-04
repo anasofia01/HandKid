@@ -370,19 +370,6 @@ class ScreenDashboard extends HTMLElement {
 		});
 	}
 
-	async updateCommentsList(idPost: string) {
-		const comments = await getCommentsById(idPost);
-		const container = this.shadowRoot?.querySelector('.column2');
-		if (container) {
-			if (comments) {
-				const commentElements = container.querySelectorAll('.comment');
-				commentElements.forEach((element) => {
-					element.remove();
-				});
-			}
-		}
-	}
-
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
