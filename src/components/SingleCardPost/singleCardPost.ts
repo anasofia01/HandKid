@@ -184,7 +184,7 @@ class SingleCardPost extends HTMLElement {
 				<style>${styles}</style>
 				<div class="container-info">
 					<div class="post-info-head">
-						<img class="avatar" src="${this.avatar}"></img>
+						<img class="avatar" src="${this.avatar}" alt="avatar user"></img>
 						<span><b>${this.name}</b></span>
 						<span class="span-head span-username">${this.username}</span>
 						<span class="span-head span-timestamp">${this.timestamp}</span>
