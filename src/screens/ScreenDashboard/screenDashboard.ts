@@ -315,7 +315,17 @@ class ScreenDashboard extends HTMLElement {
 		});
 	}
 
-	addNewContainers() {}
+	addNewContainers(container: any) {
+		const newDiv1 = document.createElement('div');
+		newDiv1.className = 'postsDiv';
+		container.appendChild(newDiv1);
+		const newDiv2 = document.createElement('div');
+		newDiv2.className = 'formDiv';
+		container.appendChild(newDiv2);
+		const newDiv3 = document.createElement('div');
+		newDiv3.className = 'commentsDiv';
+		container.appendChild(newDiv3);
+	}
 
 	async addCommentToPost(comment: string, idPost: string) {
 		const result = onUserLogin(async (userLogin) => {
