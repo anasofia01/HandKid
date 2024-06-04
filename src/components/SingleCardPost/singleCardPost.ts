@@ -37,6 +37,7 @@ class SingleCardPost extends HTMLElement {
 	comments?: number;
 	images?: string = '';
 	tags?: string = '';
+	private authUnsuscribe: (() => void) | null = null;
 
 	static get observedAttributes() {
 		const classAttribute: Record<Attribute, null> = {
