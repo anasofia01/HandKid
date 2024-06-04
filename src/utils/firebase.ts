@@ -298,8 +298,8 @@ export const getPostById = (id: string, callback: (postData: PostData | null) =>
 };
 
 export const getCommentsById = (postId: string, callback: (comments: any[]) => void): (() => void) => {
-	const docReference = doc(db, 'post', postId);
-	const result = onSnapshot(docReference, (docSnapshot) => {
+	const commentReferenceById = doc(db, 'post', postId);
+	const result = onSnapshot(commentReferenceById, (docSnapshot) => {
 		if (docSnapshot.exists()) {
 			const postData = docSnapshot.data() as PostData;
 			callback(postData.commentsText ?? []);
