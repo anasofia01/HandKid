@@ -107,8 +107,8 @@ class SingleCardProfile extends HTMLElement {
         <style>${styles}</style>
         <div class = "container-profile">
           <div class = "head-container">
-            <img class = "banner" src = "${this.banner}">
-            <img class = "avatar" src = "${this.avatar}">
+            <img class = "banner" src = "${this.banner}" alt = "banner user">
+            <img class = "avatar" src = "${this.avatar}" alt = "avatar user">
           </div>
 					${
 						this.btnEdit
