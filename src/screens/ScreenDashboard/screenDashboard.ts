@@ -265,10 +265,21 @@ class ScreenDashboard extends HTMLElement {
 	}
 
 	async addComment(detail: CommentsData) {
-		const result = onUserLogin(async (userLogin) => {
-			const container = this.shadowRoot?.querySelector('.column2');
-			if (container) {
-				container.innerHTML = '';
+		const userLoginResult = onUserLogin(async (userLogin) => {
+			const postResult = getPostById(detail.idPost, async (postData) => {
+				if (postData) {
+					const userResult = getUserById(postData.user || '', async (userData) => {
+						const container = this.shadowRoot?.querySelector('.column2');
+						if (container && postData && userLogin && userData) {
+							container.innerHTML = '';
+							this.addNewContainers(container);
+						}
+					});
+				}
+			});
+			// const container = this.shadowRoot?.querySelector('.column2');
+			// if (container) {
+			/* container.innerHTML = '';
 				const postCard = document.createElement('single-card-post') as SingleCardPost;
 				const formComment = document.createElement('create-form-comment');
 				if (userLogin) {
@@ -299,10 +310,12 @@ class ScreenDashboard extends HTMLElement {
 					postCard.render();
 				});
 
-				this.updateCommentsList(detail.idPost);
-			}
+				this.updateCommentsList(detail.idPost); */
+			// }
 		});
 	}
+
+	addNewContainers() {}
 
 	async addCommentToPost(comment: string, idPost: string) {
 		const result = onUserLogin(async (userLogin) => {
