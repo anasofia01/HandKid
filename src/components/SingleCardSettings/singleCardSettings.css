@@ -24,6 +24,7 @@
 .title-panel {
 	font-size: 1.5rem;
 	margin-bottom: 20px;
+	margin-top: 20px;
 }
 
 .items-settings {
@@ -55,4 +56,10 @@
 .item-3:last-child {
 	border-bottom: none;
 	margin-bottom: 0;
+}
+
+.arrow-left {
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
 }
