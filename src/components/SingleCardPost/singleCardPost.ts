@@ -104,8 +104,6 @@ class SingleCardPost extends HTMLElement {
 
 	connectedCallback() {
 		this.render();
-		this.shadowRoot?.querySelector('.btn-like')?.addEventListener('click', this.likePost.bind(this));
-
 		this.setUpCommentButtonListener();
 		this.setUpLikeButtonListener();
 	}
