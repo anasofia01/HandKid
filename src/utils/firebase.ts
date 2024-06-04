@@ -294,3 +294,16 @@ export const updateUserInfo = async (userId: string, userData: UserData): Promis
 		return false;
 	}
 };
+
+export const getPostById = (id: string, callback: (postData: PostData | null) => void): (() => void) => {
+	const docReference = doc(db, 'post', id);
+	const result = onSnapshot(docReference, (docSnapshot) => {
+		if (docSnapshot.exists()) {
+			const postData = { id: docSnapshot.id, ...docSnapshot.data() } as PostData;
+			callback(postData);
+		} else {
+			callback(null);
+		}
+	});
+	return result;
+};
