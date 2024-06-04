@@ -32,6 +32,7 @@ class ScreenCardPost extends HTMLElement {
 		const postContainer = this.shadowRoot?.querySelector('.posts-cards-container');
 		if (postContainer) {
 			const result = getPosts(async (posts) => {
+				postContainer.innerHTML = '';
 				for (const post of posts) {
 					const postCard = this.ownerDocument.createElement('single-card-post') as SingleCardPost;
 					const result = onUserLogin(async (userLogin) => {
