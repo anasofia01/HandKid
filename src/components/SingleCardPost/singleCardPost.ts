@@ -109,6 +109,13 @@ class SingleCardPost extends HTMLElement {
 		this.setUpLikeButtonListener();
 	}
 
+	desconectedCallback() {
+		if (this.authUnsuscribe) {
+			this.authUnsuscribe();
+			this.authUnsuscribe = null;
+		}
+	}
+
 	likePost() {
 		this.authUnsuscribe = onUserLogin(async (userLogin) => {
 			if (this.idPost) {
