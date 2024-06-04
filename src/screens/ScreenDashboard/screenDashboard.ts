@@ -275,6 +275,7 @@ class ScreenDashboard extends HTMLElement {
 							this.addNewContainers(container);
 							this.addContainerCardPost(postData, userData, userLogin);
 							this.addContainerFormComment(postData.id);
+							this.listComments(postData.id);
 						}
 					});
 				}
@@ -333,6 +334,28 @@ class ScreenDashboard extends HTMLElement {
 		}
 	}
 
+	listComments(idPost: any) {
+		const result = getCommentsById(idPost, (comments) => {
+			const container = this.shadowRoot?.querySelector('.commentsDiv');
+			if (container && comments) {
+				container.innerHTML = '';
+				comments.forEach(async (comment: any) => {
+					const unsubscribe = getUserById(comment.userId, (userData) => {
+						const commentItem = this.ownerDocument.createElement('single-button-comment') as SingleButtonComment;
+						if (userData) {
+							commentItem.comment = comment.text;
+							commentItem.avatar = userData.avatar;
+							commentItem.username = userData.username;
+							container.appendChild(commentItem);
+						} else {
+							console.log('Usuario no encontrado');
+						}
+					});
+				});
+			}
+		});
+	}
+
 	async addCommentToPost(comment: string, idPost: string) {
 		const result = onUserLogin(async (userLogin) => {
 			if (userLogin) {
@@ -355,21 +378,6 @@ class ScreenDashboard extends HTMLElement {
 				const commentElements = container.querySelectorAll('.comment');
 				commentElements.forEach((element) => {
 					element.remove();
-				});
-				comments.forEach(async (comment: any) => {
-					const commentItem = this.ownerDocument.createElement('single-button-comment') as SingleButtonComment;
-					commentItem.classList.add('comment');
-
-					const unsubscribe = getUserById(comment.userId, (userData) => {
-						if (userData) {
-							commentItem.comment = comment.text;
-							commentItem.avatar = userData.avatar;
-							commentItem.username = userData.username;
-							container.appendChild(commentItem);
-						} else {
-							console.log('Usuario no encontrado');
-						}
-					});
 				});
 			}
 		}
