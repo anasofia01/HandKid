@@ -11,6 +11,7 @@ class EditFormProfile extends HTMLElement {
 		await this.loadUserData();
 		this.render();
 		this.setUpFormSubmit();
+		this.addListenerArrow();
 	}
 
 	async loadUserData() {
@@ -47,6 +48,20 @@ class EditFormProfile extends HTMLElement {
 				this.dispatchEvent(
 					new CustomEvent('form-edit-submitted', {
 						detail: formData,
+						bubbles: true,
+						composed: true,
+					})
+				);
+			});
+		}
+	}
+
+	addListenerArrow() {
+		const arrowBtn = this.shadowRoot?.querySelector('.arrow-left');
+		if (arrowBtn) {
+			arrowBtn.addEventListener('click', () => {
+				this.dispatchEvent(
+					new CustomEvent('settings-clicked', {
 						bubbles: true,
 						composed: true,
 					})
