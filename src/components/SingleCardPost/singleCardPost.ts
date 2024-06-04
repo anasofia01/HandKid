@@ -129,6 +129,7 @@ class SingleCardPost extends HTMLElement {
 				this.dispatchEvent(commentEvent);
 			});
 		}
+		this.setUpCommentButtonListener();
 	}
 
 	likePost() {
@@ -153,6 +154,8 @@ class SingleCardPost extends HTMLElement {
 			}
 		});
 	}
+
+	setUpCommentButtonListener() {}
 
 	render() {
 		if (this.shadowRoot) {
