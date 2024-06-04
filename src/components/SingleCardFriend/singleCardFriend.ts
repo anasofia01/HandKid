@@ -82,7 +82,7 @@ class SingleCardFriend extends HTMLElement {
 						<span class = "friend-username">${this.username}</span>
 					</div>
 					<div class = "avatar-container">
-						<img src = "${this.avatar}" class = "avatar"></img>
+						<img src = "${this.avatar}" class = "avatar" alt = "avatar friend"></img>
 					</div>
       	</div>
       `;
