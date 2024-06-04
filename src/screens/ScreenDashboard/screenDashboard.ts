@@ -326,6 +326,7 @@ class ScreenDashboard extends HTMLElement {
 				postCard.comments = postData.comments;
 				container.appendChild(postCard);
 	}
+}
 
 	async addCommentToPost(comment: string, idPost: string) {
 		const result = onUserLogin(async (userLogin) => {
