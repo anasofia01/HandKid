@@ -357,7 +357,7 @@ class ScreenDashboard extends HTMLElement {
 	}
 
 	async addCommentToPost(comment: string, idPost: string) {
-		const result = onUserLogin(async (userLogin) => {
+		const unsubscribe = onUserLogin(async (userLogin) => {
 			if (userLogin) {
 				await addCommentToPost(idPost, comment, userLogin);
 				const commentsPost = await getCommentById(idPost);
@@ -365,8 +365,8 @@ class ScreenDashboard extends HTMLElement {
 					const newComments = commentsPost + 1;
 					await updateCommentsById(idPost, newComments);
 				}
-				await this.updateCommentsList(idPost);
 			}
+			unsubscribe();
 		});
 	}
 
