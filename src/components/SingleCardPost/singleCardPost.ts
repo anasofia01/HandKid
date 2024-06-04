@@ -105,30 +105,7 @@ class SingleCardPost extends HTMLElement {
 	connectedCallback() {
 		this.render();
 		this.shadowRoot?.querySelector('.btn-like')?.addEventListener('click', this.likePost.bind(this));
-		const commentButton = this.shadowRoot?.querySelector('.btn-comment');
-		if (commentButton) {
-			commentButton.addEventListener('click', () => {
-				const commentEvent = new CustomEvent('comment-clicked', {
-					detail: {
-						idPost: this.idPost,
-						avatar: this.avatar,
-						name: this.name,
-						username: this.username,
-						description: this.description,
-						timestamp: this.timestamp,
-						hashtags: this.hashtags,
-						media: this.media,
-						likes: this.likes,
-						comments: this.comments,
-						images: this.images,
-						tags: this.tags,
-					},
-					bubbles: true,
-					composed: true,
-				});
-				this.dispatchEvent(commentEvent);
-			});
-		}
+
 		this.setUpCommentButtonListener();
 	}
 
@@ -155,7 +132,32 @@ class SingleCardPost extends HTMLElement {
 		});
 	}
 
-	setUpCommentButtonListener() {}
+	setUpCommentButtonListener() {
+		const commentButton = this.shadowRoot?.querySelector('.btn-comment');
+		if (commentButton) {
+			commentButton.addEventListener('click', () => {
+				const commentEvent = new CustomEvent('comment-clicked', {
+					detail: {
+						idPost: this.idPost,
+						avatar: this.avatar,
+						name: this.name,
+						username: this.username,
+						description: this.description,
+						timestamp: this.timestamp,
+						hashtags: this.hashtags,
+						media: this.media,
+						likes: this.likes,
+						comments: this.comments,
+						images: this.images,
+						tags: this.tags,
+					},
+					bubbles: true,
+					composed: true,
+				});
+				this.dispatchEvent(commentEvent);
+			});
+		}
+	}
 
 	render() {
 		if (this.shadowRoot) {
