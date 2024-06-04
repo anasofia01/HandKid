@@ -9,6 +9,7 @@ import SingleCardProfile from '../../components/SingleCardProfile/singleCardProf
 import {
 	createPost,
 	addCommentToPost,
+	getPostById,
 	getCommentsById,
 	getCommentById,
 	updateCommentsById,
