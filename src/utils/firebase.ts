@@ -89,17 +89,6 @@ export const addCommentToPost = async (postId: string, newComment: string, userI
 	});
 };
 
-export const getCommentsById = async (postId: string) => {
-	const commentReferenceById = doc(db, 'post', postId);
-	const postDoc = await getDoc(commentReferenceById);
-	if (postDoc.exists()) {
-		const postData = postDoc.data() as PostData;
-		return postData.commentsText ?? [];
-	} else {
-		return null;
-	}
-};
-
 export const getCommentById = async (id: string): Promise<number | null> => {
 	const commentReferenceNumber = doc(db, 'post', id);
 	const postDoc = await getDoc(commentReferenceNumber);
@@ -303,6 +292,19 @@ export const getPostById = (id: string, callback: (postData: PostData | null) =>
 			callback(postData);
 		} else {
 			callback(null);
+		}
+	});
+	return result;
+};
+
+export const getCommentsById = (postId: string, callback: (comments: any[]) => void): (() => void) => {
+	const docReference = doc(db, 'post', postId);
+	const result = onSnapshot(docReference, (docSnapshot) => {
+		if (docSnapshot.exists()) {
+			const postData = docSnapshot.data() as PostData;
+			callback(postData.commentsText ?? []);
+		} else {
+			callback([]);
 		}
 	});
 	return result;
