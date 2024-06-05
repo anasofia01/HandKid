@@ -1,4 +1,5 @@
 import styles from './singleCardSettings.css';
+import { SVG } from '../../types/media';
 
 class SingleCardSettings extends HTMLElement {
 	constructor() {
