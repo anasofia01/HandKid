@@ -5,7 +5,7 @@ import { navigate } from '../../store/actions';
 import { getInfoRegister, clearInfoRegister } from '../../utils/storage';
 import { UserData } from '../../types/userData';
 import { createUser } from '../../utils/firebase';
-import { SVG } from '../../types/media';
+import { SVG, IMAGES } from '../../types/media';
 
 class SingleCardPassword extends HTMLElement {
 	constructor() {
