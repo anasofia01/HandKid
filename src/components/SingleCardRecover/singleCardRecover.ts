@@ -3,6 +3,7 @@ import { dispatch } from '../../store';
 import { Screens } from '../../types/navigation';
 import { navigate } from '../../store/actions';
 import { resetPassword } from '../../utils/firebase';
+import { SVG } from '../../types/media';
 
 class SingleCardRecover extends HTMLElement {
 	constructor() {
