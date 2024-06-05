@@ -1,4 +1,5 @@
 import styles from './editFormPassword.css';
+import { SVG } from '../../types/media';
 
 class EditFormPassword extends HTMLElement {
 	constructor() {
