@@ -6,6 +6,7 @@ import {
 	checkedIfUserHasLike,
 	addUserLikedToPost,
 } from '../../utils/firebase';
+import { SVG } from '../../types/media';
 
 export enum Attribute {
 	'idPost' = 'idPost',
