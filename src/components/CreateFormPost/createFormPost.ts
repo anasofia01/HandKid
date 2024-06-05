@@ -34,11 +34,11 @@ class CreateFormPost extends HTMLElement {
 						<div class = "image-inputs">
 							<div class = "img-1">
 								${SVG.IMG}
-								<input type = "text" placeHolder = "Add Media" name = "img1" required></input>
+								<input type = "file" name = "img1" required></input>
 							</div>
 							<div class = "img-2">
 								${SVG.IMG}
-								<input type = "text" placeHolder = "Add Media" name = "img2" required></input>
+								<input type = "file" name = "img2" required></input>
 							</div>
 						</div>
 						<div>
