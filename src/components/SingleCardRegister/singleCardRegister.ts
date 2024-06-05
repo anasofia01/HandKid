@@ -3,6 +3,7 @@ import { setInfoRegister } from '../../utils/storage';
 import { dispatch } from '../../store';
 import { navigate } from '../../store/actions';
 import { Screens } from '../../types/navigation';
+import { SVG } from '../../types/media';
 
 class SingleCardRegister extends HTMLElement {
 	constructor() {
