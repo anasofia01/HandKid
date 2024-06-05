@@ -1,4 +1,5 @@
 import styles from './createFormPost.css';
+import { SVG } from '../../types/media';
 
 class CreateFormPost extends HTMLElement {
 	constructor() {
