@@ -3,6 +3,7 @@ import styles from './screenCardFriends.css';
 import { onUserLogin, getFriends } from '../../utils/firebase';
 import { addObserver, dispatch, appState } from '../../store';
 import { getFriendsAction } from '../../store/actions';
+import { SVG } from '../../types/media';
 
 class ScreenCardFriends extends HTMLElement {
 	users: SingleCardFriend[] = [];
