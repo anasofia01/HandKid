@@ -52,9 +52,8 @@ class SingleCardPassword extends HTMLElement {
 			email: formNextData.email ?? '',
 			password: password,
 			policy: policyCheck.checked,
-			avatar: 'https://www.autoocupacio.org/wp-content/uploads/2017/07/Usuario-Vacio.png',
-			banner:
-				'https://image-assets.eu-2.volcanic.cloud/api/v1/assets/images/00acdc9462f3b2ccd275d65f3f42e5d3?t=1710413812&webp_fallback=png',
+			avatar: IMAGES.AVATAR_DEFAULT,
+			banner: IMAGES.BANNER_DEFAULT,
 			friends: 0,
 			age: age,
 		};
