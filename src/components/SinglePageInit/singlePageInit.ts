@@ -2,6 +2,7 @@ import styles from './singlePageInit.css';
 import { dispatch } from '../../store';
 import { Screens } from '../../types/navigation';
 import { navigate } from '../../store/actions';
+import { SVG } from '../../types/media';
 
 class SinglePageInit extends HTMLElement {
 	constructor() {
