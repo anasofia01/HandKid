@@ -29,7 +29,7 @@ class ScreenCardFriends extends HTMLElement {
 			<style>${styles}</style>
 			<div class = "container-friends">
 			<div class="search">
-				${SVG.FRIENDS}
+				${SVG.IS_FRIEND}
 				<b>Potential Friends</b>
 			</div>
 				<div class = "friends-cards-container"></div>
