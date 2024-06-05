@@ -3,6 +3,7 @@ import { navigate } from '../../store/actions';
 import { dispatch } from '../../store';
 import { Screens } from '../../types/navigation';
 import { logout } from '../../utils/firebase';
+import { SVG } from '../../types/media';
 
 class SingleButtonNav extends HTMLElement {
 	constructor() {
