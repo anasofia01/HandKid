@@ -1,5 +1,6 @@
 import styles from './editFormProfile.css';
 import { onUserLogin, getUserById } from '../../utils/firebase';
+import { SVG } from '../../types/media';
 
 class EditFormProfile extends HTMLElement {
 	constructor() {
