@@ -112,7 +112,7 @@ export const updateCommentsById = async (id: string, newComments: number): Promi
 
 export const createUser = async (data: UserData) => {
 	if (!data.email || !data.password) {
-		console.error('El email y la password no llegaron, están vacíos');
+		console.error('The email and password did not arrive, they are empty.');
 		return false;
 	} else {
 		try {
@@ -133,7 +133,6 @@ export const createUser = async (data: UserData) => {
 			await setDoc(dataRegister, register);
 			const loginResult = await login(data.email, data.password);
 			if (!loginResult) {
-				console.error('Falló');
 				return false;
 			}
 			return true;
