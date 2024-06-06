@@ -55,7 +55,7 @@ class CreateFormPost extends HTMLElement {
 							</div>
 						</div>
 						<div>
-							<input type = "submit" id = "save-post" value = "Post"></input>
+							<input type = "submit" id = "save-post" value = "Create Post"></input>
 						</div>
           </form>
         </div>
