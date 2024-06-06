@@ -83,10 +83,12 @@ class EditFormProfile extends HTMLElement {
 					<div class = "image-inputs">
 						<div class = "img-1">
 							${SVG.IMG}
+							<small>Upload Banner Image:</small>
 							<input type = "file" name = "banner"></input>
 						</div>
 						<div class = "img-2">
 							${SVG.IMG}
+							<small>Upload Avatar Image:</small>
 							<input type = "file" name = "avatar"></input>
 						</div>
 					</div>
