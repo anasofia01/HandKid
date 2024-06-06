@@ -91,7 +91,7 @@ class ScreenDashboard extends HTMLElement {
 			await logout();
 			dispatch(navigate(Screens.MAIN));
 		} else {
-			alert('No se pudo enviar el correo');
+			alert('Unable to send mail');
 		}
 	}
 
@@ -124,9 +124,9 @@ class ScreenDashboard extends HTMLElement {
 						userDataEdit.banner = imgBannerUrl;
 					}
 					await updateUserInfo(userLogin, userDataEdit);
-					alert('Se editó la información con éxito');
+					alert('The information was successfully edited');
 				} catch (error) {
-					alert('No se actualizó el perfil');
+					alert('Profile not updated');
 				}
 				this.renderPost();
 			}
