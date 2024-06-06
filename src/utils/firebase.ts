@@ -112,7 +112,7 @@ export const updateCommentsById = async (id: string, newComments: number): Promi
 
 export const createUser = async (data: UserData) => {
 	if (!data.email || !data.password) {
-		console.error('The email and password did not arrive, they are empty.');
+		alert('The email and password did not arrive, they are empty.');
 		return false;
 	} else {
 		try {
