@@ -50,7 +50,14 @@ class SingleCardRegister extends HTMLElement {
 		}
 	}
 
-	addListenerArrow() {}
+	addListenerArrow() {
+		const arrowBtn = this.shadowRoot?.querySelector('.arrow-left');
+		if (arrowBtn) {
+			arrowBtn.addEventListener('click', () => {
+				dispatch(navigate(Screens.MAIN));
+			});
+		}
+	}
 
 	render() {
 		if (this.shadowRoot) {
