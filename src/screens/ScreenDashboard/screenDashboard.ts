@@ -26,6 +26,7 @@ import { SingleButtonComment, SingleCardPost } from '../../components/index';
 import { navigate } from '../../store/actions';
 import { dispatch } from '../../store';
 import { Screens } from '../../types/navigation';
+import { SVG } from '../../types/media';
 
 class ScreenDashboard extends HTMLElement {
 	constructor() {
