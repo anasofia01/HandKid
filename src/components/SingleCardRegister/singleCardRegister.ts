@@ -26,6 +26,7 @@ class SingleCardRegister extends HTMLElement {
 
 	handleNext(event: any) {
 		event.preventDefault();
+		clearInfoRegister();
 		const formData = new FormData(event.target);
 		let formValues = [];
 		formValues.push({
