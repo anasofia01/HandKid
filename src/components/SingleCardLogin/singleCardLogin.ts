@@ -65,6 +65,9 @@ class SingleCardLogin extends HTMLElement {
         <div class = "container-img">
         </div>
         <div class = "form-login">
+					<div class = "arrow-left">
+						${SVG.ARROW}
+					</div>
           <div class = "container-logo">
 						${SVG.LOGO}
             HandKid
