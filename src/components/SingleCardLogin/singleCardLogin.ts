@@ -16,6 +16,7 @@ class SingleCardLogin extends HTMLElement {
 		this.addLoginListener();
 		this.buttonListenerRegister();
 		this.buttonListenerRecover();
+		this.addListenerArrow();
 	}
 
 	addLoginListener() {
@@ -53,6 +54,15 @@ class SingleCardLogin extends HTMLElement {
 		if (recoverBtn) {
 			recoverBtn.addEventListener('click', () => {
 				dispatch(navigate(Screens.RECOVER));
+			});
+		}
+	}
+
+	addListenerArrow() {
+		const arrowBtn = this.shadowRoot?.querySelector('.arrow-left');
+		if (arrowBtn) {
+			arrowBtn.addEventListener('click', () => {
+				dispatch(navigate(Screens.MAIN));
 			});
 		}
 	}
