@@ -104,12 +104,13 @@ class ScreenDashboard extends HTMLElement {
 				const avatar = formInfo.get('avatar') as File;
 				const banner = formInfo.get('banner') as File;
 				try {
-					let imgAvatarUrl, imgBannerUrl;
-					if (avatar) {
-						const imgAvatarUrl = await uploadImages(avatar, `users/${avatar.name}`);
+					let imgAvatarUrl: string | undefined;
+					let imgBannerUrl: string | undefined;
+					if (avatar.name) {
+						imgAvatarUrl = await uploadImages(avatar, `users/${avatar.name}`);
 					}
-					if (banner) {
-						const imgBannerUrl = await uploadImages(banner, `users/${banner.name}`);
+					if (banner.name) {
+						imgBannerUrl = await uploadImages(banner, `users/${banner.name}`);
 					}
 					const userDataEdit: UserData = {
 						username: username,
