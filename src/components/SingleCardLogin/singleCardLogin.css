@@ -26,10 +26,11 @@
 .form-login {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+	justify-content: flex-start;
+	align-items: flex-start;
 	margin: 60px;
 	padding: 20px;
+	position: relative;
 }
 
 .container-form {
@@ -51,8 +52,6 @@
 	padding: 20px;
 	padding-left: 40px;
 	width: 200px;
-	top: 0;
-	left: 0;
 	cursor: pointer;
 	font-size: 32px;
 	font-weight: bold;
@@ -67,6 +66,7 @@
 	color: #120078;
 	font-size: 32px;
 	font-weight: bold;
+	margin-bottom: 15px;
 }
 
 .recover-password,
@@ -114,10 +114,6 @@ form {
 	padding: 10px 20px 10px 20px;
 }
 
-.title-login {
-	margin-bottom: 15px;
-}
-
 @media (max-width: 768px) {
 	.container-login {
 		grid-template-columns: 1fr;
@@ -143,4 +139,7 @@ form {
 	width: 20px;
 	height: 20px;
 	cursor: pointer;
+	position: absolute;
+	top: 20px;
+	left: 20px;
 }
