@@ -101,12 +101,18 @@ class ScreenDashboard extends HTMLElement {
 				const description = formInfo.get('description') as string;
 				const fullname = formInfo.get('fullname') as string;
 				const username = formInfo.get('username') as string;
-				const userDataEdit: UserData = {
-					username: username,
-					fullname: fullname,
-					description: description,
-				};
+				const avatar = formInfo.get('avatar') as File;
+				const banner = formInfo.get('banner') as File;
 				try {
+					const imgAvatarUrl = await uploadImages(avatar, `users/${avatar.name}`);
+					const imgBannerUrl = await uploadImages(banner, `users/${banner.name}`);
+					const userDataEdit: UserData = {
+						username: username,
+						fullname: fullname,
+						description: description,
+						avatar: imgAvatarUrl,
+						banner: imgBannerUrl,
+					};
 					await updateUserInfo(userLogin, userDataEdit);
 					alert('Se editó la información con éxito');
 				} catch (error) {
