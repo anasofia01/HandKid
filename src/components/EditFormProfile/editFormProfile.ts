@@ -93,7 +93,7 @@ class EditFormProfile extends HTMLElement {
 						</div>
 					</div>
 					<div>
-						<textarea name = "description" id = "description" rows = "10" cols = "30" placeholder = "Profile Description"></textarea>
+						<textarea name = "description" id = "description" rows = "5" cols = "30" placeholder = "Profile Description"></textarea>
 					</div>
 					<div class = "tag-inputs">
 						<div class = "tag-input1">
