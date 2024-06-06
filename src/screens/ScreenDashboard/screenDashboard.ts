@@ -237,23 +237,25 @@ class ScreenDashboard extends HTMLElement {
 
 	async processFormData(formInfo: FormData) {
 		const result = onUserLogin(async (userLogin) => {
-			const img1 = formInfo.get('img1') as string;
-			const img2 = formInfo.get('img2') as string;
-			const description = formInfo.get('description') as string;
-			const tags1 = formInfo.get('tags1') as string;
-			const tags2 = formInfo.get('tags2') as string;
-			const datePost = new Date();
 			if (userLogin) {
-				const postDataInfo: PostData = {
-					user: userLogin,
-					description: description,
-					timestamp: datePost.toISOString(),
-					likes: 0,
-					comments: 0,
-					media: [img1, img2],
-					hashtags: [tags1, tags2],
-				};
+				const img1 = formInfo.get('img1') as File;
+				const img2 = formInfo.get('img2') as File;
+				const description = formInfo.get('description') as string;
+				const tags1 = formInfo.get('tags1') as string;
+				const tags2 = formInfo.get('tags2') as string;
+				const datePost = new Date();
 				try {
+					const img1Url = await uploadImages(img1, `images/${img1.name}`);
+					const img2Url = await uploadImages(img2, `images/${img2.name}`);
+					const postDataInfo: PostData = {
+						user: userLogin,
+						description: description,
+						timestamp: datePost.toISOString(),
+						likes: 0,
+						comments: 0,
+						media: [img1Url, img2Url],
+						hashtags: [tags1, tags2],
+					};
 					const result = await createPost(postDataInfo);
 					alert('Saved Info');
 				} catch (error) {
@@ -262,6 +264,7 @@ class ScreenDashboard extends HTMLElement {
 				}
 				this.renderPost();
 			}
+			result();
 		});
 	}
 
