@@ -15,6 +15,7 @@ class SingleCardRegister extends HTMLElement {
 		this.render();
 		this.addNextListener();
 		this.buttonListenerLogin();
+		this.addListenerArrow();
 	}
 
 	addNextListener() {
@@ -48,6 +49,8 @@ class SingleCardRegister extends HTMLElement {
 			});
 		}
 	}
+
+	addListenerArrow() {}
 
 	render() {
 		if (this.shadowRoot) {
