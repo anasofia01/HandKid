@@ -45,6 +45,8 @@ export const auth = getAuth(app);
 
 const userDocument = collection(db, 'users');
 
+const storage = getStorage();
+
 export const createPost = async (data: PostData) => {
 	await addDoc(postDocument, data);
 };
