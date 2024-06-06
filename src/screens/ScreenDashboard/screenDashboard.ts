@@ -241,8 +241,8 @@ class ScreenDashboard extends HTMLElement {
 				const img1 = formInfo.get('img1') as File;
 				const img2 = formInfo.get('img2') as File;
 				const description = formInfo.get('description') as string;
-				const tags1 = formInfo.get('tags1') as string;
-				const tags2 = formInfo.get('tags2') as string;
+				const tags1 = '#' + (formInfo.get('tags1') as string);
+				const tags2 = '#' + (formInfo.get('tags2') as string);
 				const datePost = new Date();
 				try {
 					const img1Url = await uploadImages(img1, `images/${img1.name}`);
