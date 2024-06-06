@@ -13,7 +13,7 @@ class ScreenCardPost extends HTMLElement {
 		addObserver(this);
 	}
 
-	async connectedCallback() {
+	connectedCallback() {
 		/* 		if (appState.post.length === 0) {
 			const action = await getPostsAction();
 			dispatch(action);
@@ -22,7 +22,7 @@ class ScreenCardPost extends HTMLElement {
 		// }
 	}
 
-	async render() {
+	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
 				<style>${styles}</style>
@@ -57,7 +57,7 @@ class ScreenCardPost extends HTMLElement {
 									postCard.comments = post.comments;
 									postContainer.appendChild(postCard);
 								} else {
-									console.log('No found User');
+									alert('No found User');
 								}
 							});
 						}
