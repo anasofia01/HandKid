@@ -312,3 +312,10 @@ export const getCommentsById = (postId: string, callback: (comments: any[]) => v
 	});
 	return result;
 };
+
+export const uploadImages = async (file: File, filePath: string): Promise<string> => {
+	const storageRef = ref(storage, filePath);
+	await uploadBytes(storageRef, file);
+	const url = await getDownloadURL(storageRef);
+	return url;
+};
