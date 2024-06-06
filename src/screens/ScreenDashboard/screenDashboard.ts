@@ -20,6 +20,7 @@ import {
 	updateUserInfo,
 	resetPassword,
 	logout,
+	uploadImages,
 } from '../../utils/firebase';
 import { SingleButtonComment, SingleCardPost } from '../../components/index';
 import { navigate } from '../../store/actions';
