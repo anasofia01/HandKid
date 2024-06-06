@@ -385,7 +385,7 @@ class ScreenDashboard extends HTMLElement {
 							commentItem.username = userData.username;
 							container.appendChild(commentItem);
 						} else {
-							console.log('Usuario no encontrado');
+							alert('User not found');
 						}
 					});
 				});
