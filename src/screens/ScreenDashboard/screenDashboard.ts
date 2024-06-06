@@ -177,7 +177,7 @@ class ScreenDashboard extends HTMLElement {
 		this.renderContent('.column2', 'screen-card-friends');
 	}
 
-	async renderMyProfile() {
+	renderMyProfile() {
 		const container = this.shadowRoot?.querySelector('.column2');
 		if (container) {
 			container.innerHTML = '';
@@ -205,7 +205,7 @@ class ScreenDashboard extends HTMLElement {
 		}
 	}
 
-	async renderFriendProfile(profileData: ProfileData) {
+	renderFriendProfile(profileData: ProfileData) {
 		const container = this.shadowRoot?.querySelector('.column2');
 		if (container) {
 			container.innerHTML = '';
@@ -252,7 +252,7 @@ class ScreenDashboard extends HTMLElement {
 		}
 	}
 
-	async processFormData(formInfo: FormData) {
+	processFormData(formInfo: FormData) {
 		const result = onUserLogin(async (userLogin) => {
 			if (userLogin) {
 				const img1 = formInfo.get('img1') as File;
