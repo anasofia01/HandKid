@@ -130,6 +130,7 @@ class ScreenDashboard extends HTMLElement {
 				}
 				this.renderPost();
 			}
+			result();
 		});
 	}
 
