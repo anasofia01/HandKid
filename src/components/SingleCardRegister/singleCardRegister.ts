@@ -1,5 +1,5 @@
 import styles from './singleCardRegister.css';
-import { setInfoRegister } from '../../utils/storage';
+import { setInfoRegister, clearInfoRegister } from '../../utils/storage';
 import { dispatch } from '../../store';
 import { navigate } from '../../store/actions';
 import { Screens } from '../../types/navigation';
