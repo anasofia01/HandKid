@@ -87,7 +87,9 @@ svg {
 }
 
 @media (max-width: 768px) {
-	.btn-setting {
+	.btn-setting,
+	.btn-friends,
+	.btn-is-friends {
 		margin-top: 80px;
 	}
 	.container-profile {
